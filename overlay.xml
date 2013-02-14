@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name>argent-gentoo</name>
+    <description>Romanian enterprise oriented overlay of ebuilds</description>
+    <homepage>https://github.com/Rogentos/argent-gentoo</homepage>
+    <owner type="project">
+      <email>stefan.cristian at rogentos.ro</email>
+      <name>Rogentos</name>
+    </owner>
+    <source type="git">https://github.com/Rogentos/argent-gentoo.git</source>
+    <feed>https://github.com/Rogentos/argent-gentoo/commits/master.atom</feed>
+  </repo>
+</repositories>
