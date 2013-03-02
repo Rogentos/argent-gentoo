@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -11,17 +11,17 @@ PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
 
 DESCRIPTION="A simple python application for transcoding video into formats supported by GStreamer."
-HOMEPAGE="http://www.linuxrising.org/transmageddon/"
-SRC_URI="http://www.linuxrising.org/transmageddon/files/${P}.tar.bz2"
+HOMEPAGE="http://www.linuxrising.org/"
+SRC_URI="http://www.linuxrising.org/files/${P}.tar.bz2"
 
-LICENSE="LGPL-2.1"
+LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/pygtk
-	dev-python/gst-python
-	media-libs/gstreamer"
+	dev-python/gst-python:0.10
+	media-libs/gstreamer:0.10"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
