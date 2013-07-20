@@ -12,7 +12,7 @@ SRC_URI="mirror://kernel/linux/kernel/people/mnc/open-iscsi/releases/${MY_PV}.ta
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug slp"
+IUSE="debug_grade_1 debug slp"
 DEPEND="net-libs/openslp"
 RDEPEND="${DEPEND}
 		sys-apps/util-linux"
@@ -64,6 +64,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	# build system is broken...
 	emake DESTDIR="${D}" sbindir="/usr/sbin" install_user || die "emake install_user failed"
 	# this doesn't get installed

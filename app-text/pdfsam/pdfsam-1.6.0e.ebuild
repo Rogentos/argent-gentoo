@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=1
-JAVA_PKG_IUSE="doc"
+JAVA_PKG_IUSE="debug_grade_1 doc"
 inherit java-pkg-2 eutils java-ant-2
 
 DESCRIPTION="A free open source tool to split and merge pdf documents"
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}-out-src.zip"
 LICENSE="GPL-2"
 SLOT="1.4"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 S="${WORKDIR}/pdfsam"
 
@@ -90,6 +90,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	insinto /usr/share/${PN}-${SLOT}/lib
 	doins build/pdfsam-maine-br1/release/dist/pdfsam-enhanced/*.xml || die "config install failed"
 	java-pkg_dojar build/pdfsam-maine-br1/release/dist/pdfsam-enhanced/pdfsam.jar

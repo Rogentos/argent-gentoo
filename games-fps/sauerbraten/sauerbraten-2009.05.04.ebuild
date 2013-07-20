@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/sauerbraten/sauerbraten_${PV//./_}_trooper_edition
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 RESTRICT="strip"
 
 DEPEND="sys-apps/sed"
@@ -35,6 +35,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	use amd64 && multilib_toolchain_setup x86
 
 	exeinto "$(games_get_libdir)"/${PN}

@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/lprof/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="x11-libs/qt-core:4[qt3support]
 	x11-libs/qt-assistant:4

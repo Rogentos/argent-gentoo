@@ -13,7 +13,7 @@ SRC_URI="http://download.lightscribe.com/ls/lightscribeApplications-${PV}-linux-
 LICENSE="lightscribe"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="multilib"
+IUSE="debug_grade_1 multilib"
 
 RDEPEND="dev-libs/liblightscribe
 	x86? ( >=media-libs/fontconfig-2.3.2
@@ -54,6 +54,9 @@ src_unpack() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	has_multilib_profile && ABI="x86"
 
 	into /opt/lightscribe/SimpleLabeler

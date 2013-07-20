@@ -15,7 +15,7 @@ SRC_URI=""
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=""
 RDEPEND="${DEPEND}"

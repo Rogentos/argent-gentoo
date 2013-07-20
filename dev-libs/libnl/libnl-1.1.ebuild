@@ -12,7 +12,7 @@ SRC_URI="http://people.suug.ch/~tgr/libnl/files/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 S="${WORKDIR}/${MY_P}"
 
@@ -29,5 +29,8 @@ src_unpack() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die
 }

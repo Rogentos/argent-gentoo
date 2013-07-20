@@ -19,7 +19,7 @@ SRC_URI="http://grass.osgeo.org/${MY_PM}/source/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="6"
 KEYWORDS="amd64 ppc ~ppc64 x86"
-IUSE="X cairo cxx ffmpeg fftw gmath jpeg motif mysql nls odbc opengl png postgres python readline sqlite tiff truetype wxwidgets"
+IUSE="debug_grade_1 X cairo cxx ffmpeg fftw gmath jpeg motif mysql nls odbc opengl png postgres python readline sqlite tiff truetype wxwidgets"
 
 TCL_DEPS="
 	>=dev-lang/tcl-8.5
@@ -212,6 +212,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" \
 		INST_DIR="${D}"/usr/${MY_PM} \
 		prefix="${D}"/usr BINDIR="${D}"/usr/bin \

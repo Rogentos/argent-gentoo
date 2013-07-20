@@ -14,7 +14,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="+gtk3 nls webkit"
+IUSE="debug_grade_1 +gtk3 nls webkit"
 RDEPEND="app-text/enchant
 	dev-libs/dbus-glib
 	dev-libs/expat

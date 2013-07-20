@@ -12,7 +12,7 @@ SRC_URI="http://ushare.geexbox.org/releases/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="dlna nls"
+IUSE="debug_grade_1 dlna nls"
 
 RDEPEND=">=net-libs/libupnp-1.6.14
 	dlna? ( >=media-libs/libdlna-0.2.4 )"
@@ -36,6 +36,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install
 	doman src/ushare.1
 	newconfd "${FILESDIR}"/ushare.conf.d ushare

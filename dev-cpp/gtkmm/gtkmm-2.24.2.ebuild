@@ -14,7 +14,7 @@ HOMEPAGE="http://www.gtkmm.org"
 LICENSE="LGPL-2.1"
 SLOT="2.4"
 KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~sparc-solaris ~x86-solaris"
-IUSE="doc examples test"
+IUSE="debug_grade_1 doc examples test"
 
 RDEPEND=">=dev-cpp/glibmm-2.24:2
 	>=x11-libs/gtk+-2.24:2

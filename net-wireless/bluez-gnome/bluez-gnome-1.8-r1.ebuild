@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ~hppa ~ppc x86"
 
-IUSE="gnome"
+IUSE="debug_grade_1 gnome"
 COMMON_DEPEND="dev-libs/glib:2
 	>=x11-libs/libnotify-0.3.2
 	>=gnome-base/gconf-2.6
@@ -41,6 +41,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	gnome2_src_install
 
 	# hackish fix to libGL issue, this should be fixed in code, really

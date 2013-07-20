@@ -7,7 +7,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 arm ppc ppc64 sparc x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND=""
 DEPEND=""

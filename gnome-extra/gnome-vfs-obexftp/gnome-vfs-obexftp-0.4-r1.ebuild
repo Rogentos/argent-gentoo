@@ -12,7 +12,7 @@ HOMEPAGE="http://www.gnome.org"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 hppa ~ppc sparc x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND=">=gnome-base/gnome-vfs-2.12.0.1
 	dev-libs/dbus-glib

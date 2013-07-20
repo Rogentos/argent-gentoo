@@ -14,7 +14,7 @@ SRC_URI="http://ftp.gnome.org/pub/GNOME/sources/nanny/2.31/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 CDEPEND="
 	>=gnome-base/gnome-desktop-2.26.0
@@ -45,6 +45,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "emake install failed"
 	newinitd "${FILESDIR}"/nanny.initd nanny || die "doinitd failed"
 	doicon client/common/icons/48x48/nanny.png || die "doicon failed"

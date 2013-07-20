@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/portmedia/${PN}-src-${PV}.zip"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug java python test-programs"
+IUSE="debug_grade_1 debug java python test-programs"
 
 PYTHON_DEPEND="python? 2:2.6"
 
@@ -117,6 +117,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cmake-utils_src_install
 
 	dodoc CHANGELOG.txt README.txt pm_linux/README_LINUX.txt || die "dodoc failed"

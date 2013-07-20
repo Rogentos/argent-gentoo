@@ -15,7 +15,7 @@ SRC_URI="http://fcitx.googlecode.com/files/${P}.tar.xz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+cairo debug gtk gtk3 opencc +pango qt static-libs +table test"
+IUSE="debug_grade_1 +cairo debug gtk gtk3 opencc +pango qt static-libs +table test"
 
 RDEPEND="
 	cairo? (
@@ -116,6 +116,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cmake-utils_src_install
 
 	dodoc AUTHORS ChangeLog README THANKS TODO || die

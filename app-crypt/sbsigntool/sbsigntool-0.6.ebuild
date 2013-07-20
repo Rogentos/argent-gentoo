@@ -13,7 +13,7 @@ SRC_URI="https://launchpad.net/ubuntu/+archive/primary/+files/${PN}_${PV}.orig.t
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="x86 amd64"
-IUSE="test"
+IUSE="debug_grade_1 test"
 
 RDEPEND="dev-libs/openssl"
 DEPEND="${RDEPEND}

@@ -13,7 +13,7 @@ SRC_URI="http://dists.xneur.ru/release-${PV}/tgz/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="nls"
+IUSE="debug_grade_1 nls"
 
 COMMON_DEPEND="gnome-base/libglade:2.0
 	gnome-base/gconf:2
@@ -38,6 +38,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install
 	dodoc AUTHORS ChangeLog NEWS
 	doicon pixmaps/gxneur.png

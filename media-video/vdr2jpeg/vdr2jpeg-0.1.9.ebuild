@@ -15,7 +15,7 @@ SRC_URI="mirror://gentoo/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="virtual/ffmpeg"
 DEPEND="${RDEPEND}
@@ -30,6 +30,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dobin vdr2jpeg
 	dodoc README LIESMICH
 }

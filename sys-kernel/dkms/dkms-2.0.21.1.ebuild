@@ -17,5 +17,8 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "make install failed"
 }

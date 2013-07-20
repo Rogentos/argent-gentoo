@@ -6,7 +6,7 @@ EAPI=2
 
 inherit scons-utils multilib eutils python
 
-IUSE="blender-game ffmpeg nls ogg openmp verse openal"
+IUSE="debug_grade_1 blender-game ffmpeg nls ogg openmp verse openal"
 
 DESCRIPTION="3D Creation/Animation/Publishing System"
 HOMEPAGE="http://www.blender.org/"
@@ -130,6 +130,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	exeinto /usr/bin/
 	doexe "${WORKDIR}"/install/linux2/blender
 	use blender-game && doexe "${WORKDIR}"/install/linux2/blenderplayer

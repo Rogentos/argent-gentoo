@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/farsight/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ia64 ~ppc ~ppc64 sparc ~x86 ~x86-fbsd"
-IUSE="doc +python"
+IUSE="debug_grade_1 doc +python"
 
 RDEPEND="dev-libs/glib:2"
 DEPEND="${RDEPEND}
@@ -33,6 +33,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc AUTHORS ChangeLog NEWS README || die "dodoc failed"

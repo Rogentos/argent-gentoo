@@ -11,7 +11,7 @@ DESCRIPTION="An OO interface to Musepack file information and APE tag fields"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE="debug_grade_1 test"
 
 COMMON_DEPEND=">=dev-perl/Audio-Scan-0.85"
 RDEPEND="${COMMON_DEPEND}"

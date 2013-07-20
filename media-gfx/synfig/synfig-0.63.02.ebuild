@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/synfig/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="imagemagick ffmpeg dv openexr truetype jpeg tiff fontconfig"
+IUSE="debug_grade_1 imagemagick ffmpeg dv openexr truetype jpeg tiff fontconfig"
 
 DEPEND=">=dev-libs/libsigc++-2.0.0
 	>=dev-cpp/libxmlpp-2.6.1
@@ -47,6 +47,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "Install failed!"
 	dodoc doc/*.txt || die "Dodoc failed!"
 	#insinto /usr/share/${PN}/examples

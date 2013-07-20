@@ -14,7 +14,7 @@ SRC_URI="ftp://invisible-island.net/vile/current/${MY_P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86"
-IUSE="perl"
+IUSE="debug_grade_1 perl"
 
 RDEPEND="perl? ( dev-lang/perl )
 	=app-editors/vile-${PV}
@@ -43,6 +43,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dobin xvile
 	dodoc CHANGES* README doc/*.doc
 	dohtml doc/*.html

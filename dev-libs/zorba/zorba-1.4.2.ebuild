@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="Apache-2.0 mapm"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+curl doc examples fop +imap java php python +smtp +ssl ruby static-libs +threads +tidy +unicode xqueryx"
+IUSE="debug_grade_1 +curl doc examples fop +imap java php python +smtp +ssl ruby static-libs +threads +tidy +unicode xqueryx"
 
 RDEPEND="dev-libs/libxml2
 	dev-libs/xerces-c
@@ -89,6 +89,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cmake-utils_src_install
 
 	# the modules directory contains .so and .xq files

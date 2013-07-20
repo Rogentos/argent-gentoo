@@ -14,7 +14,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="gtk qt4"
+IUSE="debug_grade_1 gtk qt4"
 
 RDEPEND="gtk? ( ~app-admin/packagekit-gtk-${PV} )
 	qt4? ( ~app-admin/packagekit-qt4-${PV} )"

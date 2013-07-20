@@ -13,7 +13,7 @@ SRC_URI="http://gnome2-globalmenu.googlecode.com/files/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome xfce"
+IUSE="debug_grade_1 gnome xfce"
 
 RDEPEND="dev-libs/glib:2
 	gnome-base/gconf:2
@@ -43,6 +43,9 @@ pkg_setup() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	gnome2_src_install
 
 	# If 'gnome' is the only used flag, then we assume we're facing a happy

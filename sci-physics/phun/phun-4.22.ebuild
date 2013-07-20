@@ -13,7 +13,7 @@ SRC_URI="x86? ( http://www.phunland.com/download/${MY_P}32.tar.bz2 )
 LICENSE="free-noncomm"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 RDEPEND="virtual/opengl
 	media-libs/sdl-image
 	dev-libs/boost
@@ -24,6 +24,9 @@ RESTRICT="strip mirror"
 S="${WORKDIR}"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	rm -rf Phun/lib
 	insinto /opt
 	doins -r Phun/ || die

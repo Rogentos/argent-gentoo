@@ -17,7 +17,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome"
+IUSE="debug_grade_1 gnome"
 
 S=${WORKDIR}/${MY_P}
 
@@ -43,6 +43,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	qt4-r2_src_install
 	#prepalldocs || die "prepalldocs failed."
 }

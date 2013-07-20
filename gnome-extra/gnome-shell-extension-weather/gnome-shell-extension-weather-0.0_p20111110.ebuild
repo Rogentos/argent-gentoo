@@ -12,7 +12,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE=""
+IUSE="debug_grade_1 "
 KEYWORDS="~amd64 ~x86"
 
 COMMON_DEPEND="
@@ -35,6 +35,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dobin weather-extension-configurator.py
 	domenu weather-extension-configurator.desktop || die
 	emake DESTDIR="${D}" install

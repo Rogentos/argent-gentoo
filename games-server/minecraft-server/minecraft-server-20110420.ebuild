@@ -11,7 +11,7 @@ SRC_URI="http://www.minecraft.net/download/minecraft_server.jar -> ${P}.jar"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 RESTRICT="mirror"
 
 DEPEND="virtual/jdk:1.6"
@@ -41,6 +41,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	java-pkg_register-optional-dependency hmod
 	java-pkg_newjar "${DISTDIR}/${P}.jar" "${PN}.jar"
 

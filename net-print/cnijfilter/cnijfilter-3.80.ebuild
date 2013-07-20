@@ -13,7 +13,7 @@ SRC_URI="http://gdlp01.c-wss.com/gds/3/0100004693/01/${PN}-source-${PV}-1.tar.gz
 LICENSE="GPL-2 cnijfilter"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+net +servicetools"
+IUSE="debug_grade_1 +net +servicetools"
 
 RDEPEND="
 	>=media-libs/libpng-1.5
@@ -85,6 +85,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	local _libdir="${EPREFIX}/usr/$(get_libdir)"
 	local _libdir_pkg=libs_bin$(use amd64 && echo 64 || echo 32)
 

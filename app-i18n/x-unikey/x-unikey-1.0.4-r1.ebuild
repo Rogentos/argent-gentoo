@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/unikey/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc x86"
-IUSE="nls gtk"
+IUSE="debug_grade_1 nls gtk"
 
 RDEPEND="x11-libs/libX11
 	x11-libs/libSM
@@ -72,6 +72,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	if use gtk;then
 		dodir "${GTK2_CONFDIR}"
 #		emake DESTDIR="${D}" install -C src/unikey-gtk || die

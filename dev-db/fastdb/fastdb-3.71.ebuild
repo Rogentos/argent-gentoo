@@ -14,7 +14,7 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="sys-devel/bison
 	sys-devel/flex
@@ -28,6 +28,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die
 
 	mv "${ED}"usr/bin/subsql "${ED}"usr/bin/subsql-fdb || die "mv failed"

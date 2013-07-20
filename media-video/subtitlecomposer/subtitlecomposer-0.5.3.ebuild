@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/subcomposer/${P}.tar.bz2"
 LICENSE="GPL-2"
 KEYWORDS="amd64 x86"
 SLOT="4"
-IUSE="debug gstreamer xine"
+IUSE="debug_grade_1 debug gstreamer xine"
 
 RDEPEND="
 	gstreamer? ( media-libs/gstreamer )

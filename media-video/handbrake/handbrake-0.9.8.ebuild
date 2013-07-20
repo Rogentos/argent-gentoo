@@ -43,7 +43,7 @@ unset SRC_CONTRIB
 LICENSE="GPL-2 GPL-3 BSD MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gtk gstreamer ffmpeg2"
+IUSE="debug_grade_1 gtk gstreamer ffmpeg2"
 
 # fribidi is necessary to compile libass
 # Don't need this dependency, net-libs/webkit-gtk,

@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="alsa blowfish gpgme gtkspell gtkhtml libnotify mcrypt pulseaudio voice webkit"
+IUSE="debug_grade_1 alsa blowfish gpgme gtkspell gtkhtml libnotify mcrypt pulseaudio voice webkit"
 
 REQUIRED_USE="^^ ( gtkhtml webkit )"
 
@@ -93,6 +93,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install
 	doicon "${S}"/themes/gyachi-classic/gyach-icon_48.png || die
 }

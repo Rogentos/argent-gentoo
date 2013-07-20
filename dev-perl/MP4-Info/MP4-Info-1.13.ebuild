@@ -11,7 +11,7 @@ DESCRIPTION="Fetch info from MPEG-4 files (.mp4, .m4a, .m4p, .3gp)"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE="debug_grade_1 test"
 
 RDEPEND="dev-perl/IO-String"
 DEPEND="

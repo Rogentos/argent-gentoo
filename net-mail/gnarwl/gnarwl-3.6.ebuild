@@ -9,7 +9,7 @@ SRC_URI="http://www.onyxbits.de/sites/default/files/${P}.tgz"
 HOMEPAGE="http://www.onyxbits.de/gnarwl"
 LICENSE="GPL-2"
 SLOT="0"
-#IUSE="targrey"
+#IUSE="debug_grade_1 targrey"
 DEPEND=""
 RDEPEND=">=sys-devel/gcc-2.95.3
 	>=sys-libs/gdbm-1.8.0
@@ -35,6 +35,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dobin src/gnarwl
 	dosbin src/damnit
 

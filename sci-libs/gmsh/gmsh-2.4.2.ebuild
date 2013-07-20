@@ -13,7 +13,7 @@ SRC_URI="http://www.geuz.org/gmsh/src/${P}-source.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="blas chaco cgns doc examples jpeg med metis mpi opencascade png zlib X"
+IUSE="debug_grade_1 blas chaco cgns doc examples jpeg med metis mpi opencascade png zlib X"
 
 RDEPEND="X? ( x11-libs/fltk:1 )
 		blas? ( virtual/blas virtual/lapack sci-libs/fftw:3.0 )
@@ -69,6 +69,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cmake-utils_src_install
 
 	cd "${WORKDIR}"/"${PF}"

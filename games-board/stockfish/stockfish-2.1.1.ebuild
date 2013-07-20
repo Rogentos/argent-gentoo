@@ -12,7 +12,7 @@ SRC_URI="http://cl.ly/43170W2W3f2F021b0N42/content -> ${P}.zip"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND=""
 DEPEND="app-arch/unzip"
@@ -24,6 +24,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dogamesbin ${PN} || die "dogamesbin failed"
 	dodoc ../Readme.txt ../Copying.txt || die "dodoc failed"
 	prepgamesdirs

@@ -12,7 +12,7 @@ SRC_URI="https://fedorahosted.org/released/system-config-keyboard/${P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE=""
+IUSE="debug_grade_1 "
 DEPEND="dev-util/intltool
 	sys-apps/findutils
 	sys-devel/gettext
@@ -24,6 +24,9 @@ PATCHES=(
 )
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	base_src_install
 
 	# remove .desktop files

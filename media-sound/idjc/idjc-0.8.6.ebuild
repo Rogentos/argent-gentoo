@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/idjc/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="aac ffmpeg flac mp3 mp3-streaming mp3-tagging speex"
+IUSE="debug_grade_1 aac ffmpeg flac mp3 mp3-streaming mp3-tagging speex"
 
 RDEPEND="<dev-lang/python-3
 	>=dev-python/pygtk-2.18:2
@@ -57,6 +57,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "emake install failed."
 }
 

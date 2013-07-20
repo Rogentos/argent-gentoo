@@ -20,7 +20,7 @@ SRC_URI="http://snapshots.madwifi-project.org/${MY_PN}-${MY_PV}/${MY_P}.tar.gz"
 LICENSE="|| ( BSD GPL-2 )"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=""
 RDEPEND="!net-wireless/madwifi-old-tools"
@@ -39,6 +39,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" BINDIR=/usr/bin MANDIR=/usr/share/man STRIP=echo \
 		install || die "emake install failed"
 

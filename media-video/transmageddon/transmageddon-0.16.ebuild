@@ -17,7 +17,7 @@ SRC_URI="http://www.linuxrising.org/transmageddon/files/${P}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="dev-python/pygtk
 	dev-python/gst-python
@@ -31,6 +31,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "emake install failed"
 	rm "${D}/usr/bin/transmageddon"
 	dodoc AUTHORS ChangeLog NEWS README TODO

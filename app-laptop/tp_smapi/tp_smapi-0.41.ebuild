@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="hdaps"
+IUSE="debug_grade_1 hdaps"
 
 RESTRICT="userpriv"
 
@@ -57,6 +57,9 @@ pkg_setup() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	linux-mod_src_install
 	dodoc CHANGES README
 	newinitd "${FILESDIR}"/${PN}-0.40-initd smapi

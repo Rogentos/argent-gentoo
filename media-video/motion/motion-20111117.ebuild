@@ -14,7 +14,7 @@ EGIT_COMMIT="944d1ee5adebe1c9cc99da64975e599ebee5aeb6"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha amd64 ~arm ~ppc ~x86"
-IUSE="ffmpeg mysql postgres v4l"
+IUSE="debug_grade_1 ffmpeg mysql postgres v4l"
 
 RDEPEND="sys-libs/zlib
 	virtual/jpeg
@@ -46,6 +46,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake \
 		DESTDIR="${D}" \
 		DOC='CHANGELOG CODE_STANDARD CREDITS FAQ README' \

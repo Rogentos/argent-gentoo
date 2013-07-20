@@ -12,7 +12,7 @@ HOMEPAGE="http://cups.sourceforge.net/xpp/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ~ppc x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND=">=net-print/cups-1.1.14
 	x11-libs/fltk:1
@@ -44,6 +44,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	einstall || die
 	dodoc ChangeLog README
 }

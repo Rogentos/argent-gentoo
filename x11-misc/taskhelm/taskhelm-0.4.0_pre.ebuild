@@ -15,7 +15,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="dev-python/pygobject:2
 	dev-python/pygtk:2
@@ -31,6 +31,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	distutils_src_install
 	dodoc ISSUES
 }

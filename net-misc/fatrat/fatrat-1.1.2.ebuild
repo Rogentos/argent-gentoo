@@ -13,7 +13,7 @@ SRC_URI="http://www.dolezel.info/download/data/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="bittorrent +curl -debug doc jabber nls webinterface"
+IUSE="debug_grade_1 bittorrent +curl -debug doc jabber nls webinterface"
 
 RDEPEND="x11-libs/qt-gui:4[dbus]
 	x11-libs/qt-svg:4
@@ -58,6 +58,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	use bittorrent \
 		&& echo "MimeType=application/x-bittorrent;" \
 		>> "${S}"/data/${PN}.desktop

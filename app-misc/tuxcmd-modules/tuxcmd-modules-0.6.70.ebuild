@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/tuxcmd/tuxcmd-modules-${PV}.tar.bz2
 LICENSE="GPL-2 unrar? ( unRAR )"
 SLOT="0"
 KEYWORDS="~x86 ~amd64" # FreePascal restrictions
-IUSE="+gnome +zip unrar +libarchive"
+IUSE="debug_grade_1 +gnome +zip unrar +libarchive"
 
 RDEPEND=">=app-misc/tuxcmd-0.6.70
 	>=dev-libs/glib-2.18.0
@@ -56,6 +56,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dodir "/usr/$(get_libdir)/tuxcmd" || die "dodir failed"
 	cd "${S}"
 

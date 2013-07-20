@@ -17,7 +17,7 @@ LICENSE="freedist"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="dedicated openal vorbis"
+IUSE="debug_grade_1 dedicated openal vorbis"
 
 RDEPEND="net-misc/curl
 	vorbis? ( media-libs/libogg media-libs/libvorbis )
@@ -70,6 +70,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	use amd64 && ARCH=x86_64
 	use x86 && ARCH=x86
 

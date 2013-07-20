@@ -6,7 +6,7 @@ EAPI="2"
 
 # Uses the javah task.
 WANT_ANT_TASKS="ant-nodeps"
-JAVA_PKG_IUSE="doc source"
+JAVA_PKG_IUSE="debug_grade_1 doc source"
 
 inherit eutils java-pkg-2 java-ant-2
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/java-game-lib/${PN}-source-${PV}.zip"
 LICENSE="BSD"
 SLOT="2.6"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 CDEPEND="dev-java/apple-java-extensions-bin
 	dev-java/apt-mirror
@@ -59,6 +59,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	java-pkg_dojar libs/${PN}*.jar
 	java-pkg_doso src/native/lib${PN}*.so
 

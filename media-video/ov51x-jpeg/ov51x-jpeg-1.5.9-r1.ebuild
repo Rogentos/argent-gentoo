@@ -11,7 +11,7 @@ SRC_URI="http://www.rastageeks.org/downloads/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 CONFIG_CHECK="USB VIDEO_V4L1_COMPAT"
 ERROR_USB="${P} requires Host-side USB support (CONFIG_USB)."
@@ -26,6 +26,9 @@ PATCHES=(
 	)
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	linux-mod_src_install
 	dodoc ChangeLog || die "dodoc failed"
 }

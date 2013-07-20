@@ -14,7 +14,7 @@ SRC_URI="http://dl.xmind.org/${P}.zip"
 LICENSE="EPL-1.0 LGPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=">=virtual/jre-1.5"
 RDEPEND="${DEPEND}"
@@ -39,6 +39,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
     dodir   /usr/lib/xmind
 
     insinto /usr/lib/xmind

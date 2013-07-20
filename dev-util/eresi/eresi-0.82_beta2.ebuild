@@ -20,7 +20,7 @@ SRC_URI="http://martin.von-gagern.net/gentoo/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="readline server doc"
+IUSE="debug_grade_1 readline server doc"
 REQUIRED_USE="server? ( !readline )"
 
 DEPEND="readline? ( sys-libs/readline )"
@@ -61,6 +61,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc doc/{AUTHOR,CREDITS} README.FIRST || die "dodoc failed"
 	if use doc; then

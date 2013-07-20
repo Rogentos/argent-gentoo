@@ -11,7 +11,7 @@ SRC_URI="http://www.minecraft.net/download/minecraft.jar -> $P.jar"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 RESTRICT="mirror"
 
 # lwjgl 2.4 is used by upstream but we're using 2.6 because of reports
@@ -47,6 +47,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	java-pkg_register-dependency jinput,lwjgl-2.6
 	java-pkg_dojar "${PN}.jar"
 

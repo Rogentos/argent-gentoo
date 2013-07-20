@@ -15,7 +15,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=">=dev-lang/ghc-6.4.1
 	~dev-haskell/hsql-${PV}

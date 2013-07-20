@@ -14,7 +14,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="nls webkit"
+IUSE="debug_grade_1 nls webkit"
 
 RDEPEND="dev-libs/dbus-glib
 	>=dev-libs/glib-2.26.1:2

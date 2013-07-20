@@ -18,7 +18,7 @@ ESVN_REPO_URI="http://svn.wildfiregames.com/public/ps/trunk"
 LICENSE="GPL-2 LGPL-2.1 MIT CCPL-Attribution-ShareAlike-3.0 as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+audio +editor fam +pch test"
+IUSE="debug_grade_1 +audio +editor fam +pch test"
 
 RDEPEND="
 	~dev-lang/spidermonkey-1.8.5
@@ -90,6 +90,9 @@ src_test() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	# data
 	insinto "${GAMES_DATADIR}"/${PN}
 	doins -r binaries/data/* || die

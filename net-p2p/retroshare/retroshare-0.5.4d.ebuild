@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/retroshare/${MY_P}.tar.gz"
 LICENSE="GPL-2 Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="cli X links-cloud voip"
+IUSE="debug_grade_1 cli X links-cloud voip"
 
 RDEPEND="
 	dev-libs/openssl:0

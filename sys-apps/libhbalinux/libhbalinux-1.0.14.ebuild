@@ -13,7 +13,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${P}.tar.gz"
 LICENSE="SNIA"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="sys-apps/hbaapi
 	x11-libs/libpciaccess"
@@ -29,5 +29,8 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install
 }

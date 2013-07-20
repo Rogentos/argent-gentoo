@@ -19,7 +19,7 @@ SRC_URI="http://files.turpial.org.ve/sources/stable/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=">=dev-python/Babel-0.9.5
 	>=dev-python/setuptools-0.6.14"

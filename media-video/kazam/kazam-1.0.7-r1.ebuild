@@ -16,7 +16,7 @@ SRC_URI="http://launchpad.net/${PN}/stable/${PV}/+download/${P}.tar.gz"
 LICENSE="GPL-3 LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="dev-python/python-distutils-extra"
 RDEPEND="x11-libs/gtk+:3[introspection]

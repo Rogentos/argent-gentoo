@@ -11,7 +11,7 @@ SRC_URI="http://cdn.wuala.com/repo/other/wuala.tar.gz"
 LICENSE="wuala"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=""
 RDEPEND="sys-fs/fuse
@@ -25,6 +25,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dodir "/opt/${PN}"
 
 	insinto "/opt/${PN}"

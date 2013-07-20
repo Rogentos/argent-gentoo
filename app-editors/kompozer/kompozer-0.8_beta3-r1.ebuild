@@ -29,7 +29,7 @@ LICENSE="GPL-2"
 SLOT="0"
 
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome java ldap"
+IUSE="debug_grade_1 gnome java ldap"
 
 # linguas
 for X in ${LANGS} ; do
@@ -37,14 +37,14 @@ for X in ${LANGS} ; do
 		SRC_URI="${SRC_URI}
 			linguas_${X/-/_}? ( ${REL_URI}/${MY_P}.${X}.xpi -> ${MY_P}-${X}.xpi )"
 	fi
-	IUSE="${IUSE} linguas_${X/-/_}"
+	IUSE="debug_grade_1 ${IUSE} linguas_${X/-/_}"
 	# english is handled internally
 	if [ "${#X}" == 5 ] && ! has ${X} ${NOSHORTLANGS}; then
 		if [ "${X}" != "en-US" ]; then
 			SRC_URI="${SRC_URI}
 				linguas_${X%%-*}? ( ${REL_URI}/${MY_P}.${X}.xpi -> ${MY_P}-${X}.xpi )"
 		fi
-		IUSE="${IUSE} linguas_${X%%-*}"
+		IUSE="debug_grade_1 ${IUSE} linguas_${X%%-*}"
 	fi
 done
 
@@ -52,11 +52,11 @@ done
 for X in ${DICTS} ; do
 	SRC_URI="${SRC_URI}
 	linguas_${X/-/_}? ( ${DICT_URI}/${MY_D}.${X}.xpi -> ${MY_D}-${X}.xpi )"
-	IUSE="${IUSE} linguas_${X/-/_}"
+	IUSE="debug_grade_1 ${IUSE} linguas_${X/-/_}"
 	if [ "${#X}" == 5 ] && ! has ${X} ${NOSHORTDICTS}; then
 		SRC_URI="${SRC_URI}
 		linguas_${X%%-*}? ( ${DICT_URI}/${MY_D}.${X}.xpi -> ${MY_D}-${X}.xpi )"
-		IUSE="${IUSE} linguas_${X%%-*}"
+		IUSE="debug_grade_1 ${IUSE} linguas_${X%%-*}"
 	fi
 done
 
@@ -247,6 +247,9 @@ xpi_dict_install() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	declare MOZILLA_FIVE_HOME="/usr/$(get_libdir)/${PN}"
 	declare emid
 

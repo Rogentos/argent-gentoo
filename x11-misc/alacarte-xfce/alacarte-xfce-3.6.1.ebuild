@@ -18,7 +18,7 @@ HOMEPAGE="http://live.gnome.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 COMMON_DEPEND="dev-python/pygobject:3
 	>=gnome-base/gnome-menus-3.5.3:3[introspection]
@@ -69,6 +69,9 @@ src_test() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	python_execute_function -s gnome2_src_install
 	python_clean_installation_image
 	python_convert_shebangs -r 2 "${ED}"

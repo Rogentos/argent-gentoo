@@ -13,7 +13,7 @@ SRC_URI="http://www.arava.co.il/matan/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="-* x86"
-IUSE="build +kernel-helper"
+IUSE="debug_grade_1 build +kernel-helper"
 
 DEPEND=""
 RDEPEND=""
@@ -75,6 +75,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	local x=
 
 	dodir /etc/svgalib /usr/{include,lib,bin,share/man}

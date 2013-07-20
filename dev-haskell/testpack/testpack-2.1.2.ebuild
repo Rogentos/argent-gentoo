@@ -16,7 +16,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 ~sparc x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="dev-haskell/hunit
 		dev-haskell/mtl

@@ -15,7 +15,7 @@ LICENSE="BSD"
 
 SLOT="0"
 KEYWORDS="~arm"
-IUSE=""
+IUSE="debug_grade_1 "
 
 pkg_pretend() {
 	local gccver=$(gcc-fullversion)
@@ -91,6 +91,9 @@ src_test() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	insinto /usr
 	doins -r include || die
 

@@ -19,7 +19,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${MY_PN}/${PV}/${MY_P}.tar.
 LICENSE="BSD"
 SLOT="2"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE="debug_grade_1 test"
 RESTRICT="test" # not all files are bundled
 
 RDEPEND=">=dev-lang/ghc-6.10.1
@@ -55,6 +55,9 @@ src_test() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cabal_src_install
 
 	# if tests were enabled, make sure the unit test driver is deleted

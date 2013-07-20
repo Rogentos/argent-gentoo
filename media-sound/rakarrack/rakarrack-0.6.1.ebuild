@@ -13,7 +13,7 @@ RESTRICT="mirror"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="x11-libs/fltk:1
 	x11-libs/libXpm
@@ -30,6 +30,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	make DESTDIR="${D}" install
 	insinto /usr/share/doc/"${PN}"
 	doins TODO

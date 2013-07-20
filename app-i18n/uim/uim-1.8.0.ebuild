@@ -12,7 +12,7 @@ SRC_URI="http://uim.googlecode.com/files/${P}.tar.bz2"
 LICENSE="BSD GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~x86"
-IUSE="+anthy canna curl eb emacs libffi gnome gtk gtk3 kde libedit libnotify m17n-lib ncurses nls prime qt4 skk sqlite ssl static-libs test unicode X xft linguas_zh_CN linguas_zh_TW linguas_ja linguas_ko"
+IUSE="debug_grade_1 +anthy canna curl eb emacs libffi gnome gtk gtk3 kde libedit libnotify m17n-lib ncurses nls prime qt4 skk sqlite ssl static-libs test unicode X xft linguas_zh_CN linguas_zh_TW linguas_ja linguas_ko"
 
 RESTRICT="test"
 
@@ -226,6 +226,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	# parallel make install b0rked, bug #222677
 	emake -j1 INSTALL_ROOT="${D}" DESTDIR="${D}" install || die "make install failed"
 

@@ -12,7 +12,7 @@ SRC_URI="http://wald.intevation.org/frs/download.php/873/${P}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND=">=net-analyzer/openvas-libraries-4
 	!net-analyzer/openvas-plugins
@@ -32,6 +32,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cmake-utils_src_install
 	dodoc ChangeLog CHANGES README || die "dodoc failed"
 	doinitd "${FILESDIR}"/openvassd || die

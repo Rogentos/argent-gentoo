@@ -12,7 +12,7 @@ SRC_URI="http://hackage.haskell.org/packages/archive/${PN}/${PV}/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 ~ppc ~ppc64 ~sparc x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND=">=dev-lang/ghc-6.8.1"
 DEPEND=">=dev-haskell/cabal-1.1

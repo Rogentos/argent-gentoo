@@ -15,7 +15,7 @@ SRC_URI="x86? ( http://download.songbirdnest.com/installer/linux/i686/${MY_PN}_$
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="alsa oss esd ogg flac faac faad musepack ugly theora speex ffmpeg gnome jpeg"
+IUSE="debug_grade_1 alsa oss esd ogg flac faac faad musepack ugly theora speex ffmpeg gnome jpeg"
 RESTRICT="strip"
 RDEPEND="${DEPEND}
 	alsa? ( media-plugins/gst-plugins-alsa )
@@ -74,6 +74,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	insinto /opt/songbird
 	doins -r *
 	fperms 755 /opt/songbird/songbird

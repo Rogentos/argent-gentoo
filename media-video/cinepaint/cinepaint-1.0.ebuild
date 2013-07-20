@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/cinepaint/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gutenprint text"
+IUSE="debug_grade_1 gutenprint text"
 
 #S=${WORKDIR}/${PN}-${MY_PV}
 S=${WORKDIR}/${PN}

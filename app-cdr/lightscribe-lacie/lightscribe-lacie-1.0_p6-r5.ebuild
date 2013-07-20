@@ -20,7 +20,7 @@ SRC_URI="http://www.lacie.com/download/drivers/4L-${MY_PV}.i586.rpm
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="multilib linguas_ja linguas_it linguas_fr linguas_es linguas_de"
+IUSE="debug_grade_1 multilib linguas_ja linguas_it linguas_fr linguas_es linguas_de"
 RESTRICT=""
 
 RDEPEND=">=sys-devel/gcc-3.4
@@ -48,6 +48,9 @@ src_unpack() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	has_multilib_profile && ABI="x86"
 
 	exeinto /opt/lightscribe/4L

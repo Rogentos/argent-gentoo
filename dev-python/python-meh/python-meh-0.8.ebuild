@@ -15,7 +15,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gtk"
+IUSE="debug_grade_1 gtk"
 
 COMMON_DEPEND="dev-util/intltool
 	sys-devel/gettext"

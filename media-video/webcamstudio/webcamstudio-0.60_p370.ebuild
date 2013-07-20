@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI="2"
-JAVA_PKG_IUSE="doc source"
+JAVA_PKG_IUSE="debug_grade_1 doc source"
 WANT_ANT_TASKS="ant-nodeps ant-junit4 ant-junit"
 EANT_BUILD_XML="${S}/trunk/build.xml"
 
@@ -18,7 +18,7 @@ ESVN_REPO_URI="http://webcamstudio.googlecode.com/svn/trunk@370"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=">=virtual/jdk-1.6
 	dev-libs/glib:2
@@ -97,6 +97,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	# CD to the proper folder here, so if upstream changes the tree structure
 	# to be easier to fix it.
 	cd "trunk"

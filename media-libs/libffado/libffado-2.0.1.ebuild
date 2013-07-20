@@ -14,7 +14,7 @@ SRC_URI="http://www.ffado.org/files/${P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE="debug optimization qt4"
+IUSE="debug_grade_1 debug optimization qt4"
 
 RDEPEND=">=media-libs/alsa-lib-1.0.0
 	>=dev-cpp/libxmlpp-2.13.0

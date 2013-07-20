@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/supertuxkart/SuperTuxKart/${PV}/${P}-src.tar.bz2
 LICENSE="GPL-3 CCPL-Attribution-ShareAlike-3.0 CCPL-Attribution-2.0 CCPL-Sampling-Plus-1.0 public-domain as-is"
 SLOT="0"
 KEYWORDS="amd64 ~ppc x86"
-IUSE="debug nls unicode"
+IUSE="debug_grade_1 debug nls unicode"
 
 RDEPEND=">=dev-games/irrlicht-1.7.2
 	virtual/opengl
@@ -46,6 +46,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die
 	doicon "${DISTDIR}"/${PN}.png
 	make_desktop_entry ${PN} SuperTuxKart

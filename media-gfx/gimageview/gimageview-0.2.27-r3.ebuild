@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/gtkmmviewer/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ~hppa ppc ppc64 x86"
-IUSE="mng nls mplayer svg wmf" #xine
+IUSE="debug_grade_1 mng nls mplayer svg wmf" #xine
 
 RDEPEND="app-arch/bzip2
 	x11-libs/gtk+:2
@@ -58,6 +58,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	einstall \
 		desktopdir="${D}"usr/share/applications \
 		gimv_docdir="${D}"usr/share/doc/${PF}

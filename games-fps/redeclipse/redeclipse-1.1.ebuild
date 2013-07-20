@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV}_linux_bsd.tar.bz2"
 LICENSE="as-is ZLIB CCPL-Attribution-ShareAlike-3.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="dedicated"
+IUSE="debug_grade_1 dedicated"
 
 DEPEND="!dedicated? (
 		media-libs/libsdl[opengl]
@@ -55,6 +55,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	newgamesbin src/reserver ${PN}-server || die
 	dodoc readme.txt
 	if ! use dedicated ; then

@@ -15,7 +15,7 @@ LICENSE="GPL-2 as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="net-wireless/wireless-tools
 		net-wireless/acx-firmware"
@@ -53,6 +53,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	linux-mod_src_install
 
 	dodoc README

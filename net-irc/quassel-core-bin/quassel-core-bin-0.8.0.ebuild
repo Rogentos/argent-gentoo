@@ -18,7 +18,7 @@ SRC_URI="http://quassel-irc.org/pub/${MY_FETCH_NAME}.bz2"
 LICENSE="GPL-3"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND=""
 DEPEND="!net-irc/quassel-core"
@@ -34,6 +34,9 @@ pkg_setup() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	newbin "${MY_FETCH_NAME}" "${MY_FETCH_NAME%%-*}"
 
 	# server stuff

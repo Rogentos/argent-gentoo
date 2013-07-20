@@ -20,7 +20,7 @@ SRC_URI="http://openafs.org/dl/openafs/${MY_PV}/${MY_P}-src.tar.bz2
 LICENSE="IBM BSD openafs-krb5-a APSL-2 sun-rpc"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 S=${WORKDIR}/${MY_P}
 
@@ -64,6 +64,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	MOD_SRCDIR=$(expr "${S}"/src/libafs/MODLOAD-*)
 	[ -f "${MOD_SRCDIR}"/libafs.${KV_OBJ} ] || die "Couldn't find compiled kernel module"
 

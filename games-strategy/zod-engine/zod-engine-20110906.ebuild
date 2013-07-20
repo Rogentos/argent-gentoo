@@ -18,7 +18,7 @@ SRC_URI="mirror://sourceforge/zod/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="
 	>=media-libs/libsdl-1.2[X]
@@ -55,6 +55,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	# custom install procedure for Gentoo
 	insinto "${GAMES_DATADIR}/${PN}"
 	doins -r assets blank_maps *.map default_settings.txt *map_list.txt || die

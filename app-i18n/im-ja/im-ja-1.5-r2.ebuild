@@ -13,9 +13,9 @@ SRC_URI="http://im-ja.sourceforge.net/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
-IUSE="gnome canna freewnn skk anthy"
+IUSE="debug_grade_1 gnome canna freewnn skk anthy"
 # --enable-debug causes build failure with gtk+-2.4
-#IUSE="${IUSE} debug"
+#IUSE="debug_grade_1 ${IUSE} debug"
 
 RDEPEND=">=dev-libs/glib-2.4:2
 	>=dev-libs/atk-1.6
@@ -99,6 +99,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	gnome2_src_install
 
 	sed -e "s:@EPREFIX@:${EPREFIX}:" "${FILESDIR}/xinput-${PN}" > "${T}/${PN}.conf" || die

@@ -16,7 +16,7 @@ SRC_URI="http://www.packagekit.org/releases/${MY_P}.tar.xz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="dev-libs/dbus-glib
 	media-libs/fontconfig
@@ -60,6 +60,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cd "${S}"/contrib/gtk-module || die
 	emake DESTDIR="${D}" install || die "emake install failed"
 }

@@ -13,7 +13,7 @@ SRC_URI="http://winff.googlecode.com/files/${P}-source.tar.gz
 LICENSE="GPL-3 doc? ( FDL-1.3 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE="debug_grade_1 doc"
 
 COMMON_DEPENDS="
 	dev-libs/atk
@@ -40,6 +40,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dobin ${PN}
 	dodoc README* changelog.txt
 	doman ${PN}.1

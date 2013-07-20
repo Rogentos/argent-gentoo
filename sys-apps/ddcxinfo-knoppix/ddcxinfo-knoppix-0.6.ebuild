@@ -4,7 +4,7 @@
 
 inherit eutils
 
-IUSE=""
+IUSE="debug_grade_1 "
 
 DESCRIPTION="Program to automatically probe a monitor for information"
 HOMEPAGE="http://www.knopper.net/"
@@ -29,6 +29,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	exeinto /usr/sbin
 	doexe ddcxinfo-knoppix ddcprobe
 	dodoc debian/changelog debian/control debian/copyright README

@@ -24,7 +24,7 @@ for protocol in ${GPSD_PROTOCOLS}; do
 	IUSE_GPSD_PROTOCOLS+=" gpsd_protocols_${protocol}"
 done
 
-IUSE="${IUSE_GPSD_PROTOCOLS} dbus ipv6 ntp qt4"
+IUSE="debug_grade_1 ${IUSE_GPSD_PROTOCOLS} dbus ipv6 ntp qt4"
 
 # those harddeps are de-facto automagicall
 RDEPEND="
@@ -98,6 +98,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 
 	# no it can't be done using emake cause it is non-compliant
 	make DESTDIR="${D}" install || die

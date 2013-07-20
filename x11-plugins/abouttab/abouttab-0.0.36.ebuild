@@ -12,7 +12,7 @@ LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="( >=www-client/mozilla-firefox-9999 )"
 DEPEND="${RDEPEND}"
@@ -24,6 +24,9 @@ src_unpack() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	declare MOZILLA_FIVE_HOME="/usr/$(get_libdir)/mozilla-firefox"
 	xpi_install "${S}"/"${P}"
 }

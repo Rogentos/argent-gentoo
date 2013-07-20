@@ -15,7 +15,7 @@ SRC_URI="http://download.tuxfamily.org/${PN}/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="gnome network nls policykit pulseaudio"
+IUSE="debug_grade_1 gnome network nls policykit pulseaudio"
 
 CDEPEND="dev-libs/glib:2
 	>=x11-libs/gtk+-2.12:2
@@ -63,6 +63,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog NEWS README
 

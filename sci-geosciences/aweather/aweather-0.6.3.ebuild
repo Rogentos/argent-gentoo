@@ -12,7 +12,7 @@ SRC_URI="http://lug.rose-hulman.edu/proj/${PN}/files/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="=sci-libs/grits-${PV}
 	x11-libs/gtk+:2

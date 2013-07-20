@@ -21,10 +21,10 @@ LICENSE="AVASYS Public License"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 
-IUSE=""
+IUSE="debug_grade_1 "
 IUSE_LINGUAS="ja"
 
-for X in ${IUSE_LINGUAS}; do IUSE="${IUSE} linguas_${X}"; done
+for X in ${IUSE_LINGUAS}; do IUSE="debug_grade_1 ${IUSE} linguas_${X}"; done
 
 DEPEND=">=media-gfx/iscan-2.18.0"
 RDEPEND="${DEPEND}"
@@ -32,6 +32,9 @@ RDEPEND="${DEPEND}"
 MY_LIB="/usr/$(get_libdir)"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	# install scanner firmware
 	insinto /usr/share/iscan
 	doins "${WORKDIR}"/usr/share/iscan/*

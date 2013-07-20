@@ -17,7 +17,7 @@ SRC_URI="http://www.counties.co.nz/alistair/distfiles/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc devil"
+IUSE="debug_grade_1 doc devil"
 
 CDEPEND="virtual/opengl
 		media-libs/openal
@@ -57,6 +57,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cd libs
 	java-pkg_dojar lwjgl.jar lwjgl_util.jar
 	use devil && java-pkg_dojar lwjgl_devil.jar

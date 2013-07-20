@@ -12,7 +12,7 @@ HOMEPAGE="http://mbarnes.github.com/gnome-video-arcade/"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gnome"
+IUSE="debug_grade_1 gnome"
 
 RDEPEND="gnome? ( >=gnome-base/libgnomeui-2.14.0 )
 	>=dev-libs/glib-2.14.0
@@ -47,6 +47,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	gnome2_src_install || die "install failed"
 	prepgamesdirs
 }

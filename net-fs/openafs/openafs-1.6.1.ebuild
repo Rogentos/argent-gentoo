@@ -19,7 +19,7 @@ SRC_URI="http://openafs.org/dl/openafs/${MY_PV}/${MY_P}-src.tar.bz2
 LICENSE="IBM BSD openafs-krb5-a APSL-2 sun-rpc"
 SLOT="0"
 KEYWORDS="~amd64 ~sparc ~x86"
-IUSE="doc kerberos pam"
+IUSE="debug_grade_1 doc kerberos pam"
 
 RDEPEND="~net-fs/openafs-kernel-${PV}
 	sys-libs/ncurses
@@ -65,6 +65,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	local CONFDIR=${WORKDIR}/gentoo/configs
 	local SCRIPTDIR=${WORKDIR}/gentoo/scripts
 

@@ -15,9 +15,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 LANGS="ar ast bg bs ca cs da de el_GR en_GB es eu fi fo fr gl he hr hu id it ja ko lt ms nb nl nn pl pt_BR pt ro ru sk sl sv te th tr ug uk uz zh_CN zh_TW"
-IUSE="nls"
+IUSE="debug_grade_1 nls"
 for i in ${LANGS}; do
-	IUSE="${IUSE} linguas_${i}"
+	IUSE="debug_grade_1 ${IUSE} linguas_${i}"
 done
 
 DEPEND=""
@@ -36,6 +36,9 @@ src_unpack() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dobin ${PN}
 
 	doicon images/* || die "doicon failed"

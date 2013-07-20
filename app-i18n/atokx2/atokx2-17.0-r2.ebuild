@@ -16,7 +16,7 @@ LICENSE="ATOK MIT"
 
 SLOT="0"
 KEYWORDS="-* ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 RESTRICT="strip mirror"
 
 DEPEND=">=x11-libs/gtk+-2.2:2
@@ -33,6 +33,9 @@ src_unpack() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cd "${D}"
 
 	local iiimgcf

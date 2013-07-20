@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 SRC_URI="mirror://sabayon/app-admin/sulfur-${PV}.tar.bz2"
 
@@ -29,6 +29,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" LIBDIR="usr/lib" install || die "make install failed"
 	dodir /etc/gconf/schemas
 	insinto /etc/gconf/schemas

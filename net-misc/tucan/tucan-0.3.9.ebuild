@@ -13,7 +13,7 @@ SRC_URI="http://forja.rediris.es/frs/download.php/1470/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="gtk"
+IUSE="debug_grade_1 gtk"
 
 RDEPEND="dev-lang/python
 	gtk? ( dev-python/pygtk
@@ -24,6 +24,9 @@ RDEPEND="dev-lang/python
 src_compile() { :; }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}"/usr install || die "emake install failed"
 	dodoc CHANGELOG README || die "dodoc failed"
 	if use gtk ; then

@@ -10,7 +10,7 @@ DESCRIPTION="Open Source implementation of the ITU H.323 teleconferencing protoc
 HOMEPAGE="http://www.openh323.org/"
 SRC_URI="http://www.voxgratia.org/releases/${PN}-v${PV//./_}-src-tar.gz"
 
-IUSE="debug ssl novideo noaudio"
+IUSE="debug_grade_1 debug ssl novideo noaudio"
 SLOT="0"
 LICENSE="MPL-1.1"
 KEYWORDS="~alpha amd64 ~hppa ppc sparc x86"
@@ -52,6 +52,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake ${makeopts} PREFIX=/usr DESTDIR=${D} install || die "emake install failed"
 
 	###

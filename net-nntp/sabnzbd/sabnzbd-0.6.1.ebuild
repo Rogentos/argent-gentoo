@@ -20,7 +20,7 @@ SRC_URI="mirror://sourceforge/sabnzbdplus/${MY_P}-src.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+rar unzip rss +yenc ssl"
+IUSE="debug_grade_1 +rar unzip rss +yenc ssl"
 
 RDEPEND="
 		>=app-arch/par2cmdline-0.4
@@ -47,6 +47,9 @@ pkg_setup() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 
 	cp "${FILESDIR}/${PN}.ini" "${S}" \
 		|| die "copying sample ${PN}.ini"

@@ -13,7 +13,7 @@ SRC_URI="ftp://invisible-island.net/vile/current/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
-IUSE="perl"
+IUSE="debug_grade_1 perl"
 
 RDEPEND=">=sys-libs/ncurses-5.2
 	perl? ( dev-lang/perl )"
@@ -34,6 +34,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install
 	dodoc CHANGES* README doc/*.doc
 	dohtml doc/*.html

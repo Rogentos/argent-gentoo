@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/modauthmysql/${P}.tar.gz"
 LICENSE="Apache-1.1"
 KEYWORDS="amd64 x86"
 SLOT="0"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="virtual/mysql
 		sys-libs/zlib"

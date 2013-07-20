@@ -12,7 +12,7 @@ SRC_URI="http://lug.rose-hulman.edu/proj/${PN}/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE="debug_grade_1 doc"
 
 RDEPEND=">=net-libs/libsoup-2.26
 	dev-libs/glib:2

@@ -12,7 +12,7 @@ SRC_URI="https://launchpad.net/nuvola-player/2.0.x/${PV}/+download/${P}.tar.gz"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug"
+IUSE="debug_grade_1 debug"
 
 RDEPEND="
 	x11-libs/gtk+:3

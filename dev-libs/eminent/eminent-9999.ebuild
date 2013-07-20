@@ -14,7 +14,7 @@ SRC_URI=""
 LICENSE=""
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="dev-lang/lua"
 DEPEND="${RDEPEND}"

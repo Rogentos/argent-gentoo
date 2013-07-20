@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/cpug/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -27,6 +27,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dobin ${PN} || die
 	domenu data/${PN}.desktop || die
 	doicon data/${PN}.png || die

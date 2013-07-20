@@ -13,7 +13,7 @@ SRC_URI="http://download.gna.org/qemulaunch/1.7.x/${MY_P}"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="dev-lang/perl
 	dev-libs/libxml2
@@ -43,6 +43,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake PREFIX="${EPREFIX}/usr" DESTDIR="${D}" install
 	dodoc Changelog
 }

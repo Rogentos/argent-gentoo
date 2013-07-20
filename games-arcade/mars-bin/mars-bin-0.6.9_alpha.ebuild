@@ -17,7 +17,7 @@ SRC_URI="mirror://sourceforge/mars-game/mars_linux_${PV}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 S="${WORKDIR}/mars_linux_${PV}"
 RESTRICT="strip"
 
@@ -41,6 +41,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 
 	dodir "/usr/share/${PN}"
 	insinto "/usr/share/${PN}"

@@ -14,7 +14,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="dev-util/intltool
 	sys-devel/gettext"
@@ -24,6 +24,9 @@ RDEPEND="net-misc/rsync
 	virtual/cdrtools"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" LIBDIR="/usr/lib" \
 		PREFIX="/usr" SYSCONFDIR="/etc" install \
 		|| die "emake install failed"

@@ -11,7 +11,7 @@ SRC_URI="https://fedorahosted.org/hal-cups-utils/attachment/wiki/ProjectReleases
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 # TODO fix rdeps
 RDEPEND="
@@ -29,6 +29,9 @@ DEPEND="${RDEPEND}
 "
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dodoc AUTHORS ChangeLog README || die "dodoc failed"
 
 	emake DESTDIR="${D}" install || die "emake install failed"

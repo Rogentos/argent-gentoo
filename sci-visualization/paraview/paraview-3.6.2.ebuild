@@ -20,7 +20,7 @@ SRC_URI="mirror://gentoo/${P}.tar.gz
 LICENSE="paraview GPL-2"
 KEYWORDS="~amd64 ~ppc ~x86"
 SLOT="0"
-IUSE="boost cg doc examples +gui mpi mysql plugins +python postgres streaming odbc overview"
+IUSE="debug_grade_1 boost cg doc examples +gui mpi mysql plugins +python postgres streaming odbc overview"
 RDEPEND="sci-libs/hdf5[mpi=]
 	mpi? ( || (
 				sys-cluster/openmpi
@@ -198,6 +198,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cmake-utils_src_install
 
 	# rename the assistant wrapper

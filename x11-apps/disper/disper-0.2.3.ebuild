@@ -12,7 +12,7 @@ SRC_URI="http://ppa.launchpad.net/wvengen/ppa/ubuntu/pool/main/d/${PN}/${PN}_${P
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="dev-lang/python"
 RDEPEND="${DEPEND}"
@@ -20,6 +20,9 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/trunk"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "make install failed."
 	doman "${PN}.1"
 	dodoc README

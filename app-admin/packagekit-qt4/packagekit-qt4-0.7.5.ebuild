@@ -16,7 +16,7 @@ SRC_URI="http://www.packagekit.org/releases/${MY_P}.tar.xz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND=">=x11-libs/qt-core-4.4.0
 	>=x11-libs/qt-dbus-4.4.0
@@ -62,6 +62,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	local qtdir=packagekit-qt2
 	cd "${S}"/lib/${qtdir} || die
 	emake DESTDIR="${D}" install || die "emake install failed"

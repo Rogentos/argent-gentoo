@@ -10,7 +10,7 @@ DESCRIPTION="Enlightenment thumbnailing library (meant to replace epsilon)"
 HOMEPAGE="http://trac.enlightenment.org/e/wiki/Ethumb"
 LICENSE="LGPL-3"
 
-IUSE="+dbus emotion epdf static-libs"
+IUSE="debug_grade_1 +dbus emotion epdf static-libs"
 
 KEYWORDS="~amd64 ~x86"
 

@@ -12,7 +12,7 @@ SRC_URI="http://imhangul.googlecode.com/files/${P}.tar.bz2"
 SLOT="0"
 LICENSE="LGPL-2.1"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND=">=app-i18n/libhangul-0.0.12
 	>=x11-libs/gtk+-2.2:2
@@ -79,6 +79,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die
 
 	find "${ED}" -name "*.la" -type f -delete || die

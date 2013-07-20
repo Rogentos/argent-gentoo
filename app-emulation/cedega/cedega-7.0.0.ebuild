@@ -10,7 +10,7 @@ SRC_URI="${MY_P}.tgz"
 LICENSE="cedega"
 SLOT="3"
 KEYWORDS="-* amd64 x86"
-IUSE="cups dbus opengl"
+IUSE="debug_grade_1 cups dbus opengl"
 RESTRICT="fetch strip"
 
 RDEPEND="x11-libs/libX11
@@ -34,6 +34,9 @@ pkg_nofetch() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	#rm -r "${WORKDIR}"/usr/share/gnome
 	#rmdir "${WORKDIR}"/usr/share/* >& /dev/null
 	mv "${WORKDIR}"/usr "${D}"/ || die "mv usr"

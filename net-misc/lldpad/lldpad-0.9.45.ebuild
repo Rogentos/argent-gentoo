@@ -14,7 +14,7 @@ SRC_URI="http://www.open-lldp.org/open-lldp/downloads/lldpad-0.9.45.tar.gz/at_do
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="kernel_linux"
+IUSE="debug_grade_1 kernel_linux"
 
 COMMON_DEPEND="dev-libs/libconfig
 	dev-libs/libnl:1.1
@@ -36,6 +36,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	autotools-utils_src_install
 	rm -r "${D}"/etc/bash_completion.d || die
 	rm -r "${D}"etc/init.d || die

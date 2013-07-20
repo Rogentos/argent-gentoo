@@ -17,7 +17,7 @@ HOMEPAGE="https://projects.kde.org/projects/playground/base/lightdm"
 LICENSE="GPL-3"
 KEYWORDS="amd64 ~ppc x86"
 SLOT="4"
-IUSE="debug"
+IUSE="debug_grade_1 debug"
 
 DEPEND="x11-libs/libX11
 	x11-libs/qt-declarative:4

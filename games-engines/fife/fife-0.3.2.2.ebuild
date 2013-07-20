@@ -18,7 +18,7 @@ LICENSE="GPL-2"
 
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE="opengl debug profile"
+IUSE="debug_grade_1 opengl debug profile"
 
 RDEPEND="dev-libs/boost
 	dev-python/pyyaml
@@ -59,6 +59,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	escons install-python --python-prefix="${D}/$(python_get_sitedir)" \
 		--prefix="${D}/usr" || die "install failed"
 }

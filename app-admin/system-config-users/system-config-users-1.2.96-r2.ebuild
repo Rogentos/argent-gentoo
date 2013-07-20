@@ -12,7 +12,7 @@ SRC_URI="https://fedorahosted.org/released/${PN}/${P}.tar.bz2"
 LICENSE="GPL-1"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE="X"
+IUSE="debug_grade_1 X"
 
 DEPEND="dev-util/desktop-file-utils
 	dev-util/intltool
@@ -41,6 +41,9 @@ pkg_postrm() {
 # to re-add sys-apps/usermode (version bumping, QA checking)
 # and remove the hackish code in src_install below
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	base_src_install
 
 	# See FIXME above

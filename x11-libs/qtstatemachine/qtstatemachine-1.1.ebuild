@@ -8,7 +8,7 @@ inherit eutils base multilib
 DESCRIPTION="Qt State Machine Framework"
 SLOT="4"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 SRC_URI="ftp://ftp.trolltech.com/qt/solutions/lgpl/qtstatemachine-1.1-opensource.tar.gz"
 RESTRICT="mirror"
 LICENSE="|| ( LGPL-2.1 GPL-3 QPL-1.0 )"
@@ -34,6 +34,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 
 	# build system is broken
 	dolib.so lib/*

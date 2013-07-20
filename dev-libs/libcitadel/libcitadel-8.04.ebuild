@@ -13,7 +13,7 @@ SRC_URI="http://easyinstall.citadel.org/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="dev-libs/expat
 	dev-libs/libical

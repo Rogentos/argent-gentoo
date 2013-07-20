@@ -16,7 +16,7 @@ SRC_URI="http://www.teamviewer.com/download/${PN}_linux.tar.gz -> ${P}.tar.gz"
 LICENSE="TeamViewerNovember2011"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RESTRICT="mirror strip"
 
@@ -35,6 +35,9 @@ pkg_setup() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 pwd
 	insinto /opt/teamviewer/
 	doins .wine/drive_c/Program\ Files/TeamViewer/Version${MV}/*

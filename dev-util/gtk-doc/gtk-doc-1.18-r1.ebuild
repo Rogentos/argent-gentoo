@@ -15,7 +15,7 @@ HOMEPAGE="http://www.gtk.org/gtk-doc/"
 LICENSE="GPL-2 FDL-1.1"
 SLOT="0"
 KEYWORDS="~alpha amd64 arm hppa ~ia64 ~m68k ~mips ppc ppc64 ~s390 ~sh ~sparc x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x64-solaris"
-IUSE="debug doc emacs highlight vim test"
+IUSE="debug_grade_1 debug doc emacs highlight vim test"
 
 # dev-tex/tex4ht blocker needed due bug #315287
 RDEPEND=">=dev-libs/glib-2.6:2
@@ -75,6 +75,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	gnome2_src_install
 
 	python_convert_shebangs 2 "${ED}"/usr/bin/gtkdoc-depscan

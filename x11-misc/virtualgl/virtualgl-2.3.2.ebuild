@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_PN}/${PV}/${MY_P}.tar.gz"
 SLOT="0"
 LICENSE="LGPL-2.1 wxWinLL-3.1 FLTK"
 KEYWORDS="~amd64 ~x86"
-IUSE="multilib ssl"
+IUSE="debug_grade_1 multilib ssl"
 
 RDEPEND="ssl? ( dev-libs/openssl )
 	media-libs/libjpeg-turbo
@@ -92,6 +92,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	# Install 32bit version on multilib
 	use amd64 && use multilib && (
 		einfo "Installing 32bit libs..."

@@ -11,7 +11,7 @@ SRC_URI="http://luks.endorphin.org/source/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="alpha amd64 ~arm hppa ~ia64 ~mips ppc ppc64 ~s390 ~sh ~sparc x86"
-IUSE="dynamic nls selinux"
+IUSE="debug_grade_1 dynamic nls selinux"
 
 DEPEND="|| (
 		>=sys-fs/lvm2-2.02.45
@@ -75,6 +75,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "install failed"
 	rmdir "${D}"/usr/$(get_libdir)/cryptsetup
 	insinto /lib/rcscripts/addons

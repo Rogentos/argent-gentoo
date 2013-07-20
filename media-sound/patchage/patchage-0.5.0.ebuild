@@ -13,7 +13,7 @@ SRC_URI="http://download.drobilla.net/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="alsa debug lash"
+IUSE="debug_grade_1 alsa debug lash"
 
 RDEPEND=">=media-libs/raul-0.7.0
 	>=x11-libs/flowcanvas-0.7.1
@@ -47,6 +47,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	./waf install --destdir="${D}" || die
 	dodoc AUTHORS README ChangeLog || die
 }

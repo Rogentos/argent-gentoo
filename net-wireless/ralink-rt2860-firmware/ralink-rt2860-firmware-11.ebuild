@@ -11,7 +11,7 @@ LICENSE="AS-IS"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE=""
+IUSE="debug_grade_1 "
 DEPEND=">=sys-apps/hotplug-20040923"
 
 src_unpack() {
@@ -22,6 +22,9 @@ src_unpack() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cd ${WORKDIR}/RT2860_Firmware_V${PV}
 	insinto /lib/firmware
 	doins *.bin

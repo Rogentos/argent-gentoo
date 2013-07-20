@@ -17,7 +17,7 @@ EGIT_COMMIT="${PV}"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="alsa ao bluetooth doc -encode +lzo openal opengl portaudio pulseaudio +wxwidgets +xrandr"
+IUSE="debug_grade_1 alsa ao bluetooth doc -encode +lzo openal opengl portaudio pulseaudio +wxwidgets +xrandr"
 RESTRICT=""
 
 RDEPEND=">=media-libs/glew-1.5
@@ -68,6 +68,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	# copy files to target installation directory
 	cmake-utils_src_install
 

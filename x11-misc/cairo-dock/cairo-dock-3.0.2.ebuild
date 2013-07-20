@@ -16,7 +16,7 @@ SRC_URI="http://launchpad.net/${MY_PN}/${MM_PV}/${PV}/+download/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="xcomposite"
+IUSE="debug_grade_1 xcomposite"
 
 COMMON_DEPEND="
 	dev-libs/dbus-glib

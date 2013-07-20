@@ -15,7 +15,7 @@ MY_P="${MY_PN}-${PV}"
 LICENSE="LGPL-3 GPL-2 unRAR LGPL-2.1 GPL-3"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-IUSE="kde gnome"
+IUSE="debug_grade_1 kde gnome"
 RESTRICT="mirror strip"
 S="${WORKDIR}"
 
@@ -55,6 +55,9 @@ QA_EXECSTACK="opt/PeaZip/res/paq/paq8o
 	opt/PeaZip/peazip"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cd "${ED}" || die
 	if use kde; then
 		mkdir -p usr/share/kde4 || die

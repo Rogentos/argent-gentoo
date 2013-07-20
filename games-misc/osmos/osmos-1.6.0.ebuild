@@ -15,7 +15,7 @@ SRC_URI="${MY_P}.tar.gz"
 LICENSE="EULA"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="media-libs/freetype
 	media-libs/openal
@@ -45,6 +45,9 @@ src_prepare() {
 src_compile() { :; }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cd ${S}
 
 	dodir ${GAMES_PREFIX_OPT}/${PN}/

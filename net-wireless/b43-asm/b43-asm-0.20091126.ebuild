@@ -11,11 +11,14 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 DEPEND=""
 S="${WORKDIR}/assembler"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dodir /usr/bin
 	emake PREFIX="${D}"/usr install || die "emake failed"
 }

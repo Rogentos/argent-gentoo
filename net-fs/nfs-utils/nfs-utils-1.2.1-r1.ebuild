@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/nfs/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-IUSE="ipv6 kerberos +nfsv3 +nfsv4 tcpd"
+IUSE="debug_grade_1 ipv6 kerberos +nfsv3 +nfsv4 tcpd"
 
 # kth-krb doesn't provide the right include
 # files, and nfs-utils doesn't build against heimdal either,
@@ -56,6 +56,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die
 
 	# Don't overwrite existing xtab/etab, install the original

@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/exult/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ppc ~sparc x86"
-IUSE="timidity zlib"
+IUSE="debug_grade_1 timidity zlib"
 
 RDEPEND=">=media-libs/libpng-1.4
 	media-libs/libsdl[audio,video,X]
@@ -80,6 +80,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake \
 		DESTDIR="${D}" \
 		desktopdir=/usr/share/applications/ \

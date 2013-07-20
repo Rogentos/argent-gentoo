@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="amarok dolphin konqueror"
+IUSE="debug_grade_1 amarok dolphin konqueror"
 
 DEPEND="dev-lang/perl"
 
@@ -60,6 +60,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" DOC_DIR="${D}usr/share/doc/${PF}" install
 }
 

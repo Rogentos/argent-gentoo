@@ -12,7 +12,7 @@ inherit autotools eutils flag-o-matic toolchain-funcs mysql-v2
 SRC_URI="mirror://sabayon/dev-db/${P}.tar.gz"
 
 # only to make repoman happy. it is really set in the eclass
-IUSE="$IUSE"
+IUSE="debug_grade_1 $IUSE"
 
 # REMEMBER: also update eclass/mysql*.eclass before committing!
 KEYWORDS="~amd64 ~x86"

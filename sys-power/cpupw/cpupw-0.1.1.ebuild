@@ -11,7 +11,7 @@ SRC_URI="http://www.tuxamito.com.es/cpupw/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 
 src_compile() {
 	cd ${S}/src
@@ -20,6 +20,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cd ${S}/src
 	exeinto /usr/sbin
 	doexe cpupw

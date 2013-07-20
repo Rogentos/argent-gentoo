@@ -14,7 +14,7 @@ SRC_URI="ftp://ftp.gimp.org/pub/${PN}/${PV:0:3}/${P}.tar.bz2"
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
-IUSE="altivec +introspection sse mmx vala"
+IUSE="debug_grade_1 altivec +introspection sse mmx vala"
 
 RDEPEND="introspection? ( >=dev-libs/gobject-introspection-0.10 )"
 DEPEND="${RDEPEND}
@@ -48,6 +48,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake install DESTDIR="${D}" || die "emake install failed"
 	find "${ED}" -name '*.la' -delete
 	dodoc AUTHORS ChangeLog README NEWS || die "dodoc failed"

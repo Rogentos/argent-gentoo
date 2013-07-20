@@ -15,7 +15,7 @@ LICENSE="GPL-2"
 SLOT="4"
 KEYWORDS="~x86 ~amd64"
 
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="app-arch/cpio
 	dev-lang/nasm
@@ -35,6 +35,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dodir /etc/bootsplash/themes
 	emake DESTDIR="${D}" THEMES="" install || die
 }

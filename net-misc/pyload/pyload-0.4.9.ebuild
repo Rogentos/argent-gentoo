@@ -22,7 +22,7 @@ HOMEPAGE="http://www.pyload.org"
 #We need a review about this and find the right license.
 LICENSE="freedist"
 SLOT="0"
-IUSE="captcha clicknload container qt4 rar ssl systemd"
+IUSE="debug_grade_1 captcha clicknload container qt4 rar ssl systemd"
 
 DEPEND="app-arch/unzip"
 
@@ -119,6 +119,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	insinto $(python_get_sitedir)/${PN}
 	doins -r ${S}/module/*
 

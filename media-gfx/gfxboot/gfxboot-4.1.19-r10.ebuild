@@ -15,9 +15,9 @@ SLOT="4"
 KEYWORDS="~x86 ~amd64"
 
 LANGS="af ar bg ca cs da de el en es et fi fr gu hi hr hu id it ja lt mr nb nl pa pl pt_BR pt ro ru sk sl sr sv ta tr uk wa xh zh_CN zh_TW zu"
-IUSE="themes doc animate speech beep"
+IUSE="debug_grade_1 themes doc animate speech beep"
 for i in ${LANGS}; do
-	IUSE="${IUSE} linguas_${i}"
+	IUSE="debug_grade_1 ${IUSE} linguas_${i}"
 done
 
 DEPEND="app-arch/cpio
@@ -93,6 +93,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	make DESTDIR="${D}" install || die "Install failed"
 	if use doc; then
 		dodoc Changelog gfxboot

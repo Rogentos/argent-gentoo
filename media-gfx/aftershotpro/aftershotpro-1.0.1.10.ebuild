@@ -15,7 +15,7 @@ SRC_URI="http://www.corel.com/akdlm/6763/downloads/${PN}/$(get_major_version)/PF
 LICENSE="AfterShotPro"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="nuance"
+IUSE="debug_grade_1 nuance"
 
 DEPEND="sys-apps/debianutils"
 RDEPEND="virtual/libc
@@ -54,6 +54,9 @@ pkg_setup() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dodir /opt/AfterShotPro
 
 	# AfterShotPro binary

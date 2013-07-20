@@ -13,7 +13,7 @@ RESTRICT="nomirror"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 DEPEND=""
 RDEPEND=""
 
@@ -33,6 +33,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	# Have todo it manually.... w00t
 	dobin Dooble
 

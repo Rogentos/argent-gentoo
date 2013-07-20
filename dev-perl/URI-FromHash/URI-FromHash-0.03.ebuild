@@ -9,7 +9,7 @@ DESCRIPTION="Build a URI from a set of named parameters"
 LICENSE="|| ( Artistic GPL-2 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 COMMON_DEPEND="
 	dev-perl/Params-Validate
 	>=dev-perl/URI-1.22

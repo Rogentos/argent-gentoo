@@ -13,7 +13,7 @@ SRC_URI="http://noad.heliohost.org/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="ffmpeg imagemagick"
+IUSE="debug_grade_1 ffmpeg imagemagick"
 
 DEPEND="media-libs/libmpeg2
 	ffmpeg? ( >=virtual/ffmpeg-0.4.8 )
@@ -48,6 +48,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 
 	dobin noad
 #       fix me later!

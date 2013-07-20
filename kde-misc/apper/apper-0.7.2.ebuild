@@ -15,7 +15,7 @@ SRC_URI="mirror://kde/stable/apper/${PV}/src/apper-${PV}.tar.bz2"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~arm ~x86"
 SLOT="4"
-IUSE="debug"
+IUSE="debug_grade_1 debug"
 
 COMMON_DEPEND=">=kde-base/kdelibs-4.3.0
 	>=app-admin/packagekit-qt4-0.6.17
@@ -25,6 +25,9 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
        kde4-base_src_install
        # fix dbus service path otherwise conflicting with gnome-packagekit one
        mv "${ED}/usr/share/dbus-1/services/org.freedesktop.PackageKit.service" \

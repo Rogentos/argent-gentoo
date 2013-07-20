@@ -14,7 +14,7 @@ SRC_URI="http://download.virtualbox.org/virtualbox/${PV}/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="X"
+IUSE="debug_grade_1 X"
 
 RDEPEND="X? ( ~x11-drivers/xf86-video-virtualbox-${PV}
 			 x11-apps/xrandr
@@ -117,6 +117,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 		linux-mod_src_install
 
 		cd "${S}"/out/linux.${ARCH}/release/bin/additions

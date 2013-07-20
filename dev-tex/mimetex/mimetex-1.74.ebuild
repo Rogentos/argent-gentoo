@@ -14,7 +14,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.zip"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE="debug_grade_1 doc"
 
 DEPEND="app-arch/unzip"
 RDEPEND=""
@@ -28,6 +28,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	use doc && dodoc ${PN}.html
 	dodoc README
 	exeinto "${MY_CGIBINDIR}"

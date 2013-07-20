@@ -11,7 +11,7 @@ SRC_URI="https://github.com/downloads/sardemff7/${PN}/${P}.tar.xz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug"
+IUSE="debug_grade_1 debug"
 
 DEPEND=">=x11-libs/libnotify-0.3.2
 	>=net-im/pidgin-2.6.0[gtk]"

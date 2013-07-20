@@ -19,7 +19,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ia64 ~ppc ~sparc ~x86"
 EJABBERD_MODULES="mod_irc mod_muc mod_proxy65 mod_pubsub mod_srl mod_statsdx"
-IUSE="captcha debug ldap odbc pam +web zlib ${EJABBERD_MODULES}"
+IUSE="debug_grade_1 captcha debug ldap odbc pam +web zlib ${EJABBERD_MODULES}"
 
 DEPEND="
 	!!net-im/ejabberd
@@ -117,6 +117,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${ED}" install || die "install failed"
 
 	# Pam helper module permissions

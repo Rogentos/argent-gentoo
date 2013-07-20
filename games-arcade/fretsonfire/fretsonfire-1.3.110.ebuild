@@ -17,7 +17,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_PN_URI}-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="doc guitarhero psyco"
+IUSE="debug_grade_1 doc guitarhero psyco"
 
 # NOTES :
 # pyopengl-2.0.0.44 (stable) makes the game crash with some configs
@@ -56,6 +56,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	insinto "$(games_get_libdir)/${PN}"
 	# we have to ignore .pyc files
 	doins src/*.py src/*.pot || die "installation failed"

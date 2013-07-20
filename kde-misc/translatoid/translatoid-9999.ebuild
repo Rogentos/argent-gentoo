@@ -13,7 +13,7 @@ HOMEPAGE="http://kde-look.org/content/show.php/translatoid?content=97511"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug"
+IUSE="debug_grade_1 debug"
 
 RDEPEND="
 	>=kde-base/plasma-workspace-${KDE_MINIMAL}

@@ -12,7 +12,7 @@ HOMEPAGE="https://projects.kde.org/projects/playground/base/kio-mtp"
 LICENSE="GPL-2"
 SLOT="4"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug"
+IUSE="debug_grade_1 debug"
 
 DEPEND="
 	>=media-libs/libmtp-1.1.3

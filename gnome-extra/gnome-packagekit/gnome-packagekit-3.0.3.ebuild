@@ -14,7 +14,7 @@ HOMEPAGE="http://www.packagekit.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="doc nls test udev"
+IUSE="debug_grade_1 doc nls test udev"
 
 RDEPEND="
 	>=dev-libs/glib-2.25.9:2

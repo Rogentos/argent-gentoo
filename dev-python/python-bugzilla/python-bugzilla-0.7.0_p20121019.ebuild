@@ -14,7 +14,7 @@ SRC_URI="https://fedorahosted.org/releases/p/y/${PN}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 S=${WORKDIR}/${MY_P}
 

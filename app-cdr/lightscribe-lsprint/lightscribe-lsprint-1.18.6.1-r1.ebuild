@@ -11,7 +11,7 @@ SRC_URI="http://download.lightscribe.com/ls/lightscribePublicSDK-${PV}-linux-2.6
 LICENSE="lightscribeSDK"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="multilib"
+IUSE="debug_grade_1 multilib"
 
 DEPEND=">=dev-libs/liblightscribe-${PV}"
 
@@ -34,6 +34,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 
 	into /opt
 	dobin lsprint

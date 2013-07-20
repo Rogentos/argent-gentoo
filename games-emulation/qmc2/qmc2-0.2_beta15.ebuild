@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}-${MY_PV}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug joystick opengl phonon +sdlmame sdlmess sqlite"
+IUSE="debug_grade_1 debug joystick opengl phonon +sdlmame sdlmess sqlite"
 
 DEPEND=">=x11-libs/qt-gui-4.5:4[accessibility]
 	>=x11-libs/qt-webkit-4.5:4
@@ -69,6 +69,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	if use sdlmame
 	then
 	    emake ${FLAGS} EMULATOR=SDLMAME install || die "make install failed"

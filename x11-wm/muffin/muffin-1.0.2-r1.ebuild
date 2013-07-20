@@ -15,7 +15,7 @@ SRC_URI="https://github.com/linuxmint/muffin/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="+introspection test xinerama"
+IUSE="debug_grade_1 +introspection test xinerama"
 KEYWORDS="~amd64 ~x86"
 
 COMMON_DEPEND=">=x11-libs/pango-1.2[X,introspection?]

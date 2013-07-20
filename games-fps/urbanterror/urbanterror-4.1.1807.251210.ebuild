@@ -19,7 +19,7 @@ SRC_URI="http://xmw.de/mirror/urbanterror/ioquake3-1807.tar.bz2
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+client +curl openal server speex vanilla vorbis"
+IUSE="debug_grade_1 +client +curl openal server speex vanilla vorbis"
 
 COMMON_DEPEND="
 	client? (
@@ -81,6 +81,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	local my_arch=i386
 	use amd64 && my_arch=x86_64
 

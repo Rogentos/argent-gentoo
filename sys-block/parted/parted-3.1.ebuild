@@ -15,7 +15,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.xz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~alpha amd64 arm hppa ~ia64 ~mips ppc ppc64 ~s390 ~sh ~sparc x86"
-IUSE="+debug device-mapper nls readline selinux static-libs test"
+IUSE="debug_grade_1 +debug device-mapper nls readline selinux static-libs test"
 
 # specific version for gettext needed
 # to fix bug 85999
@@ -72,6 +72,9 @@ src_test() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake install DESTDIR="${D}"
 	dodoc AUTHORS BUGS ChangeLog NEWS README THANKS TODO
 	dodoc doc/{API,FAT,USER.jp}

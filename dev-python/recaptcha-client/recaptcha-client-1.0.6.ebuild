@@ -15,11 +15,14 @@ SRC_URI="mirror://pypi/r/${PN}/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="dev-python/pycrypto"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	distutils_src_install
 	newdoc PKG-INFO README || die
 }

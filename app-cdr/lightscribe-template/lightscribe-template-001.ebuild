@@ -33,7 +33,7 @@ done
 LICENSE="lightscribe"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 S="${WORKDIR}"
 
@@ -53,6 +53,9 @@ src_unpack() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	for template in ${TL}
 	do
 		insinto /opt/lightscribe/template/${template}

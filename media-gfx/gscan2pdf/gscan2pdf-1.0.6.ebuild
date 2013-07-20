@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 # test only: dev-perl/Test-Perl-Critic
 DEPEND="sys-devel/gettext"
@@ -39,6 +39,9 @@ RDEPEND="dev-lang/perl[ithreads]
 	media-libs/tiff"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	perl-module_src_install
 	dodoc History
 }

@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/scim/${P}.tar.gz"
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc64 ~x86"
-IUSE="doc gtk qt4"
+IUSE="debug_grade_1 doc gtk qt4"
 
 RESTRICT="test"
 
@@ -100,6 +100,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "make install failed"
 
 	dodoc AUTHORS ChangeLog NEWS README || die

@@ -14,7 +14,7 @@ SRC_URI="http://kde-look.org/CONTENT/content-files/116676-2012-06-14_${PV}_${PN}
 LICENSE="GPL-3"
 SLOT="4"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug"
+IUSE="debug_grade_1 debug"
 
 DEPEND="app-arch/unzip"
 RDEPEND="
@@ -43,6 +43,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	default
 	insinto /usr/share/apps/${PN}-plasmoid/
 	doins -r presets

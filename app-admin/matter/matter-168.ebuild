@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="+entropy"
+IUSE="debug_grade_1 +entropy"
 SRC_URI="mirror://sabayon/sys-apps/entropy-${PV}.tar.bz2"
 
 S="${WORKDIR}/entropy-${PV}/${PN}"
@@ -23,6 +23,9 @@ RDEPEND="entropy? ( ~sys-apps/entropy-${PV} )
 	>=sys-apps/portage-2.2"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "make install failed"
 	emake DESTDIR="${D}" base-install || die "make base-install failed"
 	if use entropy; then

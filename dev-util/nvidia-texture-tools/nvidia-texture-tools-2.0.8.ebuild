@@ -14,7 +14,7 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~x86"
 
-IUSE="debug"
+IUSE="debug_grade_1 debug"
 
 DEPEND="x11-libs/libX11
 	virtual/jpeg
@@ -51,5 +51,8 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cmake-utils_src_install
 }

@@ -14,7 +14,7 @@ SRC_URI="http://www.zoneminder.com/downloads/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug ffmpeg mmap"
+IUSE="debug_grade_1 debug ffmpeg mmap"
 SLOT="0"
 
 DEPEND="
@@ -104,6 +104,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	keepdir /var/run/zm
 	keepdir /var/log/zm
 

@@ -18,9 +18,9 @@ SRC_URI="mirror://sourceforge/mlt/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
-IUSE="compressed-lumas dv debug ffmpeg frei0r gtk jack kde kdelink libsamplerate melt
+IUSE="debug_grade_1 compressed-lumas dv debug ffmpeg frei0r gtk jack kde kdelink libsamplerate melt
 mmx qt4 quicktime rtaudio sdl sse sse2 swfdec vorbis xine xml lua python ruby vdpau" # java perl php tcl
-IUSE="${IUSE} kernel_linux"
+IUSE="debug_grade_1 ${IUSE} kernel_linux"
 
 #rtaudio will use OSS on non linux OSes
 RDEPEND="ffmpeg? ( virtual/ffmpeg[vdpau?] )
@@ -145,6 +145,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README docs/*.txt
 

@@ -13,7 +13,7 @@ SRC_URI="http://projects.vdr-developer.org/attachments/download/267/${P}.tgz"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="GPL-2"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=">=media-video/vdr-1.6.0_p2-r5
 	>=media-libs/libmpeg2-0.5.1

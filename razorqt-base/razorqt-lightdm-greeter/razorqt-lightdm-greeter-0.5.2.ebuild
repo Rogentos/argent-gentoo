@@ -21,7 +21,7 @@ fi
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="razorqt-base/razorqt-libs
 	x11-misc/lightdm[qt4]"

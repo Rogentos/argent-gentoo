@@ -16,7 +16,7 @@ HOMEPAGE="http://git.xonotic.org/?p=xonotic/d0_blind_id.git;a=summary"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+crypt openssl  static-libs"
+IUSE="debug_grade_1 +crypt openssl  static-libs"
 
 RDEPEND="
 	!openssl? ( dev-libs/gmp )
@@ -44,6 +44,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	default
 
 	dodoc d0_blind_id.txt

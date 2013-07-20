@@ -12,7 +12,7 @@ SRC_URI="http://www.gnome15.org/downloads/Gnome15/Old/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="ayatana cairo gnome lg4l-module systray title"
+IUSE="debug_grade_1 ayatana cairo gnome lg4l-module systray title"
 
 RDEPEND="dev-python/pygtk
 		 dev-python/gconf-python
@@ -61,6 +61,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cd ${MY_S} && emake DESTDIR="${D}" install || die "emake install failed"
 }
 

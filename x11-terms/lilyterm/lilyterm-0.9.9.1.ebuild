@@ -12,7 +12,7 @@ SRC_URI="${HOMEPAGE}/file/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug nls"
+IUSE="debug_grade_1 debug nls"
 
 # According to information in the changelog, Gtk+ 3 support isn't complete
 # so we're forcing Gtk+ 2.
@@ -48,6 +48,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	EXAMPLES_DIR="${EPREFIX}"usr/share/doc/${PF}/examples \
 		emake DESTDIR="${D}" install || die "emake install failed."
 	rm "${ED}"usr/share/doc/${PF}/COPYING || die

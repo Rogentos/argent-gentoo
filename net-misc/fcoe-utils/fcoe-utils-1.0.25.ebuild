@@ -13,7 +13,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="kernel_linux"
+IUSE="debug_grade_1 kernel_linux"
 
 COMMON_DEPEND=">=net-misc/lldpad-0.9.43
 	>=sys-apps/hbaapi-2.2
@@ -48,6 +48,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	base_src_install
 
 	# Redhat does this way, path is hardcoded in Anaconda

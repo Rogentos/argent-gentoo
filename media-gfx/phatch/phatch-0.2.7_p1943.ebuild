@@ -23,7 +23,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.xz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 CDEPEND="dev-python/wxpython:2.8
 	dev-python/imaging
@@ -36,6 +36,9 @@ RDEPEND="${CDEPEND}
 "
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	distutils_src_install
 	# Hack...
 	mv "${ED}"usr/share/locale/locale/* "${ED}"usr/share/locale || die

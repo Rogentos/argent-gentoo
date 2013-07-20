@@ -15,7 +15,7 @@ SRC_URI="ftp://trmm-fc.gsfc.nasa.gov/software/${MY_P}.tar.gz"
 LICENSE="LGPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="sci-libs/hdf
 	virtual/jpeg"

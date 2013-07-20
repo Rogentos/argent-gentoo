@@ -16,7 +16,7 @@ SRC_URI="http://kaizer.se/publicfiles/${PN}/${MY_P}.tar.xz"
 LICENSE="Apache-2.0 GPL-2 GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+keybinder doc nautilus"
+IUSE="debug_grade_1 +keybinder doc nautilus"
 
 COMMON_DEPEND="dev-python/pygtk
 	dev-python/pyxdg
@@ -61,6 +61,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	waf-utils_src_install || die "Error: install failed!"
 }
 

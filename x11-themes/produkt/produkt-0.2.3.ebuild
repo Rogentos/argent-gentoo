@@ -15,7 +15,7 @@ SRC_URI="http://opendesktop.org/CONTENT/content-files/${CONTENT_ID}-${PN}.tar.gz
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=""
 RDEPEND="${DEPEND}"

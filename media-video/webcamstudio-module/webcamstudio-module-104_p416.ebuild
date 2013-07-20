@@ -15,7 +15,7 @@ SRC_URI="http://gentoo.plexyplanet.org/distfiles/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="virtual/linux-sources"
 RDEPEND=""
@@ -52,6 +52,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	einfo "Installing helper library..."
 	dolib libwebcamstudio.so libwebcamstudio.so.1.0.1
 

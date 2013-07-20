@@ -18,7 +18,7 @@ SRC_URI="http://corsix-th.googlecode.com/files/${MY_P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="opengl +truetype +sound wxwidgets"
+IUSE="debug_grade_1 opengl +truetype +sound wxwidgets"
 
 RDEPEND="
 	>=media-libs/libsdl-1.2[X]
@@ -76,6 +76,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	# Rewrite install procedure to fit with the filesystem
 	cd "${MY_PN}" || die "cd failed"
 	newgamesbin "${WORKDIR}/${BUILD_DIR}/CorsixTH/${MY_PN}" ${PN} || die "binary install failed"

@@ -20,7 +20,7 @@ HOMEPAGE="http://www.lightstreamer.com"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 LICENSE="lightstreamer"
 
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND="!www-servers/lightstreamer-allegro
 	!www-servers/lightstreamer-presto
@@ -42,6 +42,9 @@ pkg_setup() {
 src_compile() { echo; }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dodir /opt/Lightstreamer
 	dodir /etc/init.d
 

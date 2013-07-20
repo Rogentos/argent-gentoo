@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 RESTRICT="mirror"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="dev-lang/python:2.6
 	x11-libs/gtk+
@@ -26,6 +26,9 @@ RDEPEND="${DEPEND}"
 
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 
 	base=GMapCatcher-${PV}
 

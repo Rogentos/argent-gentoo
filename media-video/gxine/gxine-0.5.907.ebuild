@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/xine/${P}.tar.xz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ppc ppc64 x86"
-IUSE="gnome-screensaver linguas_cs linguas_de lirc nls nsplugin udev +xcb xinerama"
+IUSE="debug_grade_1 gnome-screensaver linguas_cs linguas_de lirc nls nsplugin udev +xcb xinerama"
 
 COMMON_DEPEND=">=media-libs/xine-lib-1.1.20
 	x11-libs/gtk+:2
@@ -71,6 +71,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" \
 		docdir=/usr/share/doc/${PF} \
 		docsdir=/usr/share/doc/${PF} \

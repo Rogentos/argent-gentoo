@@ -14,7 +14,7 @@ SRC_URI="http://${PN}.googlecode.com/files/${MY_PN}-source-${PV}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE="mplayer nls spell"
+IUSE="debug_grade_1 mplayer nls spell"
 
 RDEPEND=">=virtual/jre-1.5
 	virtual/ffmpeg
@@ -63,6 +63,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	java-pkg_dojar dist/Jubler.jar
 	use nls && java-pkg_dojar dist/i18n/*.jar
 	insinto /usr/share/jubler/lib/lib

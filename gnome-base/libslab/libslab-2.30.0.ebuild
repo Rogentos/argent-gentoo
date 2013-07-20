@@ -12,7 +12,7 @@ HOMEPAGE="http://www.gnome.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
+IUSE="debug_grade_1 doc"
 
 RDEPEND=">=dev-libs/glib-2.18.0
 	>=x11-libs/gtk+-2.14.0:2

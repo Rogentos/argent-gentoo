@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/dvdstyler/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug gnome kernel_linux"
+IUSE="debug_grade_1 debug gnome kernel_linux"
 
 COMMON_DEPEND=">=app-cdr/dvd+rw-tools-7.1
 	>=media-libs/libexif-0.6.16
@@ -54,6 +54,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	default
 	rm -f "${ED}"usr/share/doc/${PF}/{COPYING*,INSTALL*}
 }

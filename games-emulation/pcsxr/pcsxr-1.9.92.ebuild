@@ -13,7 +13,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~ppc"
-IUSE="alsa cdio opengl oss pulseaudio +sdl-sound"
+IUSE="debug_grade_1 alsa cdio opengl oss pulseaudio +sdl-sound"
 
 RDEPEND="x11-libs/gtk+:2
 	gnome-base/libglade
@@ -76,6 +76,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install \
 	    || die "emake install failed"
 

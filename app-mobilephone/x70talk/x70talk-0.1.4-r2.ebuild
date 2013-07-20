@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="ppc x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="net-wireless/bluez"
 
@@ -24,6 +24,9 @@ src_unpack() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dobin x70talk
 	dodoc ChangeLog README TODO
 }

@@ -14,7 +14,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="dbus libnotify libproxy"
+IUSE="debug_grade_1 dbus libnotify libproxy"
 
 RDEPEND="dev-libs/libxml2
 	>=media-libs/gst-plugins-base-0.10

@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/gaim-libnotify/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
-IUSE="nls debug"
+IUSE="debug_grade_1 nls debug"
 
 RDEPEND=">=x11-libs/libnotify-0.3.2
 	net-im/pidgin[gtk]
@@ -53,6 +53,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake install DESTDIR="${D}" || die "make install failed"
 	find "${D}" -name '*.la' -delete
 	dodoc AUTHORS ChangeLog INSTALL NEWS README TODO VERSION || die

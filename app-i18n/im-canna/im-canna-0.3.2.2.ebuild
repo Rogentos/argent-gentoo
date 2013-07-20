@@ -11,7 +11,7 @@ SRC_URI="http://bonobo.gnome.gr.jp/~nakai/immodule/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="x86 ppc"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RDEPEND=">=x11-libs/gtk+-2.4:2
 	app-i18n/canna"
@@ -48,6 +48,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	make DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README
 }

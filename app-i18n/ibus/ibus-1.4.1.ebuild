@@ -14,7 +14,7 @@ SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 arm ppc ppc64 x86 ~x86-fbsd"
-IUSE="dconf doc +gconf gtk gtk3 +introspection nls +python vala X"
+IUSE="debug_grade_1 dconf doc +gconf gtk gtk3 +introspection nls +python vala X"
 REQUIRED_USE="|| ( gtk gtk3 X )" #342903
 
 RDEPEND=">=dev-libs/glib-2.26
@@ -141,6 +141,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	default
 
 	find "${ED}" -name '*.la' -exec rm -f {} +

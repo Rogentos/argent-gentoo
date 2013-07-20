@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.src.tgz"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="dev-libs/keybinder[python]
 	dev-python/imaging
@@ -29,6 +29,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cd "${PN}"
 	newbin st2.py streamtuner2
 	rm -f st2.py

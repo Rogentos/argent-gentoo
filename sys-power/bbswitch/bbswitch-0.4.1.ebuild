@@ -21,7 +21,7 @@ inherit eutils linux-mod ${SCM_ECLASS}
 
 SLOT="0"
 LICENSE="GPL-2"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="virtual/linux-sources
 	sys-kernel/linux-headers"
@@ -37,6 +37,9 @@ pkg_setup() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	insinto /etc/modprobe.d
 	newins "${FILESDIR}"/bbswitch.modprobe bbswitch.conf || die
 	linux-mod_src_install

@@ -13,7 +13,7 @@ SRC_URI="http://cairographics.org/snapshots/${P}.tar.gz"
 LICENSE="usc-isi"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=">=x11-libs/libsvg-cairo-0.1.6"
 # depend by README, but works without it?

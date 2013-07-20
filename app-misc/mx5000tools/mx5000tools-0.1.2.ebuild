@@ -12,7 +12,7 @@ SRC_URI="http://download.gna.org/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND="media-libs/netpbm"
 RDEPEND="${DEPEND}"

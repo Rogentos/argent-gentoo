@@ -15,7 +15,7 @@ DESCRIPTION="GStreamer Integration library for Clutter"
 
 SLOT="1.0"
 KEYWORDS="~arm"
-IUSE="doc examples +introspection"
+IUSE="debug_grade_1 doc examples +introspection"
 
 RDEPEND="
 	>=dev-libs/glib-2.20:2

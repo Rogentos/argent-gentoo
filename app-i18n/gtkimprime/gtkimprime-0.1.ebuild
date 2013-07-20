@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge.jp/gtkimprime/12368/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 DEPEND=">=x11-libs/gtk+-2.4:2
 	>=app-i18n/prime-0.9.2-r1"
@@ -49,6 +49,9 @@ gtk_query_immodules_2() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	make DESTDIR="${D}" install || die "make install failed"
 
 	dodoc AUTHORS ChangeLog README

@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-E_PKG_IUSE="doc nls"
+E_PKG_IUSE="debug_grade_1 doc nls"
 inherit enlightenment
 
 DESCRIPTION="Basic widget set, based on EFL with focus mobile touch-screen devices."
@@ -12,7 +12,7 @@ HOMEPAGE="http://trac.enlightenment.org/e/wiki/Elementary"
 
 LICENSE="LGPL-2.1"
 KEYWORDS="~amd64 ~x86"
-IUSE="dbus emap fbcon opengl quicklaunch sdl static-libs thumbnails video weather webkit X xcb xdg"
+IUSE="debug_grade_1 dbus emap fbcon opengl quicklaunch sdl static-libs thumbnails video weather webkit X xcb xdg"
 
 RDEPEND="
 	>=dev-libs/ecore-9999[evas,fbcon?,opengl?,sdl?,X?,xcb?]

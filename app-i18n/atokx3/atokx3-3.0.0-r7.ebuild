@@ -20,7 +20,7 @@ LICENSE="ATOK MIT"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RESTRICT="strip mirror binchecks"
 
@@ -178,6 +178,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dodoc "${MY_UPDATE_P}/README_UP2.txt" || die
 	rm -rf "${MY_UPDATE_P}"
 

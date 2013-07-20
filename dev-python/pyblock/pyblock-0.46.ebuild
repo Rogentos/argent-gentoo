@@ -14,7 +14,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE="selinux"
+IUSE="debug_grade_1 selinux"
 
 DEPEND="${DEPEND}
 	sys-devel/gettext"

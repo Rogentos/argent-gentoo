@@ -17,7 +17,7 @@ SRC_URI="http://downloads.mongodb.org/src/${MY_P}.tar.gz
 LICENSE="AGPL-3 Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="mms-agent static-libs v8"
+IUSE="debug_grade_1 mms-agent static-libs v8"
 
 PDEPEND="mms-agent? ( dev-python/pymongo )"
 RDEPEND="!v8? ( <dev-lang/spidermonkey-1.8[unicode] )
@@ -66,6 +66,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	escons ${scons_opts} --full --nostrip install --prefix="${D}"/usr
 
 	use static-libs || rm "${D}/usr/$(get_libdir)/libmongoclient.a"

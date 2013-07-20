@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/testing/${PN}-${MY_PV}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug usb"
+IUSE="debug_grade_1 debug usb"
 
 DEPEND="sys-apps/pciutils"
 RDEPEND="${DEPEND}
@@ -55,6 +55,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dodoc AUTHORS ChangeLog INSTALL README
 	doman ndiswrapper.8
 

@@ -20,7 +20,7 @@ SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="genshi jinja test"
+IUSE="debug_grade_1 genshi jinja test"
 
 RDEPEND=">=dev-python/beaker-1.3
 	>=dev-python/decorator-2.3.2

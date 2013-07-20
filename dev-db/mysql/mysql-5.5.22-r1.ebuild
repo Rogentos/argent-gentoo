@@ -13,7 +13,7 @@ BUILD="cmake"
 
 inherit toolchain-funcs mysql-v2
 # only to make repoman happy. it is really set in the eclass
-IUSE="$IUSE"
+IUSE="debug_grade_1 $IUSE"
 
 # Define the mysql-extras source
 EGIT_REPO_URI="git://git.overlays.gentoo.org/proj/mysql-extras.git"
@@ -129,6 +129,9 @@ src_test() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	mysql-v2_src_install
 	# Fix Sabayon #3647 and Gentoo #392361
 	dosym ../share/mysql/scripts/mysql_install_db /usr/bin/mysql_install_db

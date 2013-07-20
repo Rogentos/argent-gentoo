@@ -13,7 +13,7 @@ SRC_URI="x86? ( ${SRC_BASE}32-v${PV//\./_}.tar.gz )
 
 LICENSE="Broadcom"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 RESTRICT="mirror"
 

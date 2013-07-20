@@ -16,7 +16,7 @@ LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="debug +imagemagick graphicsmagick"
+IUSE="debug_grade_1 debug +imagemagick graphicsmagick"
 
 REQUIRED_USE="^^ ( imagemagick graphicsmagick )"
 
@@ -48,6 +48,9 @@ src_prepare(){
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	#default
 	cmake-utils_src_install
 	doman "${FILESDIR}/${PN}.1"

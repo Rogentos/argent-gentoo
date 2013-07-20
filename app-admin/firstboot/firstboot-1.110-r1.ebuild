@@ -19,7 +19,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${P}-${RPMREV}.fc13.src.rpm"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="gtk"
+IUSE="debug_grade_1 gtk"
 RDEPEND="
 	gtk? ( =dev-python/pygtk-2* )
 	dev-python/rhpl
@@ -32,6 +32,9 @@ DEPEND="${RDEPEND}
 PDEPEND="app-admin/system-config-keyboard"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	distutils_src_install
 	# remove fedorish init script completely
 	rm -r "${ED}"/etc/rc.d || die

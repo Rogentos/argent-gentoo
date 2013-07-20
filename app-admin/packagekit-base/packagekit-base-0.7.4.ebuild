@@ -19,7 +19,7 @@ SRC_URI="http://www.packagekit.org/releases/${MY_P}.tar.xz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~x86"
-IUSE="connman cron doc +introspection networkmanager nsplugin pm-utils +policykit entropy static-libs test udev"
+IUSE="debug_grade_1 connman cron doc +introspection networkmanager nsplugin pm-utils +policykit entropy static-libs test udev"
 
 CDEPEND="connman? ( net-misc/connman )
 	introspection? ( >=dev-libs/gobject-introspection-0.9.9 )
@@ -54,7 +54,7 @@ RDEPEND="${CDEPEND}
 APP_LINGUAS="as bg bn ca cs da de el en_GB es fi fr gu he hi hu it ja kn ko ml mr
 ms nb nl or pa pl pt pt_BR ro ru sk sr sr@latin sv ta te th tr uk zh_CN zh_TW"
 for X in ${APP_LINGUAS}; do
-	IUSE=" ${IUSE} linguas_${X}"
+	IUSE="debug_grade_1  ${IUSE} linguas_${X}"
 done
 
 S="${WORKDIR}/${MY_P}"
@@ -133,6 +133,9 @@ src_configure() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc AUTHORS MAINTAINERS NEWS README TODO || die "dodoc failed"

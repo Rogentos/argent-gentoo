@@ -15,7 +15,7 @@ HOMEPAGE="http://ultrastardx.sourceforge.net/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+projectm"
+IUSE="debug_grade_1 +projectm"
 
 RDEPEND="media-libs/sdl-image
 	media-libs/libsdl[opengl]
@@ -48,6 +48,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dogamesbin game/ultrastardx
 	insinto "${GAMES_DATADIR}"/${PN}
 	doins -r game/covers  game/fonts game/languages game/playlists game/plugins game/resources game/sounds game/themes || die

@@ -12,7 +12,7 @@ SRC_URI="http://www.softwarebakery.com/maato/files/${PN}/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 COMMON_DEPEND="dev-libs/glib:2
 	xfce-base/thunar

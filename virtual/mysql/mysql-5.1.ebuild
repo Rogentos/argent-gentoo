@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE=""
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd ~x64-macos ~x86-macos ~x86-solaris"
-IUSE="embedded minimal static"
+IUSE="debug_grade_1 embedded minimal static"
 
 DEPEND=""
 # TODO: add mysql-cluster here

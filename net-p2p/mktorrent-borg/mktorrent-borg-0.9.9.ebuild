@@ -11,7 +11,7 @@ SRC_URI="ftp://borg.uu3.net/pub/unix/mktorrent/mktorrent-${PV}.tgz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="debug_grade_1 "
 
 S="${WORKDIR}/${PN%-borg}"
 
@@ -24,6 +24,9 @@ src_unpack() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	newbin mktorrent mktorrent-borg || die "newbin failed"
 	dodoc CHANGES
 }

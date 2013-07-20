@@ -12,7 +12,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc64 ~x86"
-IUSE="acl debug-utils"
+IUSE="debug_grade_1 acl debug-utils"
 
 DEPEND="debug-utils? ( dev-python/matplotlib )
 	acl? (
@@ -45,6 +45,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	into /
 	dosbin btrfs-show
 	dosbin btrfs-vol

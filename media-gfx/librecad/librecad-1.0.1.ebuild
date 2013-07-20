@@ -13,7 +13,7 @@ SRC_URI="https://nodeload.github.com/LibreCAD/LibreCAD/tarball/v${PV} -> ${P}.ta
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug doc"
+IUSE="debug_grade_1 debug doc"
 
 RDEPEND="
 	x11-libs/qt-gui[qt3support]
@@ -31,6 +31,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	dobin unix/librecad || die
 	insinto /usr/share/"${PN}"
 	doins -r unix/resources/* || die

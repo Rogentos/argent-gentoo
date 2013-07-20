@@ -15,13 +15,16 @@ SRC_URI="http://launchpad.net/elementaryicons/2.0/${PV}/+download/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="monochrome branding"
+IUSE="debug_grade_1 monochrome branding"
 
 DEPEND=""
 RDEPEND=""
 RESTRICT="binchecks strip"
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	cd "${WORKDIR}/${PN}"
 	insinto /usr/share/icons
 	doins -r elementary

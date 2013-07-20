@@ -16,7 +16,7 @@ SRC_URI="http://download.lightscribe.com/ls/lightscribe-${PV}-linux-2.6-intel.rp
 LICENSE="lightscribe lightscribeSDK"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="multilib"
+IUSE="debug_grade_1 multilib"
 
 RDEPEND="x86? ( sys-libs/libstdc++-v3 )
 	amd64? ( sys-libs/libstdc++-v3[multilib] )
@@ -48,6 +48,9 @@ src_prepare() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	local LSDIR="opt/lightscribe/$(get_libdir)"
 
 	exeinto /${LSDIR}/lightscribe/updates

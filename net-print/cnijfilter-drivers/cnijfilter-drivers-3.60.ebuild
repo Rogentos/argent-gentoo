@@ -17,7 +17,7 @@ SLOT="${PV}"
 KEYWORDS="~amd64 ~x86"
 PRINTER_USE=( mg2100 mg3100 mg4100 mg5300 mg6200 mg8200 ip4900 e500 )
 PRINTER_ID=( 386 387 388 389 390 391 392 393 )
-IUSE="${PRINTER_USE[@]} +servicetools"
+IUSE="debug_grade_1 ${PRINTER_USE[@]} +servicetools"
 
 RDEPEND="
 	net-print/cnijfilter[servicetools?]
@@ -130,6 +130,9 @@ src_compile() {
 }
 
 src_install() {
+     if use debug_grade_1 ; then
+   set -ex
+       fi
 	local _libdir="${EPREFIX}/usr/$(get_libdir)"
 	local _libdir_pkg=libs_bin$(use amd64 && echo 64 || echo 32)
 	local _ppddir="${EPREFIX}/usr/share/cups/model"
