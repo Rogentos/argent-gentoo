@@ -12,7 +12,7 @@ SRC_URI="http://easyinstall.citadel.org/${P}.tar.gz"
 LICENSE="GPL-2 MIT LGPL-3 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 ssl"
+IUSE="ssl"
 
 DEPEND=">=dev-libs/libical-0.43
 	>=dev-libs/libcitadel-${PV}
@@ -42,9 +42,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install
 	newinitd "${FILESDIR}"/webcit.init.d webcit
 	newconfd "${FILESDIR}"/webcit.conf.d webcit

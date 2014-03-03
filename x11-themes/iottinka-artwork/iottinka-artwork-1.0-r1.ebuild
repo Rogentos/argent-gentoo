@@ -10,16 +10,13 @@ LICENSE="as-is"
 
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 RESTRICT="nomirror"
 DEPEND="media-gfx/imagemagick"
 RDEPEND=""
 S="${WORKDIR}/${PN}"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	local bg_dir="/usr/share/backgrounds/iottinka"
 	dodir "${bg_dir}"
 	local gnome_bg_dir="/usr/share/gnome-background-properties"

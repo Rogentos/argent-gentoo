@@ -15,7 +15,7 @@ EGIT_REPO_URI="${BASE_URI}.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug_grade_1 +client +convert low +maps +zip"
+IUSE="+client +convert low +maps +zip"
 
 RDEPEND=""
 DEPEND="
@@ -181,9 +181,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	# Data
 	insinto "${GAMES_DATADIR}/${MY_PN}"
 	doins -r data || die "doins data failed"

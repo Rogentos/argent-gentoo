@@ -17,7 +17,7 @@ LICENSE="GPL"
 KEYWORDS="x86 amd64"
 RESTRICT="nomirror"
 
-IUSE="debug_grade_1 "
+IUSE=""
 SLOT="0"
 DEPEND=">=virtual/jdk-1.6"
 RDEPEND=">=virtual/jre-1.6
@@ -55,9 +55,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dodir "${INSTALLDIR}"
 	mv "${S}/lib" "${S}/lookandfeel" "${S}/plugins" "${S}"/*.jar "${S}"/*.png "${S}/${PN}" "${D}/${INSTALLDIR}/" || die "Cannot install core-files"
 	dodoc "${S}"/*.txt

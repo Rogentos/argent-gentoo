@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV//./_}_${EDITION}_linux.tar.bz2"
 LICENSE="ZLIB freedist"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 debug dedicated doc"
+IUSE="debug dedicated doc"
 
 #PATCH_VERSION="2009_06_19"
 #SRC_URI="${SRC_URI} mirror://sourceforge/${PN}/patch_${PATCH_VERSION}_linux.tar.bz2 -> ${PN}_${PATCH_VERSION}_patch_linux.tar.bz2"
@@ -61,9 +61,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	if ! use dedicated ; then
 		# Install the game data
 		insinto "${DATADIR}"

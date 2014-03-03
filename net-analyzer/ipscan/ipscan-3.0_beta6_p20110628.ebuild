@@ -20,7 +20,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 COMMON_DEPEND="dev-java/swt:3.5"
 DEPEND="${COMMON_DEPEND}
@@ -67,9 +67,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	java-pkg_newjar \
 		"${S}/dist/ipscan-$(my_get_target)-$(get_version_component_range 1-2)-git.jar" \
 		ipscan-linux.jar

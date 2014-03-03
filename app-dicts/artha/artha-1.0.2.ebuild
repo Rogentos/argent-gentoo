@@ -7,7 +7,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 enchant libnotify"
+IUSE="enchant libnotify"
 
 DEPEND=">=app-dicts/wordnet-3
 	>=x11-libs/gtk+-2.12
@@ -18,8 +18,5 @@ RDEPEND="${DEPEND}
 	libnotify? ( >=x11-libs/libnotify-0.4.1 )"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	make DESTDIR=${D} install || die "make install failed"
 } 

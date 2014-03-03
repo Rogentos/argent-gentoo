@@ -15,7 +15,7 @@ SRC_URI="http://www.springlobby.info/tarballs/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 +torrent +sound debug libnotify"
+IUSE="+torrent +sound debug libnotify"
 
 RDEPEND="
 	games-engines/spring
@@ -70,9 +70,6 @@ src_compile () {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cmake-utils_src_install
 
 	prepgamesdirs

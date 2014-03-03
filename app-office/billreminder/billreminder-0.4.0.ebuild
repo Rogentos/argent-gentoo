@@ -12,7 +12,7 @@ SRC_URI="http://ftp.gnome.org/pub/GNOME/sources/billreminder/0.4/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 nls"
+IUSE="nls"
 
 DEPEND="|| (
 			>=dev-lang/python-2.5

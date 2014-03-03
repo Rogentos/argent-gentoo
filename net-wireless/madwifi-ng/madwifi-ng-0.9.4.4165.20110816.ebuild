@@ -21,7 +21,7 @@ LICENSE="atheros-hal
 	|| ( BSD GPL-2 )"
 SLOT="0"
 KEYWORDS="amd64 ~ppc x86"
-IUSE="debug_grade_1 injection"
+IUSE="injection"
 
 RDEPEND="!net-wireless/madwifi-old
 		net-wireless/wireless-tools
@@ -69,9 +69,6 @@ src_prepare() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	linux-mod_src_install
 	dodoc README THANKS SNAPSHOT || die
 }

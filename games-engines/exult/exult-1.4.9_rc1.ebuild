@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/exult/${P/_/}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE="debug_grade_1 timidity zlib"
+IUSE="timidity zlib"
 
 RDEPEND=">=media-libs/libpng-1.2.43-r2:0
 	media-libs/libsdl[audio,video,X]
@@ -57,9 +57,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install || die
 	# no need for this directory for just playing the game
 	rm -rf "${D}${GAMES_DATADIR}/${PN}/estudio"

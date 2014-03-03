@@ -14,7 +14,7 @@ SRC_URI="https://launchpad.net/oursql/trunk/${PV}/+download/${P}.zip"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND=">=virtual/mysql-4.1"
 DEPEND="${RDEPEND}"

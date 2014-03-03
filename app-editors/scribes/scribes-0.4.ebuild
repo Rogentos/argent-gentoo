@@ -19,7 +19,7 @@ SRC_URI="http://launchpad.net/scribes/${PV}/scribes-milestone1/+download/${MY_P}
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 doc"
+IUSE="doc"
 
 RDEPEND="gnome-base/gconf
 	doc? ( gnome-extra/yelp )
@@ -58,9 +58,6 @@ src_prepare() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	gnome2_src_install
 	python_clean_installation_image
 }

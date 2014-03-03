@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/gfire/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 debug kmess-status libnotify nls"
+IUSE="debug kmess-status libnotify nls"
 
 RDEPEND="
 	net-im/pidgin[gtk]
@@ -43,9 +43,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake install DESTDIR="${D}"
 	dodoc AUTHORS README ChangeLog
 

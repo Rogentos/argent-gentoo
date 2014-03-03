@@ -13,7 +13,7 @@ SRC_URI="http://www.jackaudio.org/downloads/${P}.tar.gz"
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="debug_grade_1 3dnow altivec alsa coreaudio doc debug examples ffado mmx oss sse cpudetection pam"
+IUSE="3dnow altivec alsa coreaudio doc debug examples ffado mmx oss sse cpudetection pam"
 
 RDEPEND=">=media-libs/libsndfile-1.0.0
 	sys-libs/ncurses
@@ -59,9 +59,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc AUTHORS TODO README
 

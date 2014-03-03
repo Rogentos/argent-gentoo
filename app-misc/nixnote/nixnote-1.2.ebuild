@@ -14,7 +14,7 @@ SRC_URI="x86?    ( mirror://sourceforge/nevernote/${P}_i386.tar.gz )
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=""
 RDEPEND=">=virtual/jdk-1.5
@@ -22,9 +22,6 @@ RDEPEND=">=virtual/jdk-1.5
 
 S="${PN}"
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cp -rf "${S}/usr" "${D}/"
 }
 

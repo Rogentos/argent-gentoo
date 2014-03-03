@@ -11,7 +11,7 @@ SRC_URI="http://www.angelcode.com/${PN}/sdk/files/${PN}_${PV}.zip"
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 doc"
+IUSE="doc"
 
 DEPEND=""
 RDEPEND=""
@@ -23,9 +23,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dodir /usr/lib /usr/include
 	emake LOCAL="${D}/usr" install || die
 

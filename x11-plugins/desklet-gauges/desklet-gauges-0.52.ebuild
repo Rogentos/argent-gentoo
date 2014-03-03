@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND=">=gnome-extra/gdesklets-core-0.34.3"
 DEPEND="${RDEPEND}"

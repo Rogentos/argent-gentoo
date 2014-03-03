@@ -13,7 +13,7 @@ HOMEPAGE="http://www.xonotic.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug_grade_1 unofficial"
+IUSE="unofficial"
 
 RDEPEND="~games-fps/xonotic-data-9999"
 DEPEND="
@@ -152,9 +152,6 @@ src_unpack() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	insinto "${GAMES_DATADIR}/${MY_PN}/data"
 	for i in ${MapFiles}; do
 		doins "${MAPS_STORE_DIR}/${i}" || ewarn "installing ${i} failed"

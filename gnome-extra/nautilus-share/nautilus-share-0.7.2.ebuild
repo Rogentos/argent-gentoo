@@ -8,7 +8,7 @@ DESCRIPTION="A nautilus plugin to easily share folders over the SMB protocol"
 HOMEPAGE="http://gentoo.ovibes.net/nautilus-share"
 SRC_URI="http://gentoo.ovibes.net/${PN}/${P}.tar.gz"
 
-IUSE="debug_grade_1 "
+IUSE=""
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86"
@@ -32,9 +32,6 @@ scr_unpack() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	gnome2_src_install
 	keepdir ${USERSHARES_DIR}
 }

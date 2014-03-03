@@ -15,7 +15,7 @@ SRC_URI=""
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND="sys-fs/cryptsetup"
 RDEPEND="${DEPEND}"

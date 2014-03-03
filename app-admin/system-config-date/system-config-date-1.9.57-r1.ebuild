@@ -12,7 +12,7 @@ SRC_URI="https://fedorahosted.org/released/${PN}/${P}.tar.bz2"
 LICENSE="GPL-1"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE="debug_grade_1 gtk"
+IUSE="gtk"
 
 # FIXME: would also require a dependency against anaconda
 DEPEND="app-text/docbook-xml-dtd
@@ -36,9 +36,6 @@ RDEPEND="dev-libs/newt
 		x11-themes/hicolor-icon-theme )"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	base_src_install
 
 	# removing .desktop file, not advertising this, it is

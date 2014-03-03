@@ -21,7 +21,7 @@ HOMEPAGE="http://www.linuxfoundation.org/collaborate/workgroups/openprinting/pdf
 
 LICENSE="MIT GPL-2"
 SLOT="0"
-IUSE="debug_grade_1 avahi jpeg perl png static-libs tiff"
+IUSE="avahi jpeg perl png static-libs tiff"
 
 RDEPEND="
 	app-text/ghostscript-gpl
@@ -80,9 +80,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	default
 
 	if use perl; then

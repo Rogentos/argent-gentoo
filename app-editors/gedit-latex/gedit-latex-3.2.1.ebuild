@@ -12,7 +12,7 @@ HOMEPAGE="http://live.gnome.org/Gedit"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND=">=app-editors/gedit-3
 	>=dev-libs/glib-2.26:2

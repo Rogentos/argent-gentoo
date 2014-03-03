@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tgz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~ppc ~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=""
 RDEPEND=""
@@ -38,9 +38,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	base_src_install
 	dodoc readme.txt
 }

@@ -12,7 +12,7 @@ SRC_URI="http://nic.com.pl/~alek/pidgin-tlen/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=">=net-im/pidgin-2.6.5"
 RDEPEND="${DEPEND}"
@@ -22,9 +22,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	exeinto "/usr/$(get_libdir)/purple-2"
 	doexe libtlen.so || die "doexe failed"
 

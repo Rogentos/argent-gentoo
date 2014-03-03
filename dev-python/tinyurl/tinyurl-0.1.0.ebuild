@@ -17,7 +17,7 @@ SRC_URI="http://pypi.python.org/packages/source/T/${MY_PN}/${MY_P}.tar.bz2"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 doc examples"
+IUSE="doc examples"
 
 DEPEND=""
 RDEPEND=""

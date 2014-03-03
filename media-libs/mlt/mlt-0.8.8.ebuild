@@ -13,9 +13,9 @@ SRC_URI="mirror://sourceforge/mlt/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
-IUSE="debug_grade_1 compressed-lumas dv debug ffmpeg frei0r gtk jack kde kdenlive libsamplerate melt
+IUSE="compressed-lumas dv debug ffmpeg frei0r gtk jack kde kdenlive libsamplerate melt
 mmx qt4 quicktime rtaudio sdl sse sse2 swfdec vorbis xine xml lua python ruby vdpau" # java perl php tcl
-IUSE="debug_grade_1 ${IUSE} kernel_linux"
+IUSE="${IUSE} kernel_linux"
 
 #rtaudio will use OSS on non linux OSes
 RDEPEND="ffmpeg? ( virtual/ffmpeg[vdpau?] )
@@ -36,8 +36,8 @@ RDEPEND="ffmpeg? ( virtual/ffmpeg[vdpau?] )
 	rtaudio? ( kernel_linux? ( media-libs/alsa-lib ) )
 	swfdec? ( media-libs/swfdec )
 	xine? ( >=media-libs/xine-lib-1.1.2_pre20060328-r7 )
-	qt4? ( x11-libs/qt-gui:4
-		x11-libs/qt-svg:4
+	qt4? ( dev-qt/qtgui:4
+		dev-qt/qtsvg:4
 		media-libs/libexif )
 	kde? ( kde-base/kdelibs:4
 		media-libs/libexif )
@@ -140,9 +140,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README docs/*.txt
 

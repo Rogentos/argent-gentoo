@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/unknownhorizons/${P}.tar.xz"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND="dev-python/pyyaml
 	=games-engines/fife-0.3.3-r3"
@@ -30,9 +30,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	# FIXME: exe and data-files goes into wrong place, games.gentoo.org policy
 	# violation
 	distutils_src_install

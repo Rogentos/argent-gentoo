@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/dvdstyler/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 debug gnome kernel_linux"
+IUSE="debug gnome kernel_linux"
 
 COMMON_DEPEND=">=app-cdr/dvd+rw-tools-7.1
 	>=media-libs/libexif-0.6.16
@@ -25,7 +25,7 @@ COMMON_DEPEND=">=app-cdr/dvd+rw-tools-7.1
 	>=virtual/ffmpeg-0.6.90[encode]
 	x11-libs/wxGTK:2.8[gstreamer,X]
 	gnome? ( >=gnome-base/libgnomeui-2 )
-	kernel_linux? ( sys-fs/udev )"
+	kernel_linux? ( virtual/udev )"
 RDEPEND="${COMMON_DEPEND}
 	>=app-cdr/dvdisaster-0.72.2"
 DEPEND="${COMMON_DEPEND}
@@ -54,9 +54,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	default
 	rm -f "${ED}"usr/share/doc/${PF}/{COPYING*,INSTALL*}
 }

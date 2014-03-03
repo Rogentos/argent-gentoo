@@ -15,7 +15,7 @@ ESVN_REPO_URI="http://webcamstudio.googlecode.com/svn/trunk/trunk/vloopback@370"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND="virtual/linux-sources"
 RDEPEND=""
@@ -52,9 +52,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	einfo "Installing helper library..."
 	dolib libwebcamstudio.so libwebcamstudio.so.1.0.1
 

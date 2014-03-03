@@ -29,9 +29,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dobin netsniff-ng
 	doman doc/*.8 || die
 	insinto /etc/netsniff-ng/rules/

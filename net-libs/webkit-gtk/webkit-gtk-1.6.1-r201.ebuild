@@ -19,7 +19,7 @@ SLOT="2"
 KEYWORDS="~alpha amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~x86-macos"
 # geoclue
 
-IUSE="debug_grade_1 aqua coverage debug +gstreamer +introspection +jit spell webgl"
+IUSE="aqua coverage debug +gstreamer +introspection +jit spell webgl"
 
 # bug 372493
 REQUIRED_USE="introspection? ( gstreamer )"
@@ -161,9 +161,6 @@ src_test() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	# Workaround for Argument list too long seen in:
 	# #300867
 	# Still there on ARM

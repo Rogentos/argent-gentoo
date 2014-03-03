@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/springrts/${MY_P}_src.tar.lzma"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 +ai +java +default multithreaded headless dedicated test-ai debug custom-cflags"
+IUSE="+ai +java +default multithreaded headless dedicated test-ai debug custom-cflags"
 
 GUI_DEPEND="
 	media-libs/devil[jpeg,png,opengl]

@@ -15,7 +15,7 @@ EGIT_REPO_URI="${BASE_URI}${PN}.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug_grade_1 alsa crypt debug dedicated opengl sdl"
+IUSE="alsa crypt debug dedicated opengl sdl"
 
 UIRDEPEND="
 	media-libs/libogg
@@ -115,9 +115,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	# Engine & docs
 	pushd darkplaces
 	if use opengl || use !dedicated; then

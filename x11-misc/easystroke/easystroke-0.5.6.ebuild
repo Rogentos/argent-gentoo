@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="ISC"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
 COMMON_DEPEND="dev-cpp/glibmm:2
 	dev-cpp/gtkmm:2.4
@@ -48,9 +48,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	doman ${PN}.1
 	dodoc changelog
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}/usr" install

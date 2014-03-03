@@ -4,7 +4,7 @@
 
 EAPI="2"
 WANT_ANT_TASKS="ant-nodeps"
-JAVA_PKG_IUSE="debug_grade_1 source"
+JAVA_PKG_IUSE="source"
 
 inherit java-pkg-2 java-ant-2
 
@@ -14,7 +14,7 @@ SRC_URI="http://dev.gentooexperimental.org/~chewi/distfiles/${P}.tar.lzma"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=">=virtual/jdk-1.4
 	dev-java/jutils"
@@ -37,9 +37,6 @@ src_prepare() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	java-pkg_dojar dist/jinput.jar
 	java-pkg_doso dist/*.so
 

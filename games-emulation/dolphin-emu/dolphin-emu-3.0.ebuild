@@ -1,11 +1,11 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 EAPI="3"
 
 WX_GTK_VER="2.8"
 
-inherit cmake-utils eutils flag-o-matic games git pax-utils wxwidgets
+inherit cmake-utils eutils flag-o-matic games git-2 pax-utils wxwidgets
 
 DESCRIPTION="Free. open source emulator for Nintendo GameCube and Wii"
 HOMEPAGE="http://www.dolphin-emu.com/"
@@ -17,7 +17,7 @@ EGIT_COMMIT="${PV}"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 alsa ao bluetooth doc -encode +lzo openal opengl portaudio pulseaudio +wxwidgets +xrandr"
+IUSE="alsa ao bluetooth doc -encode +lzo openal opengl portaudio pulseaudio +wxwidgets +xrandr"
 RESTRICT=""
 
 RDEPEND=">=media-libs/glew-1.5
@@ -68,9 +68,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	# copy files to target installation directory
 	cmake-utils_src_install
 

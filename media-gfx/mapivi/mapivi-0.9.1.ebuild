@@ -7,7 +7,7 @@ DESCRIPTION="picture manager / organizer written in Perl/Tk"
 HOMEPAGE="http://mapivi.sourceforge.net/mapivi.shtml"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tgz"
 
-IUSE="debug_grade_1 "
+IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -30,9 +30,6 @@ src_unpack() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dobin mapivi || die
 
 	exeinto /usr/share/mapivi/plugins

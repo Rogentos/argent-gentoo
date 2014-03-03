@@ -10,7 +10,7 @@ DESCRIPTION='URI related types and coercions for Moose'
 LICENSE=" || ( Artistic GPL-2 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 perl_meta_configure() {
 	# ExtUtils::MakeMaker
 	echo virtual/perl-ExtUtils-MakeMaker

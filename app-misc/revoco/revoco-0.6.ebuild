@@ -12,10 +12,10 @@ SRC_URI="mirror://sourceforge/revoco/revoco-${PV}.tar.bz2"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=""
-RDEPEND=">=sys-fs/udev-104"
+RDEPEND="virtual/udev"
 
 CONFIG_CHECK="~USB_HIDDEV"
 ERROR_USB_HIDDEN="You need to enable the CONFIG_USB_HIDDEV option."
@@ -26,9 +26,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dobin "${T}"/${PN}
 }
 

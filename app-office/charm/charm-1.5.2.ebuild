@@ -14,11 +14,11 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="debug_grade_1 debug idledetection timesheettools"
+IUSE="debug idledetection timesheettools"
 
-DEPEND=">=x11-libs/qt-core-4.6.0
-	>=x11-libs/qt-gui-4.6.0
-	>=x11-libs/qt-sql-4.6.0
+DEPEND=">=dev-qt/qtcore-4.6.0
+	>=dev-qt/qtgui-4.6.0
+	>=dev-qt/qtsql-4.6.0
 	idledetection? ( x11-libs/libXScrnSaver )
 	timesheettools? ( dev-db/mysql dev-db/mysql-connector-c++ )
 "
@@ -40,9 +40,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cmake-utils_src_install
 
 	dodoc ReadMe.txt

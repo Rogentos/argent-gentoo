@@ -12,7 +12,7 @@ SRC_URI="http://www.kernel.org/pub/linux/kernel/people/mason/btrfs/${PN}-0.19.ta
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc64 ~x86"
-IUSE="debug_grade_1 acl debug-utils"
+IUSE="acl debug-utils"
 
 DEPEND="debug-utils? ( dev-python/matplotlib )
 	acl? (
@@ -55,9 +55,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	into /
 	dosbin btrfs
 	dosbin btrfs-show

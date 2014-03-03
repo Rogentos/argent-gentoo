@@ -14,7 +14,7 @@ SRC_URI="mirror://berlios/${MY_PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND=">=x11-misc/cairo-dock-${PV}"
 

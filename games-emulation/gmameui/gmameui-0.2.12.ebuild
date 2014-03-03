@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE="debug_grade_1 debug doc gnome nls joystick"
+IUSE="debug doc gnome nls joystick"
 
 RDEPEND="dev-libs/expat
 	>=x11-libs/gtk+-2.12:2
@@ -47,9 +47,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS BUGS ChangeLog NEWS README TODO
 	prepgamesdirs

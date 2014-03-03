@@ -13,12 +13,12 @@ ${P}.tar.gz"
 LICENSE="GPL-2 LGPL-2.1" # icon sets
 SLOT="0"
 KEYWORDS=""
-IUSE="debug_grade_1 "
+IUSE=""
 DEPEND="dev-libs/libgcrypt
-	x11-libs/qt-core:4
-	x11-libs/qt-gui:4
-	x11-libs/qt-sql:4
-	x11-libs/qt-webkit:4
+	dev-qt/qtcore:4
+	dev-qt/qtgui:4
+	dev-qt/qtsql:4
+	dev-qt/qtwebkit:4
 "
 RDEPEND="${DEPEND}"
 
@@ -38,9 +38,6 @@ src_compile() {
 # translations aren't visible unless the browser
 # is called from /usr/share/dooble, needs fixing
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	# Have todo it manually.... w00t
 	dobin Dooble || die
 

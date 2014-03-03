@@ -13,7 +13,7 @@ SRC_URI="http://dists.xneur.ru/release-${PV}/tgz/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 aplay debug gstreamer gtk gtk3 keylogger libnotify nls openal xosd +spell"
+IUSE="aplay debug gstreamer gtk gtk3 keylogger libnotify nls openal xosd +spell"
 
 COMMON_DEPEND=">=dev-libs/libpcre-5.0
 	sys-libs/zlib
@@ -93,9 +93,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog README NEWS TODO || die
 }

@@ -14,7 +14,7 @@ SRC_URI=""
 LICENSE="Freescale GPL-2"
 SLOT="0"
 KEYWORDS="~arm"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=""
 RDEPEND=""
@@ -30,9 +30,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" PLATFORM=IMX51 LIB_VERSION_MAJOR=2 \
 		LIB_VERSION_MINOR=0 install || die "emake install failed"
 }

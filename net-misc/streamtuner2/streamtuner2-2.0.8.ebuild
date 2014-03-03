@@ -1,11 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 EAPI=3
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
 
 inherit eutils
 
@@ -16,22 +13,24 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.src.tgz"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
-DEPEND="dev-libs/keybinder[python]
-	dev-python/imaging
-	dev-python/pygtk
+DEPEND="
+	=dev-lang/python-2*
+	dev-libs/keybinder:0[python]
+	virtual/python-imaging
+	dev-python/pygtk:2
 	dev-python/pyquery"
 RDEPEND="${DEPEND}"
 
+S=${WORKDIR}/${PN}
+
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-fix-python-path.patch
+	epatch "${FILESDIR}"/${P}-fix-python-path.patch \
+		"${FILESDIR}"/${P}-desktop-file.patch
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cd "${PN}"
 	newbin st2.py streamtuner2
 	rm -f st2.py

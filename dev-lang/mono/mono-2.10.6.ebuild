@@ -13,7 +13,7 @@ LICENSE="MIT LGPL-2.1 GPL-2 BSD-4 NPL-1.1 Ms-PL GPL-2-with-linking-exception IDP
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~x86"
 
-IUSE="debug_grade_1 minimal pax_kernel xen"
+IUSE="minimal pax_kernel xen"
 
 #Bash requirement is for += operator
 COMMONDEPEND="!dev-util/monodoc
@@ -120,9 +120,6 @@ src_test() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	go-mono_src_install
 
 	# Remove files not respecting LDFLAGS and that we are not supposed to provide, see Fedora

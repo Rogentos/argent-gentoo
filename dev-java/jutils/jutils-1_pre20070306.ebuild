@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-JAVA_PKG_IUSE="debug_grade_1 doc source"
+JAVA_PKG_IUSE="doc source"
 
 inherit java-pkg-2 java-ant-2
 
@@ -21,7 +21,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=virtual/jdk-1.4"
 RDEPEND=">=virtual/jre-1.4"
-IUSE="debug_grade_1 "
+IUSE=""
 
 S="${WORKDIR}/${PN}"
 
@@ -33,9 +33,6 @@ JAVA_PKG_BSFIX_SOURCE_TAGS="${JAVA_PKG_BSFIX_SOURCE_TAGS/javadoc}"
 RESTRICT="test"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	java-pkg_dojar bin/*.jar
 	use source && java-pkg_dosrc src/java/net
 	use doc && java-pkg_dojavadoc apidocs

@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,7 @@ SRC_URI="http://winff.googlecode.com/files/${P}-source.tar.gz
 LICENSE="GPL-3 doc? ( FDL-1.3 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 doc"
+IUSE="doc"
 
 COMMON_DEPENDS="
 	dev-libs/atk
@@ -36,13 +36,11 @@ RDEPEND="
 S="${WORKDIR}/${PN}"
 
 src_compile() {
-	lazbuild --widgetset=gtk2 -B winff.lpr || die
+	lazbuild \
+		--lazarusdir=/usr/share/lazarus/ --widgetset=gtk2 -B winff.lpr || die
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dobin ${PN}
 	dodoc README* changelog.txt
 	doman ${PN}.1

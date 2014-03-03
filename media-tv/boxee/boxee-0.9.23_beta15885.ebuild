@@ -14,7 +14,7 @@ HOMEPAGE="http://www.boxee.tv/"
 LICENSE="GPL-2 BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 debug mid xrandr opengl"
+IUSE="debug mid xrandr opengl"
 RESTRICT="mirror bindist strict"
 
 RDEPEND="opengl? ( virtual/opengl )
@@ -178,9 +178,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 
 	cd "${S}"
 

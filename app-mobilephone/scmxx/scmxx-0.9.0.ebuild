@@ -9,16 +9,13 @@ SRC_URI="mirror://sourceforge/scmxx/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 x86"
-IUSE="debug_grade_1 bluetooth nls"
+IUSE="bluetooth nls"
 
 RDEPEND="bluetooth? ( || ( net-wireless/gnome-bluetooth net-wireless/bluez ) )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	make DESTDIR="${D}" install || die "make install failed"
 
 	exeinto /usr/lib/scmxx

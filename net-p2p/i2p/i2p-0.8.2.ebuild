@@ -15,7 +15,7 @@ HOMEPAGE="http://www.i2p.net/"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 LICENSE="GPL-2"
-IUSE="debug_grade_1 "
+IUSE=""
 DEPEND=">=virtual/jdk-1.5
 	dev-java/ant"
 
@@ -33,9 +33,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dodir /opt/i2p /usr/bin
 	exeinto /opt/i2p
 	cp -r "${S}"/pkg-temp/* "${D}"/opt/i2p/

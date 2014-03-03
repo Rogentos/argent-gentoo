@@ -2,8 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI=5
 
+KDE_SCM="svn"
 KMNAME="playground/base/plasma/applets"
 inherit kde4-base subversion
 
@@ -13,7 +14,7 @@ HOMEPAGE="http://kde-look.org/content/show.php/translatoid?content=97511"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug_grade_1 debug"
+IUSE="debug"
 
 RDEPEND="
 	>=kde-base/plasma-workspace-${KDE_MINIMAL}

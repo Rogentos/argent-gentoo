@@ -15,9 +15,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 LANGS="ar ast bg bs ca cs da de el_GR en_GB es eu fi fo fr gl he hr hu id it ja ko lt ms nb nl nn pl pt_BR pt ro ru sk sl sv te th tr ug uk uz zh_CN zh_TW"
-IUSE="debug_grade_1 nls"
+IUSE="nls"
 for i in ${LANGS}; do
-	IUSE="debug_grade_1 ${IUSE} linguas_${i}"
+	IUSE="${IUSE} linguas_${i}"
 done
 
 DEPEND=""
@@ -27,7 +27,7 @@ RDEPEND=">=dev-perl/gtk2-perl-1.140
 	dev-util/desktop-file-utils
 	>=app-antivirus/clamav-0.95
 	nls? ( dev-perl/Locale-gettext )
-	sys-fs/udev"
+	virtual/udev"
 
 src_unpack() {
 	unpack ${A}
@@ -36,9 +36,6 @@ src_unpack() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dobin ${PN}
 
 	doicon images/* || die "doicon failed"

@@ -14,7 +14,7 @@ SRC_URI="http://www.freedesktop.org/software/${PN}/releases/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND=">=dev-python/pygobject-2.10:2
 	>=dev-python/pyopenssl-0.6

@@ -13,7 +13,7 @@ SLOT="0"
 LICENSE="GPL-3"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="debug_grade_1 +bbswitch video_cards_nouveau video_cards_nvidia"
+IUSE="+bbswitch video_cards_nouveau video_cards_nvidia"
 
 RDEPEND="x11-misc/virtualgl:=
 	bbswitch? ( sys-power/bbswitch )
@@ -59,9 +59,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	newconfd "${FILESDIR}"/bumblebee.confd bumblebee
 	newinitd "${FILESDIR}"/bumblebee.initd bumblebee
 	newenvd  "${FILESDIR}"/bumblebee.envd 99bumblebee

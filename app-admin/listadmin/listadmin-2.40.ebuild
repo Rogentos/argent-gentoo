@@ -11,7 +11,7 @@ SRC_URI="http://heim.ifi.uio.no/kjetilho/hacks/${PN}-${PV}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND="dev-lang/perl
 	net-mail/mailman
@@ -30,9 +30,6 @@ src_prepare() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dobin listadmin.pl || die "Failed to install script listadmin.pl"
 	doman listadmin.1 || die "doman failed"
 }

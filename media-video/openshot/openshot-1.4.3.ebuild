@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -16,7 +16,7 @@ SRC_URI="http://launchpad.net/openshot/$(get_version_component_range 1-2)/${PV}/
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=""
 RDEPEND="
@@ -29,7 +29,7 @@ RDEPEND="
 	media-libs/mlt[ffmpeg,frei0r,gtk,melt,python,sdl,xml]
 	media-sound/sox[encode,ffmpeg]
 	>=virtual/ffmpeg-0.6[encode,sdl]
-	dev-python/imaging
+	virtual/python-imaging
 	"
 #>=virtual/ffmpeg-0.6[encode,faac?,ieee1394?,mp3?,sdl,theora?,vorbis?,vpx,x264?,xvid?]
 pkg_setup() {

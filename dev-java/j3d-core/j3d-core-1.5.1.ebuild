@@ -15,7 +15,7 @@
 
 EAPI=2
 WANT_ANT_TASKS="ant-nodeps"
-JAVA_PKG_IUSE="debug_grade_1 doc source"
+JAVA_PKG_IUSE="doc source"
 
 inherit java-pkg-2 java-ant-2
 
@@ -28,7 +28,7 @@ LICENSE="|| ( sun-jrl sun-jdl )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="debug_grade_1 "
+IUSE=""
 
 COMMON_DEP="dev-java/vecmath"
 
@@ -57,9 +57,6 @@ ANT_OPTS="-Xmx1g"
 JAVA_PKG_FORCE_COMPILER="ecj-3.5"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 
 	local arch=""
 	use x86 && arch="linux-i586"
