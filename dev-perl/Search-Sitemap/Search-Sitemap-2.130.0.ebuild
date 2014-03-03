@@ -10,7 +10,7 @@ DESCRIPTION="Perl extension for managing Search Engine Sitemaps"
 LICENSE="|| ( Artistic GPL-2 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 test"
+IUSE="test"
 comment() { echo ''; }
 COMMON_DEPEND="
 	dev-perl/Moose

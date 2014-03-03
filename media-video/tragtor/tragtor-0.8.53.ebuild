@@ -11,7 +11,7 @@ SRC_URI="http://mein-neues-blog.de:9000/archive/${P}_all.tar.gz"
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=""
 RDEPEND="dev-python/pygtk
@@ -31,9 +31,6 @@ src_unpack() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dobin usr/bin/tragtor
 	doicon usr/share/pixmaps/tragtor.svg
 	domenu usr/share/applications/tragtor.desktop

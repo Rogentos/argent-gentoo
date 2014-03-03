@@ -12,7 +12,7 @@ SRC_URI="http://easyinstall.citadel.org/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 ldap pam pic postfix ssl threads"
+IUSE="ldap pam pic postfix ssl threads"
 # postfix can be used as mta with citadel. citadel needs to provide virtual/mta
 # in all other cases or other ebuilds depending on virtual/mta cause blockers
 
@@ -56,9 +56,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	if use pam ; then
 		 dodir /etc/pam.d
 	fi

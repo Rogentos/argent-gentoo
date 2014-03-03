@@ -12,7 +12,7 @@ SRC_URI="http://www.nightshadesoftware.org/downloads/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND="
 	>=dev-libs/boost-1.42
@@ -36,9 +36,6 @@ src_prepare() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog HACKING README TODO TRADEMARKS \
 		|| die "installing documentation files failed"

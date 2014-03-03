@@ -16,7 +16,7 @@ SRC_URI="http://linmodems.technion.ac.il/packages/smartlink/${P/_pre/-}.tar.gz
 LICENSE="Smart-Link"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-IUSE="debug_grade_1 alsa usb"
+IUSE="alsa usb"
 
 DEPEND="alsa? ( media-libs/alsa-lib )
 	amd64? ( app-emulation/emul-linux-x86-soundlibs )"
@@ -85,9 +85,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	linux-mod_src_install
 
 	cd "${S}"

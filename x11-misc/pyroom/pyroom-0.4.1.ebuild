@@ -14,7 +14,7 @@ SRC_URI="http://launchpad.net/${PN}/$(get_version_component_range 1-2)/${PV}/+do
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=""
 RDEPEND="dev-python/pyxdg

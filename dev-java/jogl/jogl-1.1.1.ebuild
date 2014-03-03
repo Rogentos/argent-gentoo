@@ -4,7 +4,7 @@
 
 EAPI="2"
 WANT_ANT_TASKS="ant-antlr"
-JAVA_PKG_IUSE="debug_grade_1 cg source doc"
+JAVA_PKG_IUSE="cg source doc"
 
 inherit java-pkg-2 java-ant-2
 
@@ -30,7 +30,7 @@ DEPEND=">=virtual/jdk-1.4
 
 RDEPEND=">=virtual/jre-1.4
 	${COMMON_DEPEND}"
-IUSE="debug_grade_1 "
+IUSE=""
 
 S="${WORKDIR}/${PN}"
 
@@ -69,9 +69,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	use source && java-pkg_dosrc src/classes/*
 	java-pkg_doso build/obj/*.so
 	java-pkg_dojar build/*.jar

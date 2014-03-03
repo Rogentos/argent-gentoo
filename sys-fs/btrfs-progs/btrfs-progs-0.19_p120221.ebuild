@@ -14,7 +14,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc64 ~x86"
-IUSE="debug_grade_1 acl debug-utils"
+IUSE="acl debug-utils"
 
 DEPEND="debug-utils? ( dev-python/matplotlib )
 	acl? (
@@ -62,9 +62,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake mandir="/usr/share/man" bindir="/sbin" install DESTDIR="${D}"
 
 	# fsck will segfault if invoked at boot, so do not make this link

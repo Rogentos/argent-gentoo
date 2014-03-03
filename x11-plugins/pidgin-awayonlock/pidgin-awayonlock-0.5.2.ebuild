@@ -15,7 +15,7 @@ SRC_URI="http://costela.net/files/${MY_PN}-${PV}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND="virtual/pkgconfig
 	>=net-im/pidgin-2.4.0

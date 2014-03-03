@@ -1,4 +1,4 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~ppc"
-IUSE="debug_grade_1 alsa cdio opengl oss pulseaudio +sdl-sound"
+IUSE="alsa cdio opengl oss pulseaudio +sdl-sound"
 
 RDEPEND="x11-libs/gtk+:2
 	gnome-base/libglade
@@ -60,8 +60,11 @@ src_prepare() {
 	done
 
 	# fix icon and .desktop path
-	epatch "${FILESDIR}/${PN}-datadir.patch"
-	epatch "${FILESDIR}/${PN}-include.patch"
+	epatch "${FILESDIR}/${PN}-datadir.patch" \
+		"${FILESDIR}/${PN}-include.patch"
+
+	# fix linking error with -Wl,--as-needed
+	epatch "${FILESDIR}/${P}-as-needed.patch"
 
 	# regenerate for changes to spread
 	eautoreconf
@@ -76,9 +79,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install \
 	    || die "emake install failed"
 

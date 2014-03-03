@@ -14,7 +14,7 @@ EGIT_BRANCH="xonotic-stable"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 RESTRICT="test"
 
 DEPEND=""
@@ -33,9 +33,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	newbin fteqcc.bin ${PN}
 
 	dodoc readme.txt

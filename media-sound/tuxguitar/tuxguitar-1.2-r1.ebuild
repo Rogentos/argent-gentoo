@@ -3,7 +3,7 @@
 # $Header: Exp $
 
 EAPI="2"
-JAVA_PKG_IUSE="debug_grade_1 source"
+JAVA_PKG_IUSE="source"
 
 inherit eutils java-pkg-2 java-ant-2 toolchain-funcs flag-o-matic fdo-mime gnome2-utils
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.tuxguitar.com.ar/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
-IUSE="debug_grade_1 alsa fluidsynth oss pdf timidity"
+IUSE="alsa fluidsynth oss pdf timidity"
 
 KEYWORDS="~amd64 ~x86"
 CDEPEND="dev-java/swt:3.5[cairo]
@@ -52,9 +52,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cd TuxGuitar || die "cd failed"
 	java-pkg_dojar tuxguitar.jar
 	use source && java-pkg_dosrc src/org

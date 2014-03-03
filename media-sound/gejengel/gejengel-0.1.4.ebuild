@@ -12,7 +12,7 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE="debug_grade_1 +alsa audioscrobbler debug dbus +ffmpeg flac libnotify mad openal pulseaudio syslog"
+IUSE="+alsa audioscrobbler debug dbus +ffmpeg flac libnotify mad openal pulseaudio syslog"
 
 RDEPEND="dev-cpp/gtkmm:2.4
 	dev-cpp/pangomm:1.4
@@ -58,9 +58,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	default
 	# The libgejengel.a is used by the package when building but shouldn't end
 	# up in the installation target

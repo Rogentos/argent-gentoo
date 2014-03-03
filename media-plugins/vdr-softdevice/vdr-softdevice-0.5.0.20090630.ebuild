@@ -22,7 +22,7 @@ fi
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 x86"
-IUSE="debug_grade_1 +xv fbcon directfb mmx mmxext xinerama"
+IUSE="+xv fbcon directfb mmx mmxext xinerama"
 
 # converted from built_with_use that had this comment:
 # Check for ffmpeg relying on libtheora without pkg-config-file
@@ -110,9 +110,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	vdr-plugin_src_install
 
 	cd "${S}"

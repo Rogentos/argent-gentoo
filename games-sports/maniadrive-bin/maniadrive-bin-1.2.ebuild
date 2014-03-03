@@ -17,7 +17,7 @@ S=${WORKDIR}/${MY_P}
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND="media-libs/libsdl
 	amd64? (
@@ -26,10 +26,7 @@ RDEPEND="media-libs/libsdl
 		app-emulation/emul-linux-x86-sdl
 	)"
 
-src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi 
+src_install() { 
 	dodir ${GAMES_DATADIR}/${PN} ${GAMES_BINDIR}
 	mv ${S}/game ${D}${GAMES_DATADIR}/${PN}
 	games_make_wrapper mania_drive ./mania_drive.static ${GAMES_DATADIR}/${PN}/game

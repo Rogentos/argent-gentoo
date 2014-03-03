@@ -13,7 +13,7 @@ SRC_URI="http://gnome-look.org/CONTENT/content-files/${ODTAG}-${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
-IUSE="debug_grade_1 chromium"
+IUSE="chromium"
 
 DEPEND=""
 RDEPEND="x11-themes/gtk-engines-equinox"

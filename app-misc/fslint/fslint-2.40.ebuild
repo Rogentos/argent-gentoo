@@ -15,7 +15,7 @@ RESTRICT="mirror"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=">=x11-libs/gtk+-2.4:2
 	gnome-base/libglade
@@ -35,9 +35,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cd ${S}
 	# GUI executable
 	dodir /usr/bin

@@ -15,7 +15,7 @@ EGIT_REPO_URI="http://github.com/pulb/mailnag.git"
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND="dev-python/pygobject:3
 		dev-python/gnome-keyring-python"
@@ -29,9 +29,6 @@ src_prepare() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dodir "/usr/share/${PN}"
 	cp -r "${S}"/* "${D}/usr/share/${PN}/"
 

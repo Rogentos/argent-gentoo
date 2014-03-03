@@ -33,9 +33,6 @@ pkg_nofetch() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	insinto "/opt"
 	doins -r "${S}/${PN}"
 	fperms +x "/opt/$PN/${PN}"

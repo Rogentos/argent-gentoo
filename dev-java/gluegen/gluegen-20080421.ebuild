@@ -7,7 +7,7 @@
 
 EAPI="2"
 WANT_ANT_TASKS="ant-antlr"
-JAVA_PKG_IUSE="debug_grade_1 "
+JAVA_PKG_IUSE=""
 
 inherit java-pkg-2 java-ant-2
 
@@ -27,7 +27,7 @@ DEPEND=">=virtual/jdk-1.4
 	dev-java/ant-core:0
 	dev-java/antlr:0
 	dev-java/cpptasks:0"
-IUSE="debug_grade_1 "
+IUSE=""
 
 java_prepare() {
 	rm make/lib/{cdc_fp,cpptasks}.jar
@@ -46,9 +46,6 @@ src_compile() {
 	ANT_TASKS="${WANT_ANT_TASKS}" eant ${antflags} -Dgentoo.classpath="${gcp}" all
 }
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cd build || dir "Unable to enter build directory"
 
 	#build copies system antlr.jar here.  

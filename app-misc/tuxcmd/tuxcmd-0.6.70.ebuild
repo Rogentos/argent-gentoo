@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/tuxcmd/tuxcmd-${PV}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64" # FreePascal restrictions
-IUSE="debug_grade_1 "
+IUSE=""
 
 QA_PRESTRIPPED="/usr/bin/tuxcmd"
 
@@ -36,9 +36,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${ED}/usr" install || die "emake install failed" # yep ${ED}
 	rm -f "${ED}"/usr/share/doc/tuxcmd/COPYING
 	gnome2_icon_cache_update

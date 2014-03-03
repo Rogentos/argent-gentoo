@@ -11,7 +11,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${P}.tgz"
 LICENSE="as-is"
 SLOT="${PV}"
 KEYWORDS="~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND=""
 DEPEND=""
@@ -19,9 +19,6 @@ DEPEND=""
 S="${WORKDIR}/${PN}"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	local shim_dir=/usr/share/${P}
 	dodir "${shim_dir}"
 	insinto "${shim_dir}"

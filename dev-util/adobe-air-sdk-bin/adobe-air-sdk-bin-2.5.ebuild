@@ -13,7 +13,7 @@ SRC_URI="http://airdownload.adobe.com/air/lin/download/${PV}/AdobeAIRSDK.tbz2 ->
 LICENSE="AdobeAirSDK"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 RESTRICT="strip"
 
 RDEPEND="app-arch/unzip
@@ -33,9 +33,6 @@ QA_EXECSTACK="*/libCore.so */libcurl.so */libadobecertstore.so */libadobecp.so"
 QA_TEXTRELS="*/libcurl.so"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	local sdkdir=opt/Adobe/AirSDK
 	local rtdir='runtimes/air/linux/Adobe AIR/Versions/1.0'
 

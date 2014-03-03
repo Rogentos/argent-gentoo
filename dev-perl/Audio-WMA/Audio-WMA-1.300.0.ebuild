@@ -12,7 +12,7 @@ DESCRIPTION="extension for reading WMA/ASF metadata"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 test"
+IUSE="test"
 
 RDEPEND=""
 DEPEND="

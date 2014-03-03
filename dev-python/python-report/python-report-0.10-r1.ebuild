@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="3"
 
 EGIT_REPO_URI="git://git.fedorahosted.org/report.git"
 EGIT_COMMIT="${PV}"
-inherit base git autotools eutils
+inherit base git-2 autotools eutils
 
 DESCRIPTION="Provides a single configurable problem/bug/issue reporting API."
 HOMEPAGE="http://git.fedoraproject.org/git/?p=report.git;a=summary"
@@ -15,7 +15,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND="app-arch/rpm
 	net-misc/curl"
@@ -47,9 +47,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	base_src_install
 
 	# remove Red Hat stuff

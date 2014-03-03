@@ -15,7 +15,7 @@ SRC_URI="http://autokey.googlecode.com/files/${PN}_${PV}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 doc"
+IUSE="doc"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -27,9 +27,6 @@ RDEPEND="${DEPEND}
 	dev-python/pyinotify"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	distutils_src_install
 	if use doc; then
 		dodoc -r "${S}"/doc/scripting

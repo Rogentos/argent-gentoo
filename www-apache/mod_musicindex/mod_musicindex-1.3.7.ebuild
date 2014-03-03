@@ -13,7 +13,7 @@ SRC_URI="http://www.parisc-linux.org/~varenet/musicindex/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 +mp3 +mp4 +flac +vorbis"
+IUSE="+mp3 +mp4 +flac +vorbis"
 
 DEPEND="mp3? ( media-libs/libmad )
 	mp4? ( media-libs/libmp4v2 )
@@ -41,9 +41,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install || die "emake failed"
 	apache-module_src_install
 }

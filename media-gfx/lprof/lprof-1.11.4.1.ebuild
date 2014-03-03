@@ -11,10 +11,10 @@ SRC_URI="mirror://sourceforge/lprof/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 
-DEPEND="x11-libs/qt-core:4[qt3support]
-	x11-libs/qt-assistant:4
+DEPEND="dev-qt/qtcore:4[qt3support]
+	dev-qt/qthelp:4
 	dev-libs/openssl
 	sys-libs/zlib
 	media-libs/libpng

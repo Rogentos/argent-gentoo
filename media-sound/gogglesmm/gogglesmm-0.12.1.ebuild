@@ -11,7 +11,7 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 dbus gcrypt"
+IUSE="dbus gcrypt"
 
 RDEPEND="dev-db/sqlite:3
 	>=media-libs/taglib-1.7
@@ -38,9 +38,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install || die
 
 	dodoc AUTHORS README || die

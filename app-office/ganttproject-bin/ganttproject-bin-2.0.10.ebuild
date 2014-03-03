@@ -12,7 +12,7 @@ SRC_URI="http://ganttproject.googlecode.com/files/${MY_P}.zip"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND="app-arch/unzip
 	>=virtual/jdk-1.4"
@@ -21,9 +21,6 @@ RDEPEND="virtual/jre"
 S="${WORKDIR}/${MY_P}"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	insinto /usr/share/${PN}
 	doins -r eclipsito.jar plugins/ || die
 

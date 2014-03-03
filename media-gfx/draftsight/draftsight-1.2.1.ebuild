@@ -10,7 +10,7 @@ HOMEPAGE="http://www.3ds.com/products/draftsight/free-cad-software/"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="3ds"
-IUSE="debug_grade_1 "
+IUSE=""
 
 # Use dependency list as specified in DEB file for Ubuntu
 DEPEND="app-arch/deb2targz"
@@ -51,9 +51,6 @@ src_unpack() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 
 	cp -R "${WORKDIR}/opt" "${D}"
 

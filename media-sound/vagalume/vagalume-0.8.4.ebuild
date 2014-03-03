@@ -13,7 +13,7 @@ SRC_URI="http://vagalume.igalia.com/files/source/${P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 dbus libnotify"
+IUSE="dbus libnotify"
 
 DEPEND=">=x11-libs/gtk+-2.10:2
 	>=dev-libs/libxml2-2.6

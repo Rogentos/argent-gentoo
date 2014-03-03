@@ -17,7 +17,7 @@ SRC_URI="x86? ( mirror://sourceforge/${MY_PN}/${MY_PN}-linux-x86-${MY_PV}.tgz )
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=">=virtual/jre-1.6"
 RDEPEND="${DEPEND}
@@ -28,9 +28,6 @@ use x86 && S="${WORKDIR}/${MY_PN}-linux-x86-${MY_PV}"
 use amd64 && S="${WORKDIR}/${MY_PN}-linux-x86_64-${MY_PV}"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cd "${S}"
 
 	# Fix the script BASE=

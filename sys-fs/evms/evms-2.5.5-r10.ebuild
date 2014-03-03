@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="debug_grade_1 debug gtk hb hb2 ncurses nls"
+IUSE="debug gtk hb hb2 ncurses nls"
 
 #EVMS uses libuuid from e2fsprogs
 RDEPEND="virtual/libc
@@ -91,9 +91,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install || die "Make install died"
 	dodoc ChangeLog INSTALL* PLUGIN.IDS README TERMINOLOGY doc/linuxrc
 

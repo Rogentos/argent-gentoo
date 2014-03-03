@@ -20,7 +20,7 @@ SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${MY_P}.zip"
 LICENSE="XMAME"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 debug +opengl"
+IUSE="debug +opengl"
 
 RESTRICT="mirror"
 
@@ -107,9 +107,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dogamesbin "${PN}" || die "dogamesbin ${PN} failed"
 
 	# Follows xmame ebuild, avoiding collision on /usr/games/bin/jedutil

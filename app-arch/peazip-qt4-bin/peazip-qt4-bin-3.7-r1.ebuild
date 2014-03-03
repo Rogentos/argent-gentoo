@@ -15,7 +15,7 @@ MY_P="${MY_PN}-${PV}"
 LICENSE="LGPL-3 GPL-2 unRAR LGPL-2.1 GPL-3"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-IUSE="debug_grade_1 kde gnome"
+IUSE="kde gnome"
 RESTRICT="mirror strip"
 S="${WORKDIR}"
 
@@ -29,8 +29,8 @@ MY_GTK_RDEPEND="!${CATEGORY}/${MY_PN}-qt4-bin
 
 MY_QT4_RDEPEND="!${CATEGORY}/${MY_PN}-gtk-bin
 	amd64? ( app-emulation/emul-linux-x86-qtlibs )
-	x86? ( x11-libs/qt-core
-		x11-libs/qt-gui )"
+	x86? ( dev-qt/qtcore
+		dev-qt/qtgui )"
 
 [[ ${PN} = *-gtk-bin ]] && MY_RDEPEND=${MY_GTK_RDEPEND} || \
 	MY_RDEPEND=${MY_QT4_RDEPEND}
@@ -69,9 +69,6 @@ src_unpack()
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cd "${ED}"
 	if use kde; then
 		mkdir -p usr/share/kde4

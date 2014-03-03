@@ -14,7 +14,7 @@ RESTRICT="mirror"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 doc"
+IUSE="doc"
 
 DEPEND="media-libs/libsndfile"
 RDEPEND="${DEPEND}"
@@ -38,9 +38,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cd libs
 	emake DESTDIR="${D}" PREFIX=/usr LIBDIR=$(get_libdir) install || die
 

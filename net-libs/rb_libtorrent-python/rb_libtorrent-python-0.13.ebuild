@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/libtorrent/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~x86-fbsd"
-IUSE="debug_grade_1 debug"
+IUSE="debug"
 
 DEPEND="net-libs/rb_libtorrent
 	dev-libs/boost

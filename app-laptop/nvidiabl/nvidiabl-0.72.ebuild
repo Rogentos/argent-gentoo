@@ -13,7 +13,7 @@ SRC_URI="https://github.com/downloads/guillaumezin/${PN}/${P}-source-only.dkms.t
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 DEPEND=""
 RDEPEND=""

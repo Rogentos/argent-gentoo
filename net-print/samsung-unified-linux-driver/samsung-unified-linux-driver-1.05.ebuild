@@ -13,7 +13,7 @@ SRC_URI="http://org.downloadcenter.samsung.com/downloadfile/ContentsFile.aspx?VP
 LICENSE="SAMSUNG-ELECTRONICS-software"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 -*"
-IUSE="debug_grade_1 +splix"
+IUSE="+splix"
 
 S=${WORKDIR}/cdroot/Linux
 
@@ -69,9 +69,6 @@ src_prepare() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	# Currently, we try to install the minimum necessary for
 	# integrating into CUPS. The UI may come later with a qt4
 	# useflag... but having a working driver is much more useful than

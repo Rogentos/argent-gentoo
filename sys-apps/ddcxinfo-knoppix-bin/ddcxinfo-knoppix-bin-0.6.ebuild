@@ -3,7 +3,7 @@
 
 inherit eutils multilib
 
-IUSE="debug_grade_1 "
+IUSE=""
 
 DESCRIPTION="Program to automatically probe a monitor for information"
 HOMEPAGE="http://www.knopper.net"
@@ -22,9 +22,6 @@ src_unpack() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 
 	cd ${WORKDIR}
 	exeinto /usr/sbin

@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 leveleditor +sound wiimote"
+IUSE="leveleditor +sound wiimote"
 
 DEPEND="media-libs/libsdl[opengl,joystick]
 	media-libs/sdl-ttf
@@ -48,9 +48,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dogamesbin ${PN} || die "dogamesbin failed"
 
 	insinto "${dir}"

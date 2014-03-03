@@ -4,7 +4,7 @@
 
 # uses the javah task
 WANT_ANT_TASKS="ant-nodeps"
-JAVA_PKG_IUSE="debug_grade_1 devil doc source"
+JAVA_PKG_IUSE="devil doc source"
 
 inherit java-pkg-2 java-ant-2 eutils
 
@@ -19,7 +19,7 @@ SRC_URI="mirror://sourceforge/java-game-lib/${PN}-source-${PV}.zip"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug_grade_1 "
+IUSE=""
 
 CDEPEND="virtual/opengl
 		media-libs/openal
@@ -59,9 +59,6 @@ EANT_GENTOO_CLASSPATH="jinput,jutils"
 # EANT_EXTRA_ARGS="-Dbuild.sysclasspath=first"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	java-pkg_dojar libs/lwjgl*jar
 	java-pkg_doso libs/linux/*.so
 	use doc && java-pkg_dojavadoc doc/javadoc

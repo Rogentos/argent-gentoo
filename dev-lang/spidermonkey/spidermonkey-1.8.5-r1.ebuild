@@ -18,7 +18,7 @@ SRC_URI="https://ftp.mozilla.org/pub/mozilla.org/js/${TARBALL_P}.tar.gz"
 LICENSE="NPL-1.1"
 SLOT="0"
 KEYWORDS="~arm"
-IUSE="debug_grade_1 debug static-libs test"
+IUSE="debug static-libs test"
 
 S="${WORKDIR}/${MY_P}"
 BUILDDIR="${S}/js/src"
@@ -92,9 +92,6 @@ src_test() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cd "${BUILDDIR}"
 	emake DESTDIR="${D}" install || die
 	dobin shell/js ||die

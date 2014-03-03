@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/osspd/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 +alsa pulseaudio"
+IUSE="+alsa pulseaudio"
 
 RDEPEND=">=sys-fs/fuse-2.8.0
 	alsa? ( media-libs/alsa-lib )
@@ -63,9 +63,6 @@ src_prepare() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" UDEVDIR="/lib/udev/rules.d" install \
 		|| die "emake install failed"
 

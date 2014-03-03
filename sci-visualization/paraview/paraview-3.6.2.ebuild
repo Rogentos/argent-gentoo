@@ -20,16 +20,16 @@ SRC_URI="mirror://gentoo/${P}.tar.gz
 LICENSE="paraview GPL-2"
 KEYWORDS="~amd64 ~ppc ~x86"
 SLOT="0"
-IUSE="debug_grade_1 boost cg doc examples +gui mpi mysql plugins +python postgres streaming odbc overview"
+IUSE="boost cg doc examples +gui mpi mysql plugins +python postgres streaming odbc overview"
 RDEPEND="sci-libs/hdf5[mpi=]
 	mpi? ( || (
 				sys-cluster/openmpi
 				sys-cluster/mpich2[cxx] ) )
-	gui? ( x11-libs/qt-gui:4
-			x11-libs/qt-qt3support:4
-			x11-libs/qt-opengl:4
-			|| ( >=x11-libs/qt-assistant-4.7.0:4[compat]
-				<x11-libs/qt-assistant-4.7.0:4 ) )
+	gui? ( dev-qt/qtgui:4
+			dev-qt/qt3support:4
+			dev-qt/qtopengl:4
+			|| ( >=dev-qt/qthelp-4.7.0:4[compat]
+				<dev-qt/qthelp-4.7.0:4 ) )
 	mysql? ( virtual/mysql )
 	postgres? ( dev-db/postgresql-base )
 	odbc? ( dev-db/unixODBC )
@@ -198,9 +198,6 @@ src_configure() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	cmake-utils_src_install
 
 	# rename the assistant wrapper

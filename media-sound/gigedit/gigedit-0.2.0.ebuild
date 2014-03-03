@@ -13,7 +13,7 @@ SRC_URI="http://download.linuxsampler.org/packages/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND="dev-cpp/gtkmm:2.4
 	>=media-libs/libgig-3.3.0
@@ -34,9 +34,6 @@ src_compile() {
 }
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake DESTDIR="${D}" install || die "make install failed"
 	dodoc AUTHORS ChangeLog NEWS README
 }

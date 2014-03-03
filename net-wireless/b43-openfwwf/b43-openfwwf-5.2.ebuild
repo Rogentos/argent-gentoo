@@ -11,13 +11,10 @@ SRC_URI="http://www.ing.unibs.it/openfwwf/firmware/openfwwf-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="debug_grade_1 "
+IUSE=""
 DEPEND="net-wireless/b43-asm"
 S="${WORKDIR}/openfwwf-${PV}"
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	emake PREFIX="${D}"/lib/firmware/b43-open install || die "emake failed"
 }

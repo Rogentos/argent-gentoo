@@ -12,7 +12,7 @@ SRC_URI="http://www.myway.de/richieland/${PN}-0.96.2-src.tar.bz2"
 LICENSE="GPL-2 or later"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND="media-libs/libsdl
 	media-libs/sdl-mixer"
@@ -22,9 +22,6 @@ DEPEND="${RDEPEND}"
 S=${WORKDIR}/${PN}-0.96.2
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
         cd "${S}/src"
 
 	dogamesbin ${PN} || die "dogamesbin failed"

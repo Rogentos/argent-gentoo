@@ -12,7 +12,7 @@ SRC_URI="http://downloads.sourceforge.net/atunes/${MY_PN}-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 mplayer mp3 flac ogg"
+IUSE="mplayer mp3 flac ogg"
 # TODO - Package depends on either mplayer or xine. 
 # idl0r helped with the current implementation. Hopefully I got it right!
 DEPEND=">=virtual/jre-1.6.0
@@ -26,9 +26,6 @@ RDEPEND="${DEPEND}"
 S=${WORKDIR}/${MY_PN}-${PV}-SNAPSHOT
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	# aTunes is installed into $atunes_home by simply copying the archive
 	# contents. The ebuild adds a symbolic link to the executable and a
 	# desktop shortcut.

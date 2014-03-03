@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 7zip rar zip"
+IUSE="7zip rar zip"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -21,8 +21,5 @@ RDEPEND="${DEPEND}
 "
 
 src_install() {
-     if use debug_grade_1 ; then
-   set -ex
-       fi
 	dobin ${PN}
 }

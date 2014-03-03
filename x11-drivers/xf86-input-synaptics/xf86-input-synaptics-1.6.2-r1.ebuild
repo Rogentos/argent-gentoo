@@ -10,7 +10,7 @@ DESCRIPTION="Driver for Synaptics touchpads"
 HOMEPAGE="http://cgit.freedesktop.org/xorg/driver/xf86-input-synaptics/"
 
 KEYWORDS="amd64 arm ~mips ppc ppc64 x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND="sys-libs/mtdev
 	>=x11-base/xorg-server-1.8

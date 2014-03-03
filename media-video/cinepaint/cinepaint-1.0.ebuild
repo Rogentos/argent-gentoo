@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/cinepaint/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 gutenprint text"
+IUSE="gutenprint text"
 
 #S=${WORKDIR}/${PN}-${MY_PV}
 S=${WORKDIR}/${PN}
@@ -29,6 +29,7 @@ RDEPEND="
 	media-libs/freetype:2
 	media-libs/openexr
 	media-libs/lcms
+	>=media-libs/oyranos-0.9.4
 	media-libs/tiff
 	sys-libs/zlib
 	virtual/jpeg
@@ -49,7 +50,8 @@ DEPEND="${RDEPEND}
 
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-0.22.1-rpath.patch" \
-		"${FILESDIR}/${P}-libpng1.5.patch"
+		"${FILESDIR}/${P}-libpng1.5.patch" \
+		"${FILESDIR}/${P}-oyranos.patch"
 	AT_NO_RECURSIVE=1 AT_M4DIR="." eautoreconf
 }
 

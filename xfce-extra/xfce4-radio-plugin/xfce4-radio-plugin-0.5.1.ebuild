@@ -13,7 +13,7 @@ SRC_URI="mirror://xfce/src/panel-plugins/${PN}/${PV%.*}/${P}.tar.bz2"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE="debug_grade_1 debug"
+IUSE="debug"
 
 RDEPEND=">=xfce-base/libxfcegui4-4.8
 	>=xfce-base/xfce4-panel-4.8"

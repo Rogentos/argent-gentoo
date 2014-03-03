@@ -13,7 +13,7 @@ HOMEPAGE="http://github.com/Enlik/querypkg/"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug_grade_1 "
+IUSE=""
 
 RDEPEND=">=dev-lang/perl-5.10
 	dev-perl/JSON-XS
