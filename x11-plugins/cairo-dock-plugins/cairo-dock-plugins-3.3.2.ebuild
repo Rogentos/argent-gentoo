@@ -54,3 +54,11 @@ DEPEND="${RDEPEND}
 "
 
 S="${WORKDIR}/${PN}-${PV}"
+
+src_configure() {
+	# broken with 0.99.x
+	mycmakeargs=(
+		"-Denable-upower-support=OFF"
+	)
+	cmake-utils_src_configure
+}
