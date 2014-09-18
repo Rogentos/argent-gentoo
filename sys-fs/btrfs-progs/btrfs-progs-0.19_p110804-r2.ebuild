@@ -7,7 +7,7 @@ inherit eutils
 DESCRIPTION="Btrfs filesystem utilities"
 HOMEPAGE="http://btrfs.wiki.kernel.org/"
 SRC_URI="http://www.kernel.org/pub/linux/kernel/people/mason/btrfs/${PN}-0.19.tar.bz2
-	 mirror://sabayon/sys-fs/btrfs-progs/${PN}-0.19-git-diff-20110804.patch.bz2"
+	 mirror://argent/sys-fs/btrfs-progs/${PN}-0.19-git-diff-20110804.patch.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -35,7 +35,7 @@ src_unpack() {
         # Apply fix for snapshot arguments
         epatch "${FILESDIR}"/0001-btrfs-progs-unstable-darksatanic-repo-fix-arg-checki.patch
 	# See Sabayon ML
-	# http://lists.sabayon.org/pipermail/devel/2011-October/007155.html
+	# http://lists.argentlinux.io/pipermail/devel/2011-October/007155.html
 	epatch "${FILESDIR}"/0002-btrfs-progs-ignore-unavailable-loop-device-source-files.patch
 
 	# Fix hardcoded "gcc" and "make"

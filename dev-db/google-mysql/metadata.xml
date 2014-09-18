@@ -3,7 +3,7 @@
 <pkgmetadata>
   <herd>mysql</herd>
   <maintainer>
-    <email>lxnay@gentoo.org</email>
+    <email>stefan.cristian@gentoo.org</email>
   </maintainer>
 <use>
   <flag name='big-tables'>Make tables contain up to 1.844E+19 rows</flag>

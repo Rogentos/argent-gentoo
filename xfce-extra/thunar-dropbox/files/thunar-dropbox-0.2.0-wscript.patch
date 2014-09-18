@@ -1,7 +1,7 @@
 thunar-dropbox-0.2.0
 Disable gtk-update-icon-cache, install library with proper permissions,
 respect --libdir.
-slawomir.nizio at sabayon.org
+stefan.cristian at argentlinux.io
 --- wscript
 +++ wscript
 @@ -13,11 +13,13 @@

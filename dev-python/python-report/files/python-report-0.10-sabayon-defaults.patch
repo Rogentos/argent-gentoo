@@ -6,7 +6,7 @@ diff -Nurp python-report-0.10.orig/python/report/templates/bugzilla-template/__i
      if 'bugURL' in optionsDict:
          return optionsDict["bugURL"]
 -    host = "bugzilla.redhat.com"
-+    host = "bugs.sabayon.org"
++    host = "bugs.argentlinux.io"
      if 'bugzilla_host' in optionsDict:
          host = optionsDict["bugzilla_host"]
 -    return "https://" + host + "/xmlrpc.cgi"
@@ -20,8 +20,8 @@ diff -Nurp python-report-0.10.orig/python/report/templates/bugzilla-template/__i
          if not bzfiler:
 -            bzfiler = filer.BugzillaFiler("https://bugzilla.redhat.com/xmlrpc.cgi",
 -                                          "http://bugzilla.redhat.com",
-+            bzfiler = filer.BugzillaFiler("http://bugs.sabayon.org/xmlrpc.cgi",
-+                                          "http://bugs.sabayon.org",
++            bzfiler = filer.BugzillaFiler("http://bugs.argentlinux.io/xmlrpc.cgi",
++                                          "http://bugs.argentlinux.io",
                                            filer.getVersion(), filer.getProduct())
  
          if not bzfiler or not bzfiler.supportsFiling() or not bzfiler.bugUrl:
@@ -33,7 +33,7 @@ diff -Nurp python-report-0.10.orig/python/report/templates/RHEL-template/__init_
      if optionsDict.has_key("bugURL"):
          return optionsDict["bugURL"]
 -    host = "bugzilla.redhat.com"
-+    host = "bugs.sabayon.org"
++    host = "bugs.argentlinux.io"
      if optionsDict.has_key("bugzilla_host"):
          host = optionsDict["bugzilla_host"]
 -    return "https://" + host + "/xmlrpc.cgi"
@@ -47,8 +47,8 @@ diff -Nurp python-report-0.10.orig/python/report/templates/RHEL-template/__init_
          if not bzfiler:
 -            bzfiler = filer.BugzillaFiler("https://bugzilla.redhat.com/xmlrpc.cgi",
 -                                          "http://bugzilla.redhat.com",
-+            bzfiler = filer.BugzillaFiler("http://bugs.sabayon.org/xmlrpc.cgi",
-+                                          "http://bugs.sabayon.org",
++            bzfiler = filer.BugzillaFiler("http://bugs.argentlinux.io/xmlrpc.cgi",
++                                          "http://bugs.argentlinux.io",
                                            filer.getVersion(), filer.getProduct())
  
          if not bzfiler or not bzfiler.supportsFiling() or not bzfiler.bugUrl:

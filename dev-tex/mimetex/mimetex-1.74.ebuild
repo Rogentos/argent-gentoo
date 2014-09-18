@@ -9,7 +9,7 @@ inherit toolchain-funcs webapp
 DESCRIPTION="Lets you easily embed LaTeX math in your HTML and dynamic web pages"
 HOMEPAGE="http://www.forkosh.com/mimetex.html"
 # mirrored because the zip file doesn't contain version number
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.zip"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.zip"
 
 LICENSE="GPL-3"
 SLOT="0"

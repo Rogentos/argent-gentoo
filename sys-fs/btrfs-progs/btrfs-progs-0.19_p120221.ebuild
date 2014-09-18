@@ -38,7 +38,7 @@ src_prepare() {
 	# DO NOT DROP THIS !!!!!!!!!!!!!!
 	# DO NOT DROP THIS !!!!!!!!!!!!!!
 	# DO NOT DROP THIS !!!!!!!!!!!!!!
-	# http://lists.sabayon.org/pipermail/devel/2011-October/007155.html
+	# http://lists.argentlinux.io/pipermail/devel/2011-October/007155.html
 	epatch "${FILESDIR}"/0002-btrfs-progs-ignore-unavailable-loop-device-source-files.patch
 	# DO NOT DROP THIS !!!!!!!!!!!!!!
 	# DO NOT DROP THIS !!!!!!!!!!!!!!

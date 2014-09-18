@@ -8,7 +8,7 @@ SRC_URI=""
 KEYWORDS="~amd64 ~arm ~x86"
 
 DESCRIPTION="Eselect module for making easy to switch between LightDM greeters"
-HOMEPAGE="http://www.sabayon.org"
+HOMEPAGE="https://argentlinux.io"
 
 LICENSE="GPL-2"
 SLOT="0"

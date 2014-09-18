@@ -6,7 +6,7 @@ EAPI=2
 
 DESCRIPTION="Assembler for Broadcom BCM43xx firmware"
 HOMEPAGE="http://git.bu3sch.de/git/b43-tools.git"
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

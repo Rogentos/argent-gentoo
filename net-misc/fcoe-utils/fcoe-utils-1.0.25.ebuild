@@ -8,7 +8,7 @@ inherit base autotools linux-info
 
 DESCRIPTION="Fibre Channel over Ethernet utilities"
 HOMEPAGE="http://www.open-fcoe.org"
-SRC_URI="mirror://sabayon/${CATEGORY}/${P}.tar.bz2"
+SRC_URI="mirror://argent/${CATEGORY}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"

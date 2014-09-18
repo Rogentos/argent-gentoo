@@ -8,7 +8,7 @@ inherit cmake-utils
 
 DESCRIPTION="Charm time tracking application"
 HOMEPAGE="http://github.com/KDAB/Charm"
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
-<email>slawomir.nizio@sabayonlinux.org</email>
-<name>Sławomir Nizio</name>
+<email>stefan.cristian@rogentos.ro</email>
+<name>Stefan Cristian B.</name>
 </maintainer>
 <use>
 	<flag name="gnome">enable GVFS module</flag>

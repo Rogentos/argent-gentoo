@@ -8,7 +8,7 @@ inherit gnome2-utils eutils
 
 DESCRIPTION="An extension for displaying weather notifications in GNOME Shell"
 HOMEPAGE="https://github.com/simon04/gnome-shell-extension-weather"
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

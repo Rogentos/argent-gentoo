@@ -1,7 +1,7 @@
 x11-themes/gtk-engines-kde4
 
 Ebuild added March, 2009
-Added by Mitch Harder <mitch.harder@sabayonlinux.org>
+Added by Mitch Harder <mitch.harder@argentlinux.io>
 
 The purpose of this ebuild is to provide support for gtk apps
 running in KDE 4.2.

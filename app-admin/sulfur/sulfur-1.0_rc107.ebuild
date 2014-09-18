@@ -7,14 +7,14 @@ PYTHON_DEPEND="2"
 inherit eutils gnome2-utils fdo-mime python
 
 DESCRIPTION="Sulfur, the Entropy Package Manager Store"
-HOMEPAGE="http://www.sabayon.org"
+HOMEPAGE="http://www.argentlinux.io"
 LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-SRC_URI="mirror://sabayon/app-admin/sulfur-${PV}.tar.bz2"
+SRC_URI="mirror://argent/app-admin/sulfur-${PV}.tar.bz2"
 
 RDEPEND="dev-python/pygtk:2
 	>=sys-apps/entropy-${PV}

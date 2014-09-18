@@ -6,7 +6,7 @@ EAPI=2
 
 DESCRIPTION="Cicle Fonts by Joan Alegret (Tipomatika)"
 HOMEPAGE="www.tipomatika.co.nr"
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.lzma"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.lzma"
 
 LICENSE="cicle"
 SLOT="0"

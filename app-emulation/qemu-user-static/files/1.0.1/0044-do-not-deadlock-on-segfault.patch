@@ -14,7 +14,7 @@ than me to look at this :).
 
 Example code to trigger this is at: http://csgraf.de/tmp/conftest.c
 
-Reported-by: Fabio Erculiani <lxnay@sabayon.org>
+Reported-by: Stefan Cristian <stefan.cristian@argentlinux.io>
 Signed-off-by: Alexander Graf <agraf@suse.de>
 ---
  qemu-lock.h |   10 ++++++++++

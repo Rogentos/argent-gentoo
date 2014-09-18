@@ -5,7 +5,7 @@
 Torrent Search is a torrent searching application developed in Python, and using GTK+ for its graphical interface.
 </longdescription>
 <maintainer>
-	<email>slawomir.nizio@sabayonlinux.org</email>
+	<email>stefan.cristian@argentlinux.io</email>
 </maintainer>
 <use>
 	<flag name="gnome">Install GNOME applet</flag>

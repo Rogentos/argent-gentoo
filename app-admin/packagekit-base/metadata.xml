@@ -2,11 +2,11 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<email>lxnay@gentoo.org</email>
-		<name>Fabio Erculiani</name>
+		<email>stefan.cristian@gentoo.org</email>
+		<name>Stefan Cristian</name>
 	</maintainer>
 	<use>
-		<flag name="connman">Add support for <pkg>net-misc/connman</pkg></flag>
+		<flag name="command-not-found">Enable packagekit support on shell "command not found"</flag>
 		<flag name="cron">Install cron script for auto-update</flag>
 		<flag name="entropy">
 			Enable Entropy backend

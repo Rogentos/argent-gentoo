@@ -3,7 +3,7 @@
 <pkgmetadata>
   <herd>no-herd</herd>
   <maintainer>
-    <email>mitch.harder@sabayonlinux.org</email>
+    <email>mitch.harder@argentlinux.io</email>
   </maintainer>
   <use>
     <flag name='debug-utils'>Build additional utils for debugging</flag>

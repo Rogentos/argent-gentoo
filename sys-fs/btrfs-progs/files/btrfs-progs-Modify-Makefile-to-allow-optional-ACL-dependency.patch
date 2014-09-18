@@ -1,5 +1,5 @@
 From 8283877390fcf6c6682921d5c9f4743a0fc41112 Mon Sep 17 00:00:00 2001
-From: Mitch Harder <mitch.harder@sabayonlinux.org>
+From: Mitch Harder <mitch.harder@argentlinux.io>
 Date: Sun, 13 May 2012 12:16:26 -0500
 Subject: Modify Makefile to allow optional ACL dependency.
 

@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
-<email>slawomir.nizio@sabayon.org</email>
+<email>stefan.cristian@argentlinux.io</email>
 </maintainer>
 <use>
 	<flag name="blowfish">configure/generate Blowfish encryption plugin</flag>

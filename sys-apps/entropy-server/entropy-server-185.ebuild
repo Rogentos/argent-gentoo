@@ -7,14 +7,14 @@ PYTHON_DEPEND="2"
 inherit eutils python bash-completion-r1
 
 DESCRIPTION="Entropy Package Manager server-side tools"
-HOMEPAGE="http://www.sabayon.org"
+HOMEPAGE="http://www.argentlinux.io"
 LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="+matter"
 
-SRC_URI="mirror://sabayon/sys-apps/entropy-${PV}.tar.bz2"
+SRC_URI="mirror://argent/sys-apps/entropy-${PV}.tar.bz2"
 
 S="${WORKDIR}/entropy-${PV}/server"
 

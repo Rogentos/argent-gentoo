@@ -4,7 +4,7 @@
 # $Id: $
 
 DESCRIPTION="Switch u-boot default kernel by updating /boot/uImage symlink"
-MAINTAINER="lxnay@sabayon.org"
+MAINTAINER="stefan.cristian@rogentos.ro"
 VERSION="0.1"
 
 # Module variables

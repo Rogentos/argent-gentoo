@@ -9,11 +9,11 @@
   iscsitarget-1.4.19.ebuild:
   x86 stable wrt security bug #314187
 
-  28 Feb 2010; Fabio Erculiani <lxnay@gentoo.org> iscsitarget-1.4.19.ebuild,
+  28 Feb 2010; Stefan Cristian <stefan.cristian@gentoo.org> iscsitarget-1.4.19.ebuild,
   +files/iscsitarget-1.4.19+linux-2.6.33.patch:
   add 2.6.33 kernel support to 1.4.19
 
-  28 Feb 2010; Fabio Erculiani <lxnay@gentoo.org> iscsitarget-1.4.19.ebuild:
+  28 Feb 2010; Stefan Cristian <stefan.cristian@gentoo.org> iscsitarget-1.4.19.ebuild:
   KSRC= also required for 'emake usr'
 
   18 Nov 2009; Diego E. Pettenò <flameeyes@gentoo.org>

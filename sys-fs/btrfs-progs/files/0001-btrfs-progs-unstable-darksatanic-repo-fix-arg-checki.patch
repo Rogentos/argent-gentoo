@@ -1,5 +1,5 @@
 From 6e1f3e7611187a31280fa2d1bd571e20ad067b41 Mon Sep 17 00:00:00 2001
-From: Mitch Harder <mitch.harder@sabayonlinux.org>
+From: Mitch Harder <mitch.harder@argentlinux.io>
 Date: Mon, 12 Sep 2011 12:07:41 -0500
 Subject: [btrfs-progs-unstable (darksatanic repo)] fix arg checking.
 

@@ -6,7 +6,7 @@ EAPI=2
 
 DESCRIPTION="Animal Tracks by Andrew D. Taylor"
 HOMEPAGE="http://www.dafont.com/animal-tracks.font"
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.lzma"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.lzma"
 
 LICENSE="animal-tracks"
 SLOT="0"

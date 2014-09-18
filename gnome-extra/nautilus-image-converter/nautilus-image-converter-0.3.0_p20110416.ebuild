@@ -9,7 +9,7 @@ inherit autotools-utils
 
 DESCRIPTION="Adds 'Resize Images' and 'Rotate Images' items to context menu for images"
 HOMEPAGE="http://www.bitron.ch/software/nautilus-image-converter.php"
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

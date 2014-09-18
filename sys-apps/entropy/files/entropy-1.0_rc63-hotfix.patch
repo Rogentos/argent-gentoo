@@ -1,5 +1,5 @@
 commit 215f04ebb34488b1c22ee6e78c6917aa1ddb0261
-Author: Fabio Erculiani <lxnay@sabayon.org>
+Author: Stefan Cristian <stefan.cristian@argentlinux.io>
 Date:   Mon Oct 24 16:20:35 2011 +0200
 
     [entropy.core] fix variables unpack while scanning self.__setting_dirs

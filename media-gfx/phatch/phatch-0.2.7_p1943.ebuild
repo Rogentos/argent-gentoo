@@ -12,7 +12,7 @@ inherit distutils fdo-mime
 DESCRIPTION="Simple to use cross-platform GUI Photo Batch Processor"
 HOMEPAGE="http://photobatch.stani.be/"
 
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.xz"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.xz"
 
 # last tarball released by upstream was versioned 0.2.7.1
 # but the .1 isn't mentioned in their VCS log or sources

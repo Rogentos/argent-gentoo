@@ -6,7 +6,7 @@ EAPI=2
 
 DESCRIPTION="Asenine Fonts by Graham Meade of Apostrophic Labs"
 HOMEPAGE="http://apostrophiclab.pedroreina.net"
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.lzma"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.lzma"
 
 LICENSE="ApostrophicLabs"
 SLOT="0"

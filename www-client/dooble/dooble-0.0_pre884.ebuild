@@ -7,7 +7,7 @@ inherit eutils qt4-r2 fdo-mime
 DESCRIPTION="A Secure and Open Source Web Browser that provides solid performance, stability, and cross-platform functionality."
 HOMEPAGE="http://dooble.sourceforge.net/"
 
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.gz"
 RESTRICT="nomirror"
 
 LICENSE="GPL-3"

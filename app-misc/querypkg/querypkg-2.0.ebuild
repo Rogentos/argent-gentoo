@@ -7,7 +7,7 @@ EGIT_REPO_URI="git://github.com/Enlik/querypkg.git"
 EGIT_COMMIT="v${PV}"
 inherit perl-module git-2
 
-DESCRIPTION="A simple CLI interface to packages.sabayon.org"
+DESCRIPTION="A simple CLI interface to packages.argentlinux.io"
 HOMEPAGE="http://github.com/Enlik/querypkg/"
 
 LICENSE="MIT"

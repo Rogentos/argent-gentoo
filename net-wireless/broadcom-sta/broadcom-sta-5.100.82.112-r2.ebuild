@@ -27,7 +27,7 @@ MODULESD_WL_ALIASES=("wlan0 wl")
 
 pkg_setup() {
 	# bug #300570
-	# NOTE<lxnay>: module builds correctly anyway with b43 and SSB enabled
+	# NOTE<stefan.cristian>: module builds correctly anyway with b43 and SSB enabled
 	# make checks non-fatal. The correct fix is blackisting ssb and, perhaps
 	# b43 via udev rules. Moreover, previous fix broke binpkgs support.
 	CONFIG_CHECK="~!B43 ~!SSB"

@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/openafs-kernel/openafs-kernel-1.6.2_pre3.ebuild,v 1.1 2013/01/26 17:37:57 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/openafs-kernel/openafs-kernel-1.6.2.ebuild,v 1.4 2013/04/13 14:20:17 ago Exp $
 
 EAPI="4"
 
@@ -8,23 +8,24 @@ inherit eutils autotools multilib linux-mod versionator toolchain-funcs
 
 MY_PV=$(delete_version_separator '_')
 MY_PN=${PN/-kernel}
-MY_P2="${MY_PN}-${PV}_pre3"
+MY_P2="${MY_PN}-${PV}"
 MY_P="${MY_PN}-${MY_PV}"
 PVER="1"
 DESCRIPTION="The OpenAFS distributed file system kernel module"
 HOMEPAGE="http://www.openafs.org/"
 # We always d/l the doc tarball as man pages are not USE=doc material
-SRC_URI="http://openafs.org/dl/${MY_PV}/${MY_P}-src.tar.bz2
+SRC_URI="http://openafs.org/dl/openafs/${MY_PV}/${MY_P}-src.tar.bz2
 	mirror://gentoo/${MY_P2}-patches-${PVER}.tar.bz2"
 
 LICENSE="IBM BSD openafs-krb5-a APSL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 sparc x86 ~amd64-fbsd ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE=""
 
 S=${WORKDIR}/${MY_P}
 
-CONFIG_CHECK="~!AFS_FS KEYS"
+CONFIG_CHECK="~!DEBUG_RODATA ~!AFS_FS KEYS"
+ERROR_DEBUG_RODATA="OpenAFS is incompatible with linux' CONFIG_DEBUG_RODATA option"
 ERROR_AFS_FS="OpenAFS conflicts with the in-kernel AFS-support.  Make sure not to load both at the same time!"
 ERROR_KEYS="OpenAFS needs CONFIG_KEYS option enabled"
 
@@ -41,10 +42,7 @@ src_prepare() {
 	EPATCH_EXCLUDE="012_all_kbuild.patch" \
 	EPATCH_SUFFIX="patch" \
 	epatch "${WORKDIR}"/gentoo/patches
-
-	# Linux 3.8 support
-	epatch "${FILESDIR}/${P}-linux-3.8-1.patch"
-	epatch "${FILESDIR}/${P}-linux-3.8-2.patch"
+	epatch "${FILESDIR}"/openafs-1.6.2-kernel-3.8-{1..5}.patch
 
 	# packaging is f-ed up, so we can't run automake (i.e. eautoreconf)
 	sed -i 's/^\(\s*\)a/\1ea/' regen.sh

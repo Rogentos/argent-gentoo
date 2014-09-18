@@ -9,7 +9,7 @@ inherit autotools gnome2
 DESCRIPTION="GTK+-based Last.fm client"
 HOMEPAGE="http://vagalume.igalia.com/"
 #SRC_URI="http://vagalume.igalia.com/files/source/${P}.tar.gz"
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"

@@ -10,7 +10,7 @@ inherit distutils eutils
 
 DESCRIPTION="Graphical interface for Taskwarrior"
 HOMEPAGE="http://taskwarrior.org/projects/taskwarrior/wiki/Taskhelm"
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

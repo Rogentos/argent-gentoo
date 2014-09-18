@@ -2,11 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="3"
 
 EGIT_REPO_URI="git://git.fedorahosted.org/report.git"
 EGIT_COMMIT="${PV}"
-inherit base git autotools eutils
+inherit base git-2 autotools eutils
 
 DESCRIPTION="Provides a single configurable problem/bug/issue reporting API."
 HOMEPAGE="http://git.fedoraproject.org/git/?p=report.git;a=summary"
@@ -25,7 +25,7 @@ RDEPEND="dev-libs/openssl
 
 src_prepare() {
 
-	epatch "${FILESDIR}"/${P}-sabayon-defaults.patch
+	epatch "${FILESDIR}"/${P}-argent-defaults.patch
 	epatch "${FILESDIR}"/${P}-disable-rpm.patch
 	epatch "${FILESDIR}"/${P}-fix-version-detection.patch
 
@@ -55,7 +55,7 @@ src_install() {
 	rm "${D}"/etc/report.d/bugzilla.redhat.com.ini
 
 	# XXX: {not yet implemented} install Sabayon configuration
-	# cp "${FILESDIR}"/bugs.sabayon.org.ini "${D}/etc/report.d/"
+	# cp "${FILESDIR}"/bugs.argentlinux.io.ini "${D}/etc/report.d/"
 	find "${D}"/ -name "bugzilla-template" -type d | xargs rm -rf
 	find "${D}"/ -name "RHEL-template" -type d | xargs rm -rf
 	find "${D}"/ -name "strata-template" -type d | xargs rm -rf

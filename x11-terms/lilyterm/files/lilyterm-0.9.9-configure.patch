@@ -1,5 +1,5 @@
 Remove useless check.
-slawomir.nizio at sabayon.org
+stefan.cristian at argentlinux.io
 --- a/configure
 +++ b/configure
 @@ -256,23 +256,7 @@ fi

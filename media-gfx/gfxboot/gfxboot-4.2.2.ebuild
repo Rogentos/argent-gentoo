@@ -7,7 +7,7 @@ EAPI=2
 inherit eutils
 
 DESCRIPTION="gfxboot allows you to create gfx menus for bootmanagers."
-HOMEPAGE="http://www.sabayon.org"
+HOMEPAGE="http://www.argentlinux.io"
 SRC_URI="mirror://ubuntu/pool/main/g/gfxboot/gfxboot_${PV}.orig.tar.gz
 	mirror://ubuntu/pool/main/g/gfxboot/gfxboot_${PV}-1ubuntu1.diff.gz"
 

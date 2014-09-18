@@ -8,14 +8,14 @@ PYTHON_USE_WITH="sqlite"
 inherit eutils python user
 
 DESCRIPTION="Entropy Package Manager foundation library"
-HOMEPAGE="http://www.sabayon.org"
+HOMEPAGE="http://www.argentlinux.io"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 
 IUSE=""
-SRC_URI="mirror://sabayon/${CATEGORY}/${P}.tar.bz2"
+SRC_URI="mirror://argent/${CATEGORY}/${P}.tar.bz2"
 
 RDEPEND="dev-db/sqlite[soundex]
 	net-misc/rsync
@@ -53,7 +53,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	for ex_conf in "${REPO_D_CONFPATH}"/_entropy_sabayon-limbo.example; do
+	for ex_conf in "${REPO_D_CONFPATH}"/_entropy_argent-limbo.example; do
 		real_conf="${ex_conf%.example}"
 		if [ -f "${real_conf}" ] || [ -f "${real_conf/_}" ]; then
 			# skip installation then

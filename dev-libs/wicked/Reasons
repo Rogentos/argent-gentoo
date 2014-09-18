@@ -1,14 +1,14 @@
 dev-libs/wicked
 
 Ebuild added July 30, 2008
-Added by Wael Nasreddine <wael.nasreddine@sabayonlinux.org>
+Added by Wael Nasreddine <wael.nasreddine@argentlinux.io>
 
 Wicked is a library that provides lua functions to awesome 3
 
 ======
-30.07.08 - Wael Nasreddine <wael.nasreddine@sabayonlinux.org>
+30.07.08 - Wael Nasreddine <wael.nasreddine@argentlinux.io>
            - wicked: welcome :)
            
-26.04.09 - Ian Whyman <ian.whyman@sabayonlinux.org>
+26.04.09 - Ian Whyman <ian.whyman@argentlinux.io>
            - Update to new upstream URL
          

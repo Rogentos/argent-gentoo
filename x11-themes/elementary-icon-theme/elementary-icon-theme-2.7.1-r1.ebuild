@@ -10,7 +10,7 @@ inherit gnome2-utils
 DESCRIPTION="Elementary gnome icon theme"
 HOMEPAGE="https://launchpad.net/elementaryicons"
 SRC_URI="http://launchpad.net/elementaryicons/2.0/${PV}/+download/${P}.tar.gz
-	branding? ( mirror://sabayon/x11-themes/fdo-icons-sabayon${SLREV}.tar.gz )"
+	branding? ( mirror://argent/x11-themes/fdo-icons-argent${SLREV}.tar.gz )"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -38,7 +38,7 @@ src_install() {
 
 	cd "${WORKDIR}"
 	# Sabayon nice stuff
-	for base_dir in fdo-icons-sabayon/*; do
+	for base_dir in fdo-icons-argent/*; do
 		[[ -d ${base_dir} ]] || \
 			die "error, ${base_dir} doesn't exist or is not a directory"
 		icon_dir=$(basename "${base_dir}") # example: 128x128

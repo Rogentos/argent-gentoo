@@ -11,7 +11,7 @@ MY_PV_ADD=U1
 DESCRIPTION="FreeRapid is a simple Java downloader that supports downloading from Rapidshare and other file-sharing services."
 HOMEPAGE="http://wordrider.net/freerapid"
 ZIP_REV="566"
-SRC_URI="mirror://sabayon/${CATEGORY}/FreeRapid-${PV}u1-b${ZIP_REV}.zip"
+SRC_URI="mirror://argent/${CATEGORY}/FreeRapid-${PV}u1-b${ZIP_REV}.zip"
 
 LICENSE="GPL"
 KEYWORDS="x86 amd64"

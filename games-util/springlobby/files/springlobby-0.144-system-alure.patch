@@ -1,5 +1,5 @@
 Use system alure.
-Sławomir Nizio <slawomir.nizio at sabayon.org>
+Stefan Cristian B. <stefan.cristian at argentlinux.io>
 --- CMakeLists.txt	2012-03-12 17:37:46.000000000 +0000
 +++ CMakeLists.txt	2012-05-10 00:58:03.324560610 +0000
 @@ -124,9 +124,10 @@

@@ -3,7 +3,7 @@ Reason: on some systems with /usr/bin/xgettext and /usr/bin/xgettext.pl,
 whereis -b xgettext prints the .pl one first, causing the compilation
 to fail (xgettext.pl reports unknown options).
 
-slawomir.nizio at sabayon.org
+stefan.cristian at argentlinux.io
 diff -ur lilyterm-0.9.9.old/.default lilyterm-0.9.9/.default
 --- lilyterm-0.9.9.old/.default	2012-04-17 17:50:56.000000000 +0200
 +++ lilyterm-0.9.9/.default	2012-04-23 16:08:50.661159772 +0200

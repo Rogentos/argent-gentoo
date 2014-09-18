@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer>
-	<email>slawomir.nizio@sabayonlinux.org</email>
+	<email>stefan.cristian@argentlinux.io</email>
 </maintainer>
 <longdescription lang="en">
 PeaZip is a free archiver, available as portable and installable software for Windows and Linux.

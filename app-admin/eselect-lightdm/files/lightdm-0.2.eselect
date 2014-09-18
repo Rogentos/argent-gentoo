@@ -4,7 +4,7 @@
 # $Id: $
 
 DESCRIPTION="Switch between LightDM greeters"
-MAINTAINER="lxnay@gentoo.org"
+MAINTAINER="stefan.cristian@gentoo.org"
 VERSION="0.1"
 
 # Module variables

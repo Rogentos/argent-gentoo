@@ -1,5 +1,5 @@
 Provide option to choose between gtkhtml and webkit-gtk.
-Sławomir Nizio <slawomir.nizio at sabayon.org>
+Stefan Cristian B. <stefan.cristian at argentlinux.io>
 --- gyachi-1.2.11/configure.ac.tmpl
 +++ gyachi-1.2.11/configure.ac.tmpl
 @@ -375,9 +375,16 @@

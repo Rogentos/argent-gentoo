@@ -10,7 +10,7 @@ inherit gnome2-utils
 DESCRIPTION="Elementary gnome icon theme"
 HOMEPAGE="https://launchpad.net/elementaryicons"
 SRC_URI="http://launchpad.net/elementaryicons/2.0/${PV}/+download/${P}.tar.gz
-	branding? ( mirror://sabayon/x11-themes/fdo-icons-sabayon${SLREV}.tar.gz )"
+	branding? ( mirror://argent/x11-themes/fdo-icons-argent${SLREV}.tar.gz )"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -30,16 +30,16 @@ src_install() {
 	if use branding ; then
 		cd "${WORKDIR}"
 		insinto /usr/share/icons/elementary
-		doins -r fdo-icons-sabayon/*
+		doins -r fdo-icons-argent/*
 
 		if use monochrome ; then
 			insinto /usr/share/icons/elementary-mono-dark
-			doins -r fdo-icons-sabayon/*
+			doins -r fdo-icons-argent/*
 		fi
 
 		# ugly fix, while Ian is ZzZ
 		for target in $(find "${D}"/usr/share/icons/*/panel/ -name start-here.svg); do
-			cp fdo-icons-sabayon/scalable/places/start-here.svg "${target}" || die
+			cp fdo-icons-argent/scalable/places/start-here.svg "${target}" || die
 		done
 	fi
 }

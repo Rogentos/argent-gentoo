@@ -5,7 +5,7 @@
 EAPI="3"
 
 DESCRIPTION="Dummy ebuild to ease transition to RigoDaemon"
-HOMEPAGE="http://www.sabayon.org"
+HOMEPAGE="http://www.argentlinux.io"
 LICENSE="GPL-2"
 
 SLOT="0"

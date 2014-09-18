@@ -1,5 +1,5 @@
 commit 02d59f97bff92b87117a4dddc705179500f16f52
-Author: Fabio Erculiani <lxnay@sabayon.org>
+Author: Stefan Cristian <stefan.cristian@argentlinux.io>
 Date:   Tue Mar 19 22:53:07 2013 +0000
 
     entropy: fix undefined reference "update"

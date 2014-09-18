@@ -10,17 +10,17 @@ app-emulation/qemu-gui
 # Highly unstable
 ~net-im/skype-1.4.0.58
 
-# Wael Nasreddine <wael.nasreddine@sabayonlinux.org>
+# Wael Nasreddine <wael.nasreddine@argentlinux.io>
 # Awsome 3 live from git.
 ~x11-wm/awesome-9999
 
-# Wael Nasreddine <wael.nasreddine@sabayonlinux.org>
+# Wael Nasreddine <wael.nasreddine@argentlinux.io>
 # xcb-utils live from git.
 # NOTE: There's no need to unmask this package for awesome 3 anymore you can
 #       safely use >=xcb-util-0.2.1
 ~x11-libs/xcb-util-9999
 
-# Ian Whyman <ian.whyman@sabayonlinux.org>
+# Ian Whyman <ian.whyman@argentlinux.io>
 # Lots of issues:
 #  "The driver isn't breaking signal handling on further investigation. 
 #  There are programs quering the xserver which is looking at some property
@@ -31,24 +31,24 @@ app-emulation/qemu-gui
 # Gentoo #260441
 ~x11-drivers/nvidia-drivers-180.35
 
-# Ian Whyman <ian.whyman@sabayonlinux.org>
+# Ian Whyman <ian.whyman@argentlinux.io>
 # Breaks many apps, see: #575
 =x11-libs/libxcb-1.1.93-r1
 
-# Fabio Erculiani <lxnay@sabayonlinux.org>
+# Stefan Cristian <stefan.cristian@argentlinux.io>
 # Switching over to Portage tree drivers
 =x11-drivers/ati-drivers-9.6-r1
 
-# Ian Whyman <ian.whyman@sabayonlinux.org>
+# Ian Whyman <ian.whyman@argentlinux.io>
 # Mask Unstable Miro versions
 >media-tv/miro-2.0.5
 
-# Fabio Erculiani <lxnay@sabayonlinux.org>
+# Stefan Cristian <stefan.cristian@argentlinux.io>
 # Mask imlib2 version used on Branch 5
 # by E17 stuff
 =media-libs/imlib2-9999
 
-# Fabio Erculiani <lxnay@sabayon.org>
+# Stefan Cristian <stefan.cristian@argentlinux.io>
 # They work like shit
 ~x11-drivers/ati-drivers-11.9
 ~x11-drivers/ati-userspace-11.9

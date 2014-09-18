@@ -1,5 +1,5 @@
 upstream fixes
-http://bugs.sabayon.org/show_bug.cgi?id=3921
+http://bugs.argentlinux.io/show_bug.cgi?id=3921
 diff --git a/src/editor/edit.c b/src/editor/edit.c
 index e1c753f..b2ef495 100644
 --- a/src/editor/edit.c

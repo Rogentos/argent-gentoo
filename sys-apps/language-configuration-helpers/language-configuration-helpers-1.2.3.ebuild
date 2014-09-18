@@ -1,11 +1,12 @@
 # Copyright 1999-2012 Sabayon
+# Copyright 2014 Argent
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
 inherit eutils versionator
 
 DESCRIPTION="Sabayon (Gentoo compatible) Locale configuration tool"
-HOMEPAGE="http://www.sabayon.org/"
+HOMEPAGE="https://argentlinux.io/"
 SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"

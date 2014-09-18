@@ -10,7 +10,7 @@ if [[ ${PV} = 9999 ]]; then
 	LIVE_ECLASS="bzr"
 	EBZR_REPO_URI="lp:${PN}"
 else
-	SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
+	SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.gz"
 	KEYWORDS="~amd64 ~x86"
 fi
 

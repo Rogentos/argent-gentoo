@@ -5,7 +5,7 @@
 EAPI=5
 
 DESCRIPTION="Dummy ebuild that prints the arch name in pkg_setup"
-HOMEPAGE="http://www.sabayon.org"
+HOMEPAGE="https://argentlinux.io"
 LICENSE="GPL-2+"
 
 SLOT="0"

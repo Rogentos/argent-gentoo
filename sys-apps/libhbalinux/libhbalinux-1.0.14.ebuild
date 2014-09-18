@@ -8,7 +8,7 @@ inherit eutils autotools
 
 DESCRIPTION="SNIA HBAAPI vendor library built on top of the scsi_transport_fc interfaces."
 HOMEPAGE="http://www.open-fcoe.org"
-SRC_URI="mirror://sabayon/${CATEGORY}/${P}.tar.gz"
+SRC_URI="mirror://argent/${CATEGORY}/${P}.tar.gz"
 
 LICENSE="SNIA"
 SLOT="0"

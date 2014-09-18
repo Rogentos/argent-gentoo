@@ -1,5 +1,5 @@
 Make XaraLX compile with libpng 1.5.
-Author: Sławomir Nizio <slawomir.nizio at sabayon.org>
+Author: Stefan Cristian B. <stefan.cristian at argentlinux.io>
 
 diff --git a/wxOil/outptpng.cpp b/wxOil/outptpng.cpp
 index 8c5268d..34c4791 100755

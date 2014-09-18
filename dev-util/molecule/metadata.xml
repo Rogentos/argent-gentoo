@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<email>lxnay@gentoo.org</email>
-		<name>Fabio Erculiani</name>
+		<email>stefan.cristian@gentoo.org</email>
+		<name>Stefan Cristian</name>
 	</maintainer>
 	<longdescription lang="en">
 		Metro is a build tool that can build, rebuild or extend Sabayon Linux or

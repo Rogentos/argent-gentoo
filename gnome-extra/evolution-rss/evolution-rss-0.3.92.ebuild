@@ -9,7 +9,7 @@ inherit eutils gnome2
 
 DESCRIPTION="An RSS reader plugin for Evolution"
 HOMEPAGE="http://gnome.eu.org/evo/index.php/Evolution_RSS_Reader_Plugin"
-SRC_URI="mirror://sabayon/${CATEGORY}/${PN}/${P}.tar.gz"
+SRC_URI="mirror://argent/${CATEGORY}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
