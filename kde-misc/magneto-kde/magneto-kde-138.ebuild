@@ -7,7 +7,7 @@ PYTHON_DEPEND="2"
 inherit eutils python
 
 DESCRIPTION="Entropy Package Manager notification applet KDE frontend"
-HOMEPAGE="http://www.sabayon.org"
+HOMEPAGE="http://www.argentlinux.org"
 LICENSE="GPL-2"
 
 SLOT="0"
