@@ -7,7 +7,7 @@ PYTHON_DEPEND="2"
 inherit eutils gnome2-utils fdo-mime python
 
 DESCRIPTION="Rigo, the Sabayon Application Browser"
-HOMEPAGE="http://www.sabayon.org"
+HOMEPAGE="http://www.argentlinux.org"
 LICENSE="GPL-3"
 
 SLOT="0"
