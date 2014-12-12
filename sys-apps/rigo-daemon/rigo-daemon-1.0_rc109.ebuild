@@ -8,7 +8,7 @@ inherit eutils python
 
 MY_PN="RigoDaemon"
 DESCRIPTION="Entropy Client DBus Services, aka RigoDaemon"
-HOMEPAGE="http://www.sabayon.org"
+HOMEPAGE="http://www.argentlinux.org"
 LICENSE="GPL-3"
 
 SLOT="0"
