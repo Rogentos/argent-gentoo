@@ -22,7 +22,7 @@ DEPEND="app-arch/rpm
 RDEPEND="dev-libs/openssl
 	net-misc/curl
 	dev-libs/libxml2
-	>=app-misc/argent-version-14.05-r1"
+	>=app-misc/argent-version-1.05-r1"
 
 src_prepare() {
 
